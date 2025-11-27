@@ -1,12 +1,11 @@
 import Header from "../app/components/common/Header";
+import Hero from "../app/components/hero/Hero";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <div className="pt-20"> {/* padding to avoid overlap */}
-        Home Content
-      </div>
+      <Hero />
     </>
   );
 }
