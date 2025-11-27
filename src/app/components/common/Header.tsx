@@ -11,34 +11,35 @@ export default function Header() {
   const menu = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Service", path: "/service" },
-    { name: "Blogs", path: "/blog" },
+    { name: "Services", path: "/services" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Blogs", path: "/blogs" },
     { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <header className="w-full sticky top-0 bg-white/90 backdrop-blur-lg shadow-sm z-50">
+    <header className="w-full fixed top-0 left-0 z-50 backdrop-blur-xl bg-white/10 border-b border-white/20">
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         
-        {/* --- Logo --- */}
+        {/* Logo */}
         <div className="flex items-center gap-2">
-          <Image src="/images/logo.png" alt="logo" width={120} height={50} priority />
+          <Image src="/images/logo.png" alt="logo" width={120} height={50} />
         </div>
 
-        {/* --- Desktop Menu --- */}
+        {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-8">
           {menu.map((item, index) => (
             <Link
               key={index}
               href={item.path}
-              className="font-medium text-gray-700 hover:text-orange-500 transition"
+              className="text-gray-700 hover:text-orange-500 transition font-medium"
             >
               {item.name}
             </Link>
           ))}
         </nav>
 
-        {/* --- Desktop Login Button --- */}
+        {/* Login Button */}
         <Link
           href="/login"
           className="hidden md:block px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition"
@@ -46,23 +47,20 @@ export default function Header() {
           Login
         </Link>
 
-        {/* --- Mobile menu button --- */}
-        <button
-          className="md:hidden text-3xl"
-          onClick={() => setOpen(!open)}
-        >
+        {/* Mobile menu button */}
+        <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>
           {open ? <HiX /> : <HiMenu />}
         </button>
       </div>
 
-      {/* --- Mobile Dropdown Menu --- */}
+      {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-white shadow-md py-4 flex flex-col gap-4 px-6">
+        <div className="md:hidden bg-white/60 backdrop-blur-xl shadow-md py-4 flex flex-col gap-4 px-6">
           {menu.map((item, i) => (
             <Link
               key={i}
               href={item.path}
-              className="text-gray-700 font-medium hover:text-orange-500 transition"
+              className="text-gray-800 font-medium hover:text-orange-500 transition"
               onClick={() => setOpen(false)}
             >
               {item.name}

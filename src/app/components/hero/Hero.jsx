@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-gradient-to-b from-[#FFF7F2] to-white pt-20 pb-12">
+    <section className="pt-32 bg-gradient-to-b from-[#FFF7F2] to-white pb-12">
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-10 px-4">
         
         {/* ---- LEFT CONTENT ---- */}
