@@ -3,30 +3,62 @@ import { IoSearch, IoFilter } from "react-icons/io5";
 
 export default function ServicesSection() {
   const services = [
-    { image: "/images/services/service1.png", title: "Lorem ipsum dolor sit amet consectetur.", tutor: "Jhon Wick" },
-    { image: "/images/services/service2.png", title: "Lorem ipsum dolor sit amet consectetur.", tutor: "Jhon Wick" },
-    { image: "/images/services/service3.png", title: "Lorem ipsum dolor sit amet consectetur.", tutor: "Jhon Wick" },
-    { image: "/images/services/service4.png", title: "Lorem ipsum dolor sit amet consectetur.", tutor: "Jhon Wick" },
-    { image: "/images/services/service5.png", title: "Lorem ipsum dolor sit amet consectetur.", tutor: "Jhon Wick" },
-    { image: "/images/services/service6.png", title: "Lorem ipsum dolor sit amet consectetur.", tutor: "Jhon Wick" },
+    {
+      image: "/images/service1.png",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      tutor: "John Wick",
+      tutorImg: "/images/profile.jpeg",
+    },
+    {
+      image: "/images/service2.png",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      tutor: "John Wick",
+      tutorImg: "/images/profile.jpeg",
+    },
+    {
+      image: "/images/service3.png",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      tutor: "John Wick",
+      tutorImg: "/images/profile.jpeg",
+    },
+    {
+      image: "/images/service4.png",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      tutor: "John Wick",
+      tutorImg: "/images/profile.jpeg",
+    },
+    {
+      image: "/images/service5.png",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      tutor: "John Wick",
+      tutorImg: "/images/profile.jpeg",
+    },
+    {
+      image: "/images/service6.png",
+      title: "Lorem ipsum dolor sit amet consectetur.",
+      tutor: "John Wick",
+      tutorImg: "/images/profile.jpeg",
+    },
   ];
 
   return (
-    <section className="py-16 container mx-auto px-4">
-      
-      {/* Header title & Search */}
-      <div className="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
-        
+    <section className="pt-2 py-12 bg-[#F4F4F4]">
+
+
+      {/* Header + Search */}
+      <div className="container mx-auto px-6 lg:px-24 mb-14 flex flex-col md:flex-row justify-between items-center gap-6">
+
+        {/* Tag + Title */}
         <div>
-          <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-md">
+          <span className="bg-[#CF6943] text-white text-[12px] px-4 py-1 rounded-full shadow-md">
             Our Services
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold mt-3 text-gray-900">
+          <h2 className="text-[28px] md:text-[36px] font-semibold mt-3 text-[#070606]">
             Explore Our Services
           </h2>
         </div>
 
-        {/* Search Bar */}
+        {/* Search Field */}
         <div className="flex items-center gap-2 border shadow-sm bg-white px-4 py-2 rounded-lg max-w-xs w-full">
           <IoSearch className="text-gray-500 text-lg" />
           <input
@@ -34,18 +66,19 @@ export default function ServicesSection() {
             placeholder="Search..."
             className="outline-none flex-1 text-sm"
           />
-          <button className="bg-orange-500 text-white p-2 rounded-md hover:bg-orange-600">
+          <button className="bg-[#CF6943] text-white p-2 rounded-md hover:bg-[#B85A39]">
             <IoFilter size={18} />
           </button>
         </div>
       </div>
 
-      {/* Card Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Cards Grid */}
+      <div className="container mx-auto px-6 lg:px-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {services.map((item, index) => (
           <ServiceCard key={index} {...item} />
         ))}
       </div>
+
     </section>
   );
 }

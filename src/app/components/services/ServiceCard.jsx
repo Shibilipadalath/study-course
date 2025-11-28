@@ -2,50 +2,81 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { IoArrowForwardOutline } from "react-icons/io5";
 
-export default function ServiceCard({ image, title, tutor }) {
+export default function ServiceCard({ image, title, tutor, tutorImg }) {
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition p-3">
-      {/* Image */}
+    <div
+      className="bg-white rounded-[12px] p-5 transition-all hover:-translate-y-2 hover:shadow-xl"
+      style={{
+        boxShadow: "0px 15px 29px rgba(0,0,0,0.15)",
+        width: "100%",
+        maxWidth: "392px",
+        minHeight: "420px", // Reduced height
+      }}
+    >
+      {/* Service Image */}
       <div className="relative">
         <Image
           src={image}
-          width={400}
-          height={250}
+          width={392}
+          height={220}
           alt={title}
-          className="rounded-lg object-cover w-full h-[180px]"
+          className="rounded-[12px] object-cover w-full h-[200px]"
         />
 
-        {/* Rating Badge */}
-        <div className="absolute top-2 left-2 bg-white shadow px-3 py-1 rounded-lg flex items-center gap-2 text-sm">
-          <FaStar className="text-yellow-400" />
-          <span className="font-medium">4.5 (134)</span>
+        {/* Rating Badge - Updated to Figma spec */}
+        <div
+          className="absolute top-3 left-3 flex items-center gap-2 px-4 py-1.5 text-[13px] text-white font-medium"
+          style={{
+            background: "#02020270",
+            borderRadius: "40px",
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          <FaStar className="text-[#FFB800]" size={14} />
+          4.5 (134)
         </div>
       </div>
 
       {/* Title */}
-      <h3 className="text-[15px] font-medium text-gray-800 mt-3">
+      <h3 className="text-[16px] font-semibold text-[#070606] mt-4 leading-tight">
         {title}
       </h3>
 
       {/* Footer */}
-      <div className="flex items-center justify-between mt-4">
-        {/* Tutor info */}
-        <div className="flex items-center gap-2">
-          <Image
-            src="/images/instructors/person.png"
-            width={28}
-            height={28}
-            alt="Tutor"
-            className="rounded-full"
-          />
-          <span className="text-gray-500 text-[13px]">{tutor}</span>
-        </div>
+<div className="mt-16 flex items-center justify-between px-4 py-3"
+  style={{
+    background: "#E7E6E6",
+    borderRadius: "12px",
+  }}
+>
+  {/* Tutor Info */}
+  <div className="flex items-center gap-2">
+    <Image
+      src={tutorImg}
+      width={32}
+      height={32}
+      alt="Tutor"
+      className="rounded-full object-cover"
+    />
+    <div>
+      <p className="text-[14px] font-medium text-[#070606] leading-none">{tutor}</p>
+      <p className="text-[11px] text-[#7A7A7A] mt-[2px] leading-none">Lorem Ipsum</p>
+    </div>
+  </div>
 
-        {/* Button */}
-        <button className="bg-orange-500 text-white p-2 rounded-md hover:bg-orange-600 transition">
-          <IoArrowForwardOutline />
-        </button>
-      </div>
+  {/* Right Button */}
+  <button
+  className="w-[40px] h-[40px] flex items-center justify-center text-white transition-all hover:brightness-105 hover:scale-[1.08]"
+  style={{
+    background: "#CF6943",
+    borderRadius: "12px",
+  }}
+>
+
+    <IoArrowForwardOutline size={20} />
+  </button>
+</div>
+
     </div>
   );
 }
