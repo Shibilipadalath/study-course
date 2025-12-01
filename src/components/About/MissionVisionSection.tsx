@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function MissionVisionSection() {
   return (
-    <section className="w-full py-28 bg-white">
+    <section className="w-full pb-28 pt-12 bg-white">
       <div className="container mx-auto px-6 lg:px-24 space-y-32">
         {/* ==================== MISSION ==================== */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
