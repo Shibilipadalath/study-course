@@ -34,56 +34,69 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-28 bg-[#F4F4F4]">
-      <div className="container mx-auto px-6 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-12">
+    <section className="py-28 bg-[#F4F4F4] relative overflow-hidden">
 
-        {/* LEFT TEXT SECTION */}
-        <div>
-          <span className="bg-[#CF6943] text-white text-xs px-4 py-1 rounded-full shadow-sm">
+      {/* Background Circles (Subtle Like Figma) */}
+      <div className="absolute left-10 top-20 -z-10 opacity-30">
+        <svg width="260" height="260">
+          <circle cx="130" cy="130" r="120" stroke="#CF694350" strokeWidth="1.2" fill="none" />
+          <circle cx="130" cy="130" r="90" stroke="#CF694350" strokeWidth="1.2" fill="none" />
+          <circle cx="130" cy="130" r="60" stroke="#CF694350" strokeWidth="1.2" fill="none" />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-16">
+
+        {/* LEFT TEXT */}
+        <div className="max-w-md">
+          <span className="bg-[#CF6943] text-white text-xs px-4 py-1 rounded-full shadow">
             FAQ
           </span>
 
-          <h2 className="text-[30px] md:text-[36px] font-semibold text-[#070606] mt-4">
+          <h2 className="text-[36px] font-semibold text-[#070606] leading-tight mt-4">
             Frequently Asked <br /> Questions
           </h2>
 
-          <p className="text-gray-600 text-[15px] leading-[1.7] mt-4 max-w-md">
+          <p className="text-gray-600 text-[15px] mt-4 leading-[1.7]">
             Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing.
             Pulvinar sit aliquam ipsum rhoncus turpis pellentesque vestibulum condimentum orci.
           </p>
         </div>
 
-        {/* FAQ CARD */}
-        <div className="bg-white p-6 rounded-xl shadow-md max-w-lg">
+        {/* RIGHT FAQ CARD */}
+        <div className="bg-white rounded-xl shadow-lg p-6 max-w-xl">
           {faqs.map((item, index) => (
             <div key={index}>
-              
               {/* Question Row */}
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                 className="w-full flex justify-between items-center py-4 text-left"
               >
-                <span className="text-[14px] font-medium text-[#070606]">
+                <span className="text-[15px] font-medium text-[#070606]">
                   {item.q}
                 </span>
-                <span className="text-[#CF6943] p-1 rounded-full hover:bg-[#F4F4F4] transition">
-                  {openIndex === index ? <IoRemove size={18} /> : <IoAdd size={18} />}
+
+                <span
+                  className={`${
+                    openIndex === index ? "bg-[#f89b84]" : "bg-[#F4B9AA]"
+                  } text-[#000000] p-2 rounded-full transition`}
+                >
+                  {openIndex === index ? <IoRemove size={16} /> : <IoAdd size={16} />}
                 </span>
               </button>
 
               {/* Answer */}
               {openIndex === index && (
-                <p className="text-[13px] text-gray-500 pb-4 leading-relaxed">
+                <p className="text-[13px] text-gray-500 pb-4 leading-[1.65] mt-1">
                   {item.a}
                 </p>
               )}
 
               {/* Divider */}
-              {index !== faqs.length - 1 && <hr className="border-gray-200" />}
+              {index !== faqs.length - 1 && <hr className="border-[#F2F2F2]" />}
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

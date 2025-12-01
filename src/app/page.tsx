@@ -7,6 +7,7 @@ import CoursesSection from "./components/courses/CoursesSection";
 import WhyUsSection from "./components/WhyUsSection";
 import TestimonialSection from "./components/TestimonialSection";
 import FAQSection from "./components/FAQSection";
+import LookingForSection from "./components/LookingForSection"
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <WhyUsSection/>
       <TestimonialSection/>
       <FAQSection/>
+      <LookingForSection/>
       <Footer/>
     </>
   );
