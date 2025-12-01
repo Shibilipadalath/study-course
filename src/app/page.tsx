@@ -4,6 +4,9 @@ import Hero from "../app/components/hero/Hero";
 import AboutSection from "../app/components/AboutSection";
 import ServicesSection from "../app/components/services/ServicesSection";
 import CoursesSection from "./components/courses/CoursesSection";
+import WhyUsSection from "./components/WhyUsSection";
+import TestimonialSection from "./components/TestimonialSection";
+import FAQSection from "./components/FAQSection";
 
 export default function Home() {
   return (
@@ -13,6 +16,9 @@ export default function Home() {
       <AboutSection/>
       <ServicesSection/>
       <CoursesSection/>
+      <WhyUsSection/>
+      <TestimonialSection/>
+      <FAQSection/>
       <Footer/>
     </>
   );
