@@ -65,7 +65,7 @@ export default function Hero() {
           className="flex-1 flex justify-center md:justify-end"
         >
           <Image
-            src="/images/Student.png"
+            src="/images/student.png"
             alt="Student"
             width={600}
             height={550}
