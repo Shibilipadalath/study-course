@@ -5,7 +5,7 @@ import { IoArrowForwardOutline } from "react-icons/io5";
 export default function ServiceCard({ image, title, tutor, tutorImg }) {
   return (
     <div
-      className="bg-white rounded-[12px] p-5 transition-all hover:-translate-y-2 hover:shadow-xl"
+      className="bg-white rounded-xl p-5 transition-all hover:-translate-y-2 hover:shadow-xl"
       style={{
         boxShadow: "0px 15px 29px rgba(0,0,0,0.15)",
         width: "100%",
@@ -20,7 +20,7 @@ export default function ServiceCard({ image, title, tutor, tutorImg }) {
           width={392}
           height={220}
           alt={title}
-          className="rounded-[12px] object-cover w-full h-[200px]"
+          className="rounded-xl object-cover w-full h-[200px]"
         />
 
         {/* Rating Badge - Updated to Figma spec */}
@@ -60,13 +60,13 @@ export default function ServiceCard({ image, title, tutor, tutorImg }) {
     />
     <div>
       <p className="text-[14px] font-medium text-[#070606] leading-none">{tutor}</p>
-      <p className="text-[11px] text-[#7A7A7A] mt-[2px] leading-none">Lorem Ipsum</p>
+      <p className="text-[11px] text-[#7A7A7A] mt-0.5 leading-none">Lorem Ipsum</p>
     </div>
   </div>
 
   {/* Right Button */}
   <button
-  className="w-[40px] h-[40px] flex items-center justify-center text-white transition-all hover:brightness-105 hover:scale-[1.08]"
+  className="w-10 h-10 flex items-center justify-center text-white transition-all hover:brightness-105 hover:scale-[1.08]"
   style={{
     background: "#CF6943",
     borderRadius: "12px",

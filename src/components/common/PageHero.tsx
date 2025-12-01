@@ -16,7 +16,7 @@ export default function PageHero({ title, breadcrumb }: PageHeroProps) {
       <div className="absolute top-[-50px] left-[-50px] w-[400px] h-[400px] bg-[#FF6F39] rounded-full blur-[200px] opacity-60" />
 
       {/* Second White Glow Blur */}
-      <div className="absolute right-[-80px] bottom-[-80px] w-[400px] h-[400px] bg-white rounded-full blur-[200px] opacity-80" />
+      <div className="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-white rounded-full blur-[200px] opacity-80" />
 
       {/* CONTENT */}
       <div className="relative z-12 text-center">

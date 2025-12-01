@@ -47,7 +47,7 @@ export default function CourseCard({ image, title, desc }: CourseCardProps) {
             </div>
 
             {/* Profile images */}
-            <div className="flex items-center mt-1 space-x-[-8px]">
+            <div className="flex items-center mt-1 -space-x-2">
               {["/images/profile.jpeg","/images/profile.jpeg","/images/profile.jpeg","/images/profile.jpeg"].map((p,i)=>(
                 <Image
                   key={i}

@@ -20,7 +20,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-gradient-to-b from-white/80 to-white/10 backdrop-blur-xl">
+    <header className="w-full fixed top-0 left-0 z-50 bg-linear-to-b from-white/80 to-white/10 backdrop-blur-xl">
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-10">
 
         {/* ---- LOGO ---- */}
@@ -48,7 +48,7 @@ export default function Header() {
         {/* ---- DESKTOP LOGIN BUTTON ---- */}
         <Link
           href="/login"
-          className="hidden md:flex items-center justify-center text-white rounded-[8px] font-medium transition shadow-[0_4px_10px_rgba(0,0,0,0.12)] bg-[#CF6943] hover:bg-[#b95c3b] w-[150px] h-[45px]"
+          className="hidden md:flex items-center justify-center text-white rounded-lg font-medium transition shadow-[0_4px_10px_rgba(0,0,0,0.12)] bg-[#CF6943] hover:bg-[#b95c3b] w-[150px] h-[45px]"
         >
           Login
         </Link>
@@ -81,7 +81,7 @@ export default function Header() {
           <Link
             href="/login"
             onClick={() => setOpen(false)}
-            className="w-full flex items-center justify-center text-white rounded-[8px] font-medium transition bg-[#CF6943] hover:bg-[#b95c3b] h-[45px]"
+            className="w-full flex items-center justify-center text-white rounded-lg font-medium transition bg-[#CF6943] hover:bg-[#b95c3b] h-[45px]"
           >
             Login
           </Link>

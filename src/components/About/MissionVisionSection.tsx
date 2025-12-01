@@ -34,7 +34,7 @@ export default function MissionVisionSection() {
                 width={200}
                 height={200}
                 alt="overlay"
-                className="rounded-xl object-cover w-[180px] h-[160px]"
+                className="rounded-xl object-cover w-[180px] h-40"
               />
             </div>
           </motion.div>
@@ -142,7 +142,7 @@ export default function MissionVisionSection() {
                 width={200}
                 height={200}
                 alt="overlay"
-                className="rounded-xl object-cover w-[180px] h-[160px]"
+                className="rounded-xl object-cover w-[180px] h-40"
               />
             </div>
           </motion.div>

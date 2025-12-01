@@ -9,10 +9,10 @@ export default function AboutSection() {
 
       {/* Smooth Fade from Hero */}
       {/* Smooth Fade from Hero */}
-<div className="absolute -top-10 left-0 w-full h-20 bg-gradient-to-b from-[#FFEFEA] to-[#F4F4F4] pointer-events-none"></div>
+<div className="absolute -top-10 left-0 w-full h-20 bg-linear-to-b from-[#FFEFEA] to-[#F4F4F4] pointer-events-none"></div>
 
       {/* Subtle Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-[#F4F4F4] opacity-70 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-white/40 to-[#F4F4F4] opacity-70 pointer-events-none"></div>
 
       {/* Floating Soft Orange Blobs */}
       <div className="absolute left-24 top-12 w-44 h-44 bg-[#CF6943]/15 rounded-full blur-3xl animate-pulse" />
@@ -90,7 +90,7 @@ export default function AboutSection() {
         </motion.div>
       </div>
       <div className="mt-20 mb-2 w-full flex justify-center">
-      <div className="h-[1px] w-[90%] max-w-[1030px] border border-transparent"
+      <div className="h-px w-[90%] max-w-[1030px] border border-transparent"
           style={{
             borderImage: "linear-gradient(90deg, #F2F0F0 0%, #000000 50%, #F2F0F0 100%) 1"
           }}>
