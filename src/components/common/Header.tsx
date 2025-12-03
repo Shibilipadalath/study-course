@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   const menu = [
@@ -19,13 +20,26 @@ export default function Header() {
     { name: "Contact", path: "/contact" },
   ];
 
+  // Detect scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-linear-to-b from-white/80 to-white/10 backdrop-blur-xl">
+    <header
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 
+      ${isScrolled ? "bg-white/80 backdrop-blur-xl shadow-md" : "bg-transparent"}`}
+    >
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-10">
 
         {/* ---- LOGO ---- */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/images/logo.png" alt="logo" width={160} height={80} priority /> 
+          <Image src="/images/logo.png" alt="logo" width={160} height={80} priority />
         </Link>
 
         {/* ---- DESKTOP NAV ---- */}
@@ -48,7 +62,7 @@ export default function Header() {
         {/* ---- DESKTOP LOGIN BUTTON ---- */}
         <Link
           href="/login"
-          className="hidden md:flex items-center justify-center text-white rounded-lg font-medium transition shadow-[0_4px_10px_rgba(0,0,0,0.12)] bg-[#CF6943] hover:bg-[#b95c3b] w-[150px] h-[45px]"
+          className="hidden md:flex items-center justify-center text-white rounded-lg font-medium transition shadow-md bg-[#CF6943] hover:bg-[#b95c3b] w-[150px] h-[45px]"
         >
           Login
         </Link>
@@ -61,7 +75,7 @@ export default function Header() {
 
       {/* ---- MOBILE NAV ---- */}
       {open && (
-        <div className="md:hidden bg-white/90 backdrop-blur-xl shadow-md py-4 flex flex-col gap-4 px-6">
+        <div className="md:hidden bg-white/95 backdrop-blur-xl shadow-md py-4 flex flex-col gap-4 px-6">
           {menu.map((item) => (
             <Link
               key={item.path}
@@ -77,7 +91,6 @@ export default function Header() {
             </Link>
           ))}
 
-          {/* MOBILE LOGIN BUTTON */}
           <Link
             href="/login"
             onClick={() => setOpen(false)}
