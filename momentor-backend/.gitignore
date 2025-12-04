@@ -33,3 +33,5 @@ coverage/
 *.gz
 
 /generated/prisma
+
+/generated/prisma
