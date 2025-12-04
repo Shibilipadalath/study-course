@@ -13,11 +13,11 @@ dotenv.config()
 app.use(express.json())
 app.use(cors())
 app.use(helmet())
-app.use(morgan("env"))
+app.use(morgan("dev"))
 
 
-app.get('/',()=>{
-    console.log("hi");
+app.get('/',(req,res)=>{
+    res.send("Hello")
 })
 
 
