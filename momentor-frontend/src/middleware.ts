@@ -3,14 +3,12 @@ import type { NextRequest } from "next/server";
 
 export function middleware(req: NextRequest) {
   const token = req.cookies.get("access_token")?.value;
-  const { pathname, search } = req.nextUrl;
+  const { pathname } = req.nextUrl;
 
   // Protect admin routes
   if (pathname.startsWith("/admin")) {
     if (!token) {
-      const loginUrl = new URL("/login", req.url);
-      loginUrl.searchParams.set("redirect", pathname + search);
-      return NextResponse.redirect(loginUrl);
+      return NextResponse.redirect(new URL("/login", req.url));
     }
     return NextResponse.next();
   }
@@ -27,4 +25,3 @@ export function middleware(req: NextRequest) {
 export const config = {
   matcher: ["/admin/:path*", "/login"],
 };
-
