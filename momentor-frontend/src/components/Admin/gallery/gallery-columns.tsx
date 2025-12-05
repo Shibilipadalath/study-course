@@ -4,14 +4,38 @@ import { useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
 import { Edit2, Trash2, ArrowUp, ArrowDown, ArrowUpDown } from "lucide-react";
-import { SupplierFormDialog } from "./supplier-form";
-import { SupplierDeleteDialog } from "./supplier-delete-dailog";
-import { Supplier } from "@prisma/client";
-import { useUser } from "./supplier-table";
+import { GalleryFormDialog } from "./gallery-form";
+import { GalleryDeleteDialog } from "./gallery-delete-dailog";
+import { Gallery } from "@/types/gallery-types";
+import Image from "next/image";
 
-export const supplierColumns: ColumnDef<Supplier>[] = [
+export const galleryColumns: ColumnDef<Gallery>[] = [
   {
-    accessorKey: "SupplierId",
+    accessorKey: "image",
+    header: "Image",
+    cell: ({ row }) => {
+      const imageUrl = row.getValue("image") as string;
+      return (
+        <div className="px-3">
+          {imageUrl ? (
+            <Image
+              src={imageUrl}
+              alt="Gallery"
+              width={80}
+              height={80}
+              className="rounded-lg object-cover"
+            />
+          ) : (
+            <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-xs">
+              No Image
+            </div>
+          )}
+        </div>
+      );
+    },
+  },
+  {
+    accessorKey: "category.name",
     header: ({ column }) => {
       const sort = column.getIsSorted();
       const renderIcon = () => {
@@ -23,14 +47,18 @@ export const supplierColumns: ColumnDef<Supplier>[] = [
 
       return (
         <Button variant="ghost" onClick={() => column.toggleSorting(sort === "asc")}>
-          Supplier Id {renderIcon()}
+          Category {renderIcon()}
         </Button>
       );
     },
-    cell: ({ row }) => <div className="px-3">{row.getValue("SupplierId") as string}</div>,
+    cell: ({ row }) => (
+      <div className="px-3">
+        <p className="font-medium">{row.original.category?.name || "N/A"}</p>
+      </div>
+    ),
   },
   {
-    accessorKey: "name",
+    accessorKey: "createdAt",
     header: ({ column }) => {
       const sort = column.getIsSorted();
       const renderIcon = () => {
@@ -42,48 +70,34 @@ export const supplierColumns: ColumnDef<Supplier>[] = [
 
       return (
         <Button variant="ghost" onClick={() => column.toggleSorting(sort === "asc")}>
-          Name {renderIcon()}
+          Created At {renderIcon()}
         </Button>
       );
     },
-    cell: ({ row }) => <div className="px-3">{row.getValue("name") as string}</div>,
-  },
-  {
-    accessorKey: "openingBalance",
-    header: "Opening",
-    cell: ({ row }) => <div>{row.getValue("openingBalance")}</div>,
-  },
-  {
-    accessorKey: "outstandingPayments",
-    header: "Pending",
-    cell: ({ row }) => <div>{row.getValue("outstandingPayments")}</div>,
-  },
-  {
-    accessorKey: "email",
-    header: "Email",
-    cell: ({ row }) => <div className="px-3">{row.getValue("email") || "..."}</div>,
-  },
-  {
-    accessorKey: "phone",
-    header: "Phone",
-    cell: ({ row }) => <div className="px-3">{row.getValue("phone") || "..."}</div>,
-  },
-  {
-    accessorKey: "address",
-    header: "Address",
-    cell: ({ row }) => <div className="px-3">{row.getValue("address") || "..."}</div>,
+    cell: ({ row }) => {
+      const date = row.getValue("createdAt") as Date;
+      const formattedDate = new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      });
+      return (
+        <div className="px-3">
+          {formattedDate}
+        </div>
+      );
+    },
   },
   {
     id: "actions",
     header: "Actions",
-    cell: ({ row }) => <SupplierActions supplier={row.original} />,
+    cell: ({ row }) => <GalleryActions gallery={row.original} />,
   },
 ];
 
-const SupplierActions = ({ supplier }: { supplier: Supplier }) => {
+const GalleryActions = ({ gallery }: { gallery: Gallery }) => {
   const [openEdit, setOpenEdit] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
-  const { userRole, userBranchId } = useUser();
 
   return (
     <div className="flex gap-2">
@@ -108,17 +122,15 @@ const SupplierActions = ({ supplier }: { supplier: Supplier }) => {
       </Button>
 
       {/* Edit Modal */}
-      <SupplierFormDialog
+      <GalleryFormDialog
         open={openEdit}
         openChange={setOpenEdit}
-        suppliers={supplier}
-        userRole={userRole}
-        userBranchId={userBranchId}
+        gallery={gallery}
       />
 
       {/* Delete Modal */}
-      <SupplierDeleteDialog
-        supplier={supplier}
+      <GalleryDeleteDialog
+        gallery={gallery}
         open={openDelete}
         setOpen={setOpenDelete}
       />

@@ -1,4 +1,22 @@
-import type { Session, User } from "@prisma/client";
+// User type matching Prisma schema
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  isActive: boolean;
+  createdAt: Date | string;
+  updatedAt: Date | string;
+}
+
+// Session type (if needed for future use)
+export interface Session {
+  id: string;
+  userId: string;
+  token: string;
+  expiresAt: Date | string;
+  createdAt: Date | string;
+}
 
 // The actual payload inside the nested `data`
 export interface SessionData {

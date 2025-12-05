@@ -24,46 +24,45 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { blogSchema } from "@/schemas/blog-schema";
+import { galleryCategorySchema } from "@/schemas/gallery-category-schema";
 import { toast } from "sonner";
 import { Plus, Loader2 } from "lucide-react";
 import { useState } from "react";
-import { Blog } from "@/types/blog-types";
+import { GalleryCategory } from "@/types/gallery-types";
 import { useRouter } from "next/navigation";
-import { Textarea } from "@/components/ui/textarea";
 
-export function BlogFormDialog({
-  blog,
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
+
+export function GalleryCategoryFormDialog({
+  category,
   open,
   openChange,
 }: {
-  blog?: Blog;
+  category?: GalleryCategory;
   open?: boolean;
   openChange?: (open: boolean) => void;
 }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
-  const form = useForm<z.infer<typeof blogSchema>>({
-    resolver: zodResolver(blogSchema),
+  const form = useForm<z.infer<typeof galleryCategorySchema>>({
+    resolver: zodResolver(galleryCategorySchema),
     defaultValues: {
-      image: blog?.image || "",
-      title: blog?.title || "",
-      description: blog?.description || "",
+      name: category?.name || "",
     },
   });
 
   const handleSubmit = async (
-    values: z.infer<typeof blogSchema>,
+    values: z.infer<typeof galleryCategorySchema>,
     close: () => void
   ) => {
     setIsSubmitting(true);
     try {
-      const url = blog
-        ? `http://localhost:5001/api/blogs/${blog.id}`
-        : `http://localhost:5001/api/blogs`;
+      const url = category
+        ? `${API_BASE_URL}/api/gallery-category/${category.id}`
+        : `${API_BASE_URL}/api/gallery-category`;
 
-      const method = blog ? "PUT" : "POST";
+      const method = category ? "PUT" : "POST";
 
       const res = await fetch(url, {
         method,
@@ -74,21 +73,20 @@ export function BlogFormDialog({
       const response = await res.json();
 
       if (!res.ok) {
-        toast.error(response.message || "Failed to save blog");
+        toast.error(response.message || "Failed to save category");
         return;
       }
 
-      toast.success(blog ? "Blog updated successfully" : "Blog created successfully");
+      toast.success(category ? "Category updated successfully" : "Category created successfully");
       close();
       router.refresh();
     } catch (error) {
-      console.error("Error saving blog:", error);
+      console.error("Error saving category:", error);
       toast.error("Unexpected error occurred");
     } finally {
       setIsSubmitting(false);
     }
   };
-
 
   return (
     <FormDialog
@@ -100,61 +98,28 @@ export function BlogFormDialog({
       <FormDialogTrigger asChild>
         <Button>
           <Plus className="size-4" />
-          {blog ? "Edit Blog" : "New Blog"}
+          {category ? "Edit Category" : "New Category"}
         </Button>
       </FormDialogTrigger>
 
-      <FormDialogContent className="sm:max-w-2xl">
+      <FormDialogContent className="sm:max-w-md">
         <FormDialogHeader>
-          <FormDialogTitle>{blog ? "Edit Blog" : "New Blog"}</FormDialogTitle>
+          <FormDialogTitle>{category ? "Edit Category" : "New Category"}</FormDialogTitle>
           <FormDialogDescription>
-            {blog
-              ? "Update blog details. Click save when you're done."
-              : "Fill out the blog details. Click save when you're done."}
+            {category
+              ? "Update category details. Click save when you're done."
+              : "Fill out the category details. Click save when you're done."}
           </FormDialogDescription>
         </FormDialogHeader>
 
         <FormField
           control={form.control}
-          name="image"
+          name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Image URL</FormLabel>
+              <FormLabel>Category Name</FormLabel>
               <FormControl>
-                <Input placeholder="https://example.com/image.jpg" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="title"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Title</FormLabel>
-              <FormControl>
-                <Input placeholder="Blog Title" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="description"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Description</FormLabel>
-              <FormControl>
-                <Textarea 
-                  placeholder="Blog description..." 
-                  {...field}
-                  rows={6}
-                  className="resize-none"
-                />
+                <Input placeholder="Enter category name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -174,7 +139,7 @@ export function BlogFormDialog({
                 Saving...
               </>
             ) : (
-              blog ? "Update" : "Save"
+              category ? "Update" : "Save"
             )}
           </Button>
         </FormDialogFooter>
@@ -182,3 +147,4 @@ export function BlogFormDialog({
     </FormDialog>
   );
 }
+

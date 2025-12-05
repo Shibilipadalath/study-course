@@ -16,8 +16,6 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-
 export const BlogDeleteDialog: FC<{
   blog: Blog;
   open: boolean;
@@ -27,8 +25,9 @@ export const BlogDeleteDialog: FC<{
     const router = useRouter()
     const handleDelete = async () => {
       try{
-          const response = await fetch(`${API_BASE_URL}/api/blogs/${blog?.id}`,{
-              method:"DELETE"
+          const response = await fetch(`http://localhost:5001/api/blogs/${blog?.id}`,{
+              method:"DELETE",
+              credentials: "include"
             });
           
           if (!response.ok) {

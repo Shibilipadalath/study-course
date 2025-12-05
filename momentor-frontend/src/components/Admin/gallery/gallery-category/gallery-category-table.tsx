@@ -27,15 +27,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { Gallery } from "@/types/gallery-types";
+import { GalleryCategory } from "@/types/gallery-types";
 import { useState } from "react";
 
-interface GalleryTableProps<TValue> {
-  columns: ColumnDef<Gallery, TValue>[];
-  data: Gallery[];
+interface GalleryCategoryTableProps<TValue> {
+  columns: ColumnDef<GalleryCategory, TValue>[];
+  data: GalleryCategory[];
 }
 
-export function GalleryTable<TValue>({ columns, data }: GalleryTableProps<TValue>) {
+export function GalleryCategoryTable<TValue>({ columns, data }: GalleryCategoryTableProps<TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [globalFilter, setGlobalFilter] = useState("");
 
@@ -57,8 +57,8 @@ export function GalleryTable<TValue>({ columns, data }: GalleryTableProps<TValue
     <div className="flex flex-col gap-5">
       <Card>
         <CardHeader>
-          <CardTitle>Gallery Items</CardTitle>
-          <CardDescription>A list of all gallery items</CardDescription>
+          <CardTitle>Gallery Categories</CardTitle>
+          <CardDescription>A list of all gallery categories</CardDescription>
         </CardHeader>
         <CardContent>
           <Table>
@@ -106,3 +106,4 @@ export function GalleryTable<TValue>({ columns, data }: GalleryTableProps<TValue
     </div>
   );
 }
+

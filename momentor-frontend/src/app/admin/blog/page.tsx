@@ -3,7 +3,7 @@ import { blogColumns } from "@/components/Admin/blog/blog-columns";
 import { BlogFormDialog } from "@/components/Admin/blog/blog-form";
 import { Blog } from "@/types/blog-types";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
 async function getBlogs(): Promise<Blog[]> {
   try {

@@ -74,50 +74,72 @@ export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    if (!email || !password)
+    if (!email || !password) {
       return res.status(400).json({
         success: false,
-        message: "Email and password are required",
+        error: "Email and password are required",
       });
+    }
 
+    // Find user
     const user = await prisma.user.findUnique({
       where: { email },
     });
 
-    if (!user)
+    if (!user) {
       return res.status(401).json({
         success: false,
-        message: "Invalid email or password",
+        error: "Invalid email or password",
       });
+    }
 
-    if (!user.isActive)
+    // Check if account is active
+    if (!user.isActive) {
       return res.status(403).json({
         success: false,
-        message: "Account is deactivated",
+        error: "Account is deactivated",
       });
+    }
 
-    const match = await bcrypt.compare(password, user.password);
+    // Check password
+    const isValidPassword = await bcrypt.compare(password, user.password);
 
-    if (!match)
+    if (!isValidPassword) {
       return res.status(401).json({
         success: false,
-        message: "Invalid email or password",
+        error: "Invalid email or password",
       });
+    }
 
-    const token = signToken(user.id);
-    const { password: pwd, ...userData } = user;
+    // Generate JWT token
+    const token = jwt.sign(
+      { userId: user.id, email: user.email },
+      process.env.JWT_SECRET || "change-this-secret",
+      { expiresIn: "7d" }
+    );
 
-    return res.json({
+    // Redirect target (always admin for this project)
+    const redirectTo = "/admin";
+
+    return res.status(200).json({
       success: true,
       message: "Login successful",
       token,
-      user: userData,
+      redirectTo, // Front-end should use this to navigate
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        isActive: user.isActive,
+        createdAt: user.createdAt,
+        updatedAt: user.updatedAt,
+      },
     });
   } catch (err) {
-    console.error("LOGIN ERROR:", err);
+    console.error("❌ Login error:", err);
     return res.status(500).json({
       success: false,
-      message: "Login failed",
+      error: err.message,
     });
   }
 };

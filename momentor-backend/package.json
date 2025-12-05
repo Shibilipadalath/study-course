@@ -6,7 +6,13 @@
   "type": "module",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "seed": "node prisma/seed.js",
+    "test:cors": "node test-cors.mjs",
+    "fix:cors": "node fix-cors.mjs"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   },
   "author": "",
   "license": "ISC",

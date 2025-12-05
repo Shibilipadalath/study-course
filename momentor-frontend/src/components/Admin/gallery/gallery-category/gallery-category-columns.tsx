@@ -4,38 +4,13 @@ import { useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
 import { Edit2, Trash2, ArrowUp, ArrowDown, ArrowUpDown } from "lucide-react";
-import { BlogFormDialog } from "./blog-form";
-import { BlogDeleteDialog } from "./blog-delete-dailog";
-import { Blog } from "@/types/blog-types";
-import Image from "next/image";
+import { GalleryCategoryFormDialog } from "./gallery-category-form";
+import { GalleryCategoryDeleteDialog } from "./gallery-category-delete-dailog";
+import { GalleryCategory } from "@/types/gallery-types";
 
-export const blogColumns: ColumnDef<Blog>[] = [
+export const galleryCategoryColumns: ColumnDef<GalleryCategory>[] = [
   {
-    accessorKey: "image",
-    header: "Image",
-    cell: ({ row }) => {
-      const imageUrl = row.getValue("image") as string;
-      return (
-        <div className="px-3">
-          {imageUrl ? (
-            <Image
-              src={imageUrl}
-              alt="Blog"
-              width={80}
-              height={80}
-              className="rounded-lg object-cover"
-            />
-          ) : (
-            <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-xs">
-              No Image
-            </div>
-          )}
-        </div>
-      );
-    },
-  },
-  {
-    accessorKey: "title",
+    accessorKey: "name",
     header: ({ column }) => {
       const sort = column.getIsSorted();
       const renderIcon = () => {
@@ -47,27 +22,15 @@ export const blogColumns: ColumnDef<Blog>[] = [
 
       return (
         <Button variant="ghost" onClick={() => column.toggleSorting(sort === "asc")}>
-          Title {renderIcon()}
+          Name {renderIcon()}
         </Button>
       );
     },
     cell: ({ row }) => (
-      <div className="px-3 max-w-xs">
-        <p className="font-medium truncate">{row.getValue("title") as string}</p>
+      <div className="px-3">
+        <p className="font-medium">{row.getValue("name") as string}</p>
       </div>
     ),
-  },
-  {
-    accessorKey: "description",
-    header: "Description",
-    cell: ({ row }) => {
-      const description = row.getValue("description") as string;
-      return (
-        <div className="px-3 max-w-md">
-          <p className="text-sm text-gray-600 line-clamp-2">{description}</p>
-        </div>
-      );
-    },
   },
   {
     accessorKey: "createdAt",
@@ -103,11 +66,11 @@ export const blogColumns: ColumnDef<Blog>[] = [
   {
     id: "actions",
     header: "Actions",
-    cell: ({ row }) => <BlogActions blog={row.original} />,
+    cell: ({ row }) => <GalleryCategoryActions category={row.original} />,
   },
 ];
 
-const BlogActions = ({ blog }: { blog: Blog }) => {
+const GalleryCategoryActions = ({ category }: { category: GalleryCategory }) => {
   const [openEdit, setOpenEdit] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
 
@@ -134,18 +97,19 @@ const BlogActions = ({ blog }: { blog: Blog }) => {
       </Button>
 
       {/* Edit Modal */}
-      <BlogFormDialog
+      <GalleryCategoryFormDialog
         open={openEdit}
         openChange={setOpenEdit}
-        blog={blog}
+        category={category}
       />
 
       {/* Delete Modal */}
-      <BlogDeleteDialog
-        blog={blog}
+      <GalleryCategoryDeleteDialog
+        category={category}
         open={openDelete}
         setOpen={setOpenDelete}
       />
     </div>
   );
 };
+

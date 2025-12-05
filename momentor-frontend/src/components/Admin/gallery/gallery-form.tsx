@@ -24,64 +24,68 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { supplierSchema } from "@/schemas/supplier-schema";
+import { gallerySchema } from "@/schemas/gallery-schema";
 import { toast } from "sonner";
 import { Plus, Loader2 } from "lucide-react";
-import { useState } from "react";
-import * as React from "react";
-import { Supplier } from "@prisma/client";
+import { useState, useEffect } from "react";
+import { Gallery, GalleryCategory } from "@/types/gallery-types";
 import { useRouter } from "next/navigation";
-import { Textarea } from "@/components/ui/textarea";
-import { BranchSelector } from "@/components/common/branch-selector";
 
-export function SupplierFormDialog({
-  suppliers,
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
+
+export function GalleryFormDialog({
+  gallery,
   open,
   openChange,
-  userRole,
-  userBranchId,
 }: {
-  suppliers?: Supplier;
+  gallery?: Gallery;
   open?: boolean;
   openChange?: (open: boolean) => void;
-  userRole?: string;
-  userBranchId?: string;
 }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [selectedBranchId, setSelectedBranchId] = useState<string>(suppliers?.branchId || userBranchId || "");
+  const [categories, setCategories] = useState<GalleryCategory[]>([]);
+  const [loadingCategories, setLoadingCategories] = useState(true);
   const router = useRouter();
 
-  const form = useForm<z.infer<typeof supplierSchema>>({
-    resolver: zodResolver(supplierSchema),
+  // Fetch categories
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const res = await fetch(`${API_BASE_URL}/api/gallery-category`, {
+          cache: "no-store",
+        });
+        if (res.ok) {
+          const data = await res.json();
+          setCategories(data.categories || []);
+        }
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      } finally {
+        setLoadingCategories(false);
+      }
+    };
+    fetchCategories();
+  }, []);
+
+  const form = useForm<z.infer<typeof gallerySchema>>({
+    resolver: zodResolver(gallerySchema),
     defaultValues: {
-      SupplierId: suppliers?.SupplierId || "",
-      name: suppliers?.name || "",
-      email: suppliers?.email || "",
-      phone: suppliers?.phone || "",
-      address: suppliers?.address || "",
-      openingBalance: suppliers?.openingBalance || undefined,
-      branchId: suppliers?.branchId || "",
+      image: gallery?.image || "",
+      categoryId: gallery?.categoryId || "",
     },
   });
 
-  // Sync selectedBranchId with form's branchId field
-  React.useEffect(() => {
-    if (selectedBranchId) {
-      form.setValue("branchId", selectedBranchId);
-    }
-  }, [selectedBranchId, form]);
-
   const handleSubmit = async (
-    values: z.infer<typeof supplierSchema>,
+    values: z.infer<typeof gallerySchema>,
     close: () => void
   ) => {
     setIsSubmitting(true);
     try {
-      const url = suppliers
-        ? `/api/suppliers/${suppliers.id}`
-        : "/api/suppliers/create";
+      const url = gallery
+        ? `${API_BASE_URL}/api/gallery/${gallery.id}`
+        : `${API_BASE_URL}/api/gallery`;
 
-      const method = suppliers ? "PATCH" : "POST";
+      const method = gallery ? "PUT" : "POST";
 
       const res = await fetch(url, {
         method,
@@ -92,21 +96,20 @@ export function SupplierFormDialog({
       const response = await res.json();
 
       if (!res.ok) {
-        toast.error(response.error || "Failed to save supplier");
+        toast.error(response.message || "Failed to save gallery item");
         return;
       }
 
-      toast.success(suppliers ? "Supplier updated successfully" : "Supplier created successfully");
+      toast.success(gallery ? "Gallery item updated successfully" : "Gallery item created successfully");
       close();
       router.refresh();
     } catch (error) {
-      console.error("Error saving supplier:", error);
+      console.error("Error saving gallery item:", error);
       toast.error("Unexpected error occurred");
     } finally {
       setIsSubmitting(false);
     }
   };
-
 
   return (
     <FormDialog
@@ -118,121 +121,61 @@ export function SupplierFormDialog({
       <FormDialogTrigger asChild>
         <Button>
           <Plus className="size-4" />
-          {suppliers ? "Edit Supplier" : "New Supplier"}
+          {gallery ? "Edit Gallery" : "New Gallery"}
         </Button>
       </FormDialogTrigger>
 
-      <FormDialogContent className="sm:max-w-sm">
+      <FormDialogContent className="sm:max-w-2xl">
         <FormDialogHeader>
-          <FormDialogTitle>{suppliers ? "Edit Supplier" : "New Supplier"}</FormDialogTitle>
+          <FormDialogTitle>{gallery ? "Edit Gallery Item" : "New Gallery Item"}</FormDialogTitle>
           <FormDialogDescription>
-            {suppliers
-              ? "Update supplier details. Click save when you're done."
-              : "Fill out the supplier details. Click save when you're done."}
+            {gallery
+              ? "Update gallery item details. Click save when you're done."
+              : "Fill out the gallery item details. Click save when you're done."}
           </FormDialogDescription>
         </FormDialogHeader>
 
-        <div className="grid grid-cols-2 gap-4">
-          <FormField
-            control={form.control}
-            name="SupplierId"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Supplier ID</FormLabel>
-                <FormControl>
-                  <Input placeholder="S0001" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Name</FormLabel>
-                <FormControl>
-                  <Input placeholder="Supplier Name" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email (optional)</FormLabel>
-                <FormControl>
-                  <Input placeholder="email@example.com" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Phone (optional)</FormLabel>
-                <FormControl>
-                  <Input placeholder="Phone number" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-        </div>
-
         <FormField
           control={form.control}
-          name="address"
+          name="image"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Address (optional)</FormLabel>
+              <FormLabel>Image URL</FormLabel>
               <FormControl>
-                <Textarea placeholder="Address" {...field} />
+                <Input placeholder="https://example.com/image.jpg" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <BranchSelector
-          value={selectedBranchId}
-          onValueChange={setSelectedBranchId}
-          userRole={userRole}
-          userBranchId={userBranchId}
-          isEditMode={!!suppliers}
-        />
-
-
         <FormField
           control={form.control}
-          name="openingBalance"
+          name="categoryId"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Opening Balance</FormLabel>
+              <FormLabel>Category</FormLabel>
               <FormControl>
-                <Input type="number" 
-                {...field} 
-                value={field.value ?? ""}
-                />
+                {loadingCategories ? (
+                  <Input placeholder="Loading categories..." disabled />
+                ) : (
+                  <select
+                    {...field}
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    <option value="">Select a category</option>
+                    {categories.map((category) => (
+                      <option key={category.id} value={category.id}>
+                        {category.name}
+                      </option>
+                    ))}
+                  </select>
+                )}
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-
-
 
         <FormDialogFooter>
           <DialogClose asChild>
@@ -240,14 +183,14 @@ export function SupplierFormDialog({
               Cancel
             </Button>
           </DialogClose>
-          <Button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting || loadingCategories}>
             {isSubmitting ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Saving...
               </>
             ) : (
-              suppliers ? "Update" : "Save"
+              gallery ? "Update" : "Save"
             )}
           </Button>
         </FormDialogFooter>

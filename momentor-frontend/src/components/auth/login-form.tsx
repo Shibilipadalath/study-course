@@ -1,153 +1,114 @@
 "use client";
 
-import { cn } from "../../lib/utils";
-import { Button } from "../../components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../../components/ui/card";
-import { Input } from "../../components/ui/input";
-import { useForm } from "react-hook-form";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../../components/ui/form";
-import { loginSchema } from "../../schemas/user-schema";
-import { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2 } from "lucide-react";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { LoginData } from "../../types/auth";
-import { api } from "@/app/axios";
-import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export function LoginForm({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
+export function LoginForm() {
   const router = useRouter();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const form = useForm<LoginData>({
-    resolver: zodResolver(loginSchema),
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-  });
+  const validate = () => {
+    if (!email) return "Email is required";
+    const re = /^\S+@\S+\.\S+$/;
+    if (!re.test(email)) return "Enter a valid email";
+    if (!password) return "Password is required";
+    return null;
+  };
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const token = localStorage.getItem("access_token");
-      if (token) {
-        router.replace("/admin");
-      }
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    const vErr = validate();
+    if (vErr) {
+      setError(vErr);
+      return;
     }
-  }, [router]);
-
-  const onSubmit = async (values: LoginData) => {
-    setIsSubmitting(true);
-    setErrorMessage(null);
+    setLoading(true);
     try {
-      const response = await api.post("/api/auth/login", values);
-      const { token, message } = response.data || {};
-
-      if (!token) {
-        setErrorMessage("Login failed. Please try again.");
-        toast.error("Login failed");
+      const res = await fetch(`${API_URL}/api/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+        credentials: "include",
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data?.error || data?.message || "Login failed");
+        setLoading(false);
         return;
       }
 
-      // Persist token for client usage and middleware via cookie
-      localStorage.setItem("access_token", token);
-      document.cookie = `access_token=${token}; path=/; max-age=${7 * 24 * 60 * 60}`;
+      // Save token and user
+      document.cookie = `access_token=${data.token}; path=/; max-age=${7 * 24 * 60 * 60}`;
+      document.cookie = `user=${encodeURIComponent(JSON.stringify(data.user))}; path=/; max-age=${7 * 24 * 60 * 60}`;
+      localStorage.setItem("access_token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
 
-      toast.success(message || "Login successful");
-      router.replace("/admin");
-    } catch (error: unknown) {
-      const msg =
-        // @ts-expect-error - best-effort error message extraction
-        (error?.response?.data?.message ||
-        // @ts-expect-error - best-effort error message extraction
-        error?.response?.data?.error) ||
-        "Invalid credentials";
-      setErrorMessage(msg);
-      toast.error(msg);
+      router.push(data.redirectTo || "/admin");
+      router.refresh();
+    } catch (err) {
+      console.error(err);
+      setError("An unexpected error occurred. Please try again.");
     } finally {
-      setIsSubmitting(false);
+      setLoading(false);
     }
   };
 
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
-      <Card>
+    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+      <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle>Login to your account</CardTitle>
-          <CardDescription>
-            Enter your email and password to login
-          </CardDescription>
+          <CardTitle className="text-2xl">Sign in to your account</CardTitle>
         </CardHeader>
         <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)}>
-              <div className="flex flex-col gap-6">
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email</FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder="m@example.com"
-                          type="email"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                {errorMessage && (
-                  <div className="text-sm font-medium text-red-600">
-                    {errorMessage}
-                  </div>
-                )}
-                <FormField
-                  control={form.control}
-                  name="password"
-                  render={({ field }) => (
-                    <FormItem>
-                      <div className="flex items-center justify-between">
-                        <FormLabel>Password</FormLabel>
-                        {/* <a
-                          href="#"
-                          className="text-sm underline-offset-4 hover:underline"
-                        >
-                          Forgot your password?
-                        </a> */}
-                      </div>
-                      <FormControl>
-                        <Input type="password" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? <Loader2 className="animate-spin size-4" /> : "Login"}
-                </Button>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="you@example.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="mt-1"
+              />
+            </div>
+            <div>
+              <Label htmlFor="password">Password</Label>
+              <Input
+                id="password"
+                type="password"
+                placeholder="Your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="mt-1"
+              />
+            </div>
+            {error && (
+              <div className="text-sm text-destructive bg-destructive/10 p-2 rounded">
+                {error}
               </div>
-            </form>
-          </Form>
+            )}
+            <div>
+              <Button type="submit" className="w-full" disabled={loading}>
+                {loading ? "Signing in..." : "Sign in"}
+              </Button>
+            </div>
+            <div className="text-center text-sm text-muted-foreground">
+              Don’t have an account? <a className="underline" href="/auth/register">Register</a>
+            </div>
+          </form>
         </CardContent>
       </Card>
     </div>
