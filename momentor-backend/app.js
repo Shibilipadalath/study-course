@@ -7,7 +7,7 @@ import authRouter from "./routes/auth.route.js";
 import blogRoutes from "./routes/blog.route.js";
 import galleryCategoryRoutes from "./routes/category.route.js";
 import galleryRoutes from "./routes/gallery.route.js";
-
+import serviceRoutes from "./routes/service.route.js";
 
 const app=express()
 
@@ -25,6 +25,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/gallery-category", galleryCategoryRoutes);
 app.use("/api/gallery", galleryRoutes);
+app.use("/api/services", serviceRoutes);
 
 
 const PORT=process.env.PORT||5000
