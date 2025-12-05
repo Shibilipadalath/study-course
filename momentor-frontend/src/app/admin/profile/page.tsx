@@ -11,7 +11,7 @@ export default function AdminProfilePage() {
         <div className="bg-white rounded-xl shadow-md p-6 border border-gray-100">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Profile Picture</h2>
           <div className="flex items-center gap-6">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#CF6943] to-[#b95c3b] flex items-center justify-center text-white text-3xl font-bold">
+            <div className="w-24 h-24 rounded-full bg-linear-to-br from-[#CF6943] to-[#b95c3b] flex items-center justify-center text-white text-3xl font-bold">
               A
             </div>
             <div>
