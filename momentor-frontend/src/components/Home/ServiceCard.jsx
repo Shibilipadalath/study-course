@@ -23,18 +23,6 @@ export default function ServiceCard({ image, title, tutor, tutorImg }) {
           className="rounded-xl object-cover w-full h-[200px]"
         />
 
-        {/* Rating Badge - Updated to Figma spec */}
-        <div
-          className="absolute top-3 left-3 flex items-center gap-2 px-4 py-1.5 text-[13px] text-white font-medium"
-          style={{
-            background: "#02020270",
-            borderRadius: "40px",
-            backdropFilter: "blur(4px)",
-          }}
-        >
-          <FaStar className="text-[#FFB800]" size={14} />
-          4.5 (134)
-        </div>
       </div>
 
       {/* Title */}

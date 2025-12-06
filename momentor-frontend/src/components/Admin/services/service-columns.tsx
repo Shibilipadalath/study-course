@@ -93,6 +93,33 @@ export const serviceColumns: ColumnDef<Service>[] = [
       );
     },
   },
+  {
+    accessorKey: "description",
+    header: ({ column }) => {
+      const sorted = column.getIsSorted();
+
+      const renderIcon = () => {
+        if (!sorted) return <ArrowUpDown className="size-4" />;
+        if (sorted === "asc") return <ArrowUp className="size-4" />;
+        if (sorted === "desc") return <ArrowDown className="size-4" />;
+        return null;
+      };
+
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(sorted === "asc")}
+        >
+          Description {renderIcon()}
+        </Button>
+      );
+    },
+    cell: ({ row }) => (
+      <div className="px-3 max-w-xs">
+        <p className="font-medium truncate">{row.getValue("description") as string}</p>
+      </div>
+    ),
+  },
 
   {
     accessorKey: "createdAt",
