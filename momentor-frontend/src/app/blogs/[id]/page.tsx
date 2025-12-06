@@ -31,10 +31,10 @@ async function getBlog(id: string): Promise<Blog | null> {
 export default async function BlogDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  // ✅ params is NOT a Promise
-  const blog = await getBlog(params.id);
+  const { id } = await params;
+  const blog = await getBlog(id);
 
   if (!blog) {
     notFound();
@@ -42,13 +42,10 @@ export default async function BlogDetailPage({
 
   return (
     <>
-      <Header />
-      <PageHero
-        title="Blog Details"
-        breadcrumb={`Home / Blogs / ${blog.title}`}
-      />
+    <Header />
+    <PageHero title="Blog Details" breadcrumb={`Home / Blogs / ${blog.title}`} />
 
-      <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white w-full">
         <div className="container mx-auto px-6 lg:px-24 py-12">
           <div className="max-w-5xl mx-auto">
             <h1 className="text-4xl font-bold mb-6">{blog.title}</h1>
