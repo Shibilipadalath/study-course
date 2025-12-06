@@ -15,9 +15,12 @@ export const blogColumns: ColumnDef<Blog>[] = [
     header: "Image",
     cell: ({ row }) => {
       const imageUrl = row.getValue("image") as string;
+      const isValidUrl = imageUrl && typeof imageUrl === "string" && imageUrl.trim() !== "" && 
+        (imageUrl.startsWith("http://") || imageUrl.startsWith("https://") || imageUrl.startsWith("/"));
+      
       return (
         <div className="px-3">
-          {imageUrl ? (
+          {isValidUrl ? (
             <Image
               src={imageUrl}
               alt="Blog"

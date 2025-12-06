@@ -147,11 +147,11 @@ export const loginUser = async (req, res) => {
 // ======================= LOGOUT =======================
 export const logoutUser = async (req, res) => {
   try {
-    // If you're storing JWT in frontend (localStorage), logout is just client-side.
-    // If you later use cookies, you can clear cookie here.
-    // res.clearCookie("token");
+    // Clear cookies if they exist
+    res.clearCookie("access_token", { path: "/", sameSite: "lax" });
+    res.clearCookie("user", { path: "/", sameSite: "lax" });
 
-    return res.json({
+    return res.status(200).json({
       success: true,
       message: "Logged out successfully",
     });

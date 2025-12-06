@@ -31,6 +31,7 @@ import { useState } from "react";
 import { Blog } from "@/types/blog-types";
 import { useRouter } from "next/navigation";
 import { Textarea } from "@/components/ui/textarea";
+import { ImageUpload } from "@/components/Admin/image-upload";
 
 export function BlogFormDialog({
   blog,
@@ -119,9 +120,12 @@ export function BlogFormDialog({
           name="image"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Image URL</FormLabel>
               <FormControl>
-                <Input placeholder="https://example.com/image.jpg" {...field} />
+                <ImageUpload
+                  value={field.value}
+                  onChange={field.onChange}
+                  label="Image"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

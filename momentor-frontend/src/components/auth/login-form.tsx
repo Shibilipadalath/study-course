@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
 export function LoginForm() {
   const router = useRouter();

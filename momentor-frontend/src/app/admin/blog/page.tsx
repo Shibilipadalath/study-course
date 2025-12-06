@@ -7,7 +7,7 @@ const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
 async function getBlogs(): Promise<Blog[]> {
   try {
-    const res = await fetch(`${API_BASE_URL}/api/blogs/getAllBlogs`, {
+    const res = await fetch(`${API_BASE_URL}/api/blogs`, {
       cache: "no-store",
     });
 

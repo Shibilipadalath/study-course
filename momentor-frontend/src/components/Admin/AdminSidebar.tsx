@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   HiBriefcase,
@@ -14,6 +14,7 @@ import {
 } from "react-icons/hi";
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
 import { useState, useEffect } from "react";
+import { LogoutDialog } from "@/components/auth/logout-modal";
 
 interface MenuItem {
   name: string;
@@ -31,8 +32,8 @@ const menuItems: MenuItem[] = [
 
 export default function AdminSidebar() {
   const pathname = usePathname();
-  const router = useRouter();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [logoutOpen, setLogoutOpen] = useState(false);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -47,9 +48,7 @@ export default function AdminSidebar() {
   }, [isMobileOpen]);
 
   const handleLogout = () => {
-    // Add your logout logic here
-    console.log("Logging out...");
-    // Example: router.push("/login");
+    setLogoutOpen(true);
   };
 
   return (
@@ -176,6 +175,9 @@ export default function AdminSidebar() {
           className="lg:hidden fixed inset-0 bg-black/50 z-30 transition-opacity duration-300"
         />
       )}
+
+      {/* Logout Dialog */}
+      <LogoutDialog open={logoutOpen} setOpen={setLogoutOpen} />
     </>
   );
 }

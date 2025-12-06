@@ -30,6 +30,7 @@ import { Plus, Loader2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Gallery, GalleryCategory } from "@/types/gallery-types";
 import { useRouter } from "next/navigation";
+import { ImageUpload } from "@/components/Admin/image-upload";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
@@ -140,9 +141,12 @@ export function GalleryFormDialog({
           name="image"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Image URL</FormLabel>
               <FormControl>
-                <Input placeholder="https://example.com/image.jpg" {...field} />
+                <ImageUpload
+                  value={field.value}
+                  onChange={field.onChange}
+                  label="Image"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

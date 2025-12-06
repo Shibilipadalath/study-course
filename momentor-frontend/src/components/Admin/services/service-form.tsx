@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { ImageUpload } from "@/components/Admin/image-upload";
 
 interface Props {
   service: Service | null; // null => create
@@ -13,7 +14,7 @@ interface Props {
   onSaved: () => void;
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
 export function ServiceForm({ service, onClose, onSaved }: Props) {
   const isEdit = Boolean(service);
@@ -92,8 +93,11 @@ export function ServiceForm({ service, onClose, onSaved }: Props) {
           </div>
 
           <div>
-            <label className="text-sm font-medium">Image URL</label>
-            <Input value={image} onChange={(e) => setImage(e.target.value)} />
+            <ImageUpload
+              value={image}
+              onChange={setImage}
+              label="Image"
+            />
           </div>
 
           <div>

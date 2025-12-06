@@ -14,6 +14,8 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
+
 export const LogoutDialog = ({
   open,
   setOpen,
@@ -21,35 +23,48 @@ export const LogoutDialog = ({
   open: boolean;
   setOpen: (open: boolean) => void;
 }) => {
-    const router = useRouter()
+  const router = useRouter();
 
-const handleLogout = async () => {
-  try {
-    const res = await fetch("/api/auth/logout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+  const handleLogout = async () => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/auth/logout`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (!res.ok) {
-      toast.error(data?.error || "Logout failed");
-      return;
+      if (!res.ok) {
+        toast.error(data?.error || data?.message || "Logout failed");
+        return;
+      }
+
+      // Clear stored auth tokens and user data
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      
+      // Clear cookies
+      document.cookie = "token=; path=/; max-age=0; SameSite=Lax";
+      document.cookie = "user=; path=/; max-age=0; SameSite=Lax";
+
+      toast.success(data?.message || "Logged out successfully");
+      setOpen(false);
+      router.replace("/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+      // Even if API call fails, clear local storage and redirect
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      document.cookie = "token=; path=/; max-age=0; SameSite=Lax";
+      document.cookie = "user=; path=/; max-age=0; SameSite=Lax";
+      toast.error("Failed to logout");
+      setOpen(false);
+      router.replace("/login");
     }
-
-    // Clear stored auth tokens
-    localStorage.removeItem("access_token");
-    document.cookie = "access_token=; path=/; max-age=0";
-
-    toast.success(data?.message || "Logged out successfully");
-    router.replace("/login");
-  } catch (error) {
-    console.error("Logout error:", error);
-    toast.error("Failed to logout");
-  }
-};
+  };
 
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
