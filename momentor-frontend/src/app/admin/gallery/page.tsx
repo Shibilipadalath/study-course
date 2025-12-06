@@ -1,6 +1,8 @@
 import { Gallery, GalleryCategory } from "@/types/gallery-types";
 import { GalleryTabs } from "@/components/Admin/gallery/gallery-tabs";
 
+export const dynamic = 'force-dynamic';
+
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
 async function getGalleries(): Promise<Gallery[]> {
