@@ -76,36 +76,38 @@ export function ServiceForm({ service, onClose, onSaved }: Props) {
 
   return (
     <Dialog open onOpenChange={(open) => { if (!open) onClose(); }}>
-      <DialogContent className="sm:max-w-lg">
+      <DialogContent className="sm:max-w-lg max-h-[90vh] flex flex-col">
         <DialogHeader>
           <DialogTitle>{isEdit ? "Edit Service" : "Create Service"}</DialogTitle>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="grid gap-4">
-          <div>
-            <label className="text-sm font-medium">Title</label>
-            <Input value={title} onChange={(e) => setTitle(e.target.value)} />
+        <form onSubmit={handleSubmit} className="flex flex-col flex-1 min-h-0">
+          <div className="overflow-y-auto flex-1 grid gap-4 pr-2">
+            <div>
+              <label className="text-sm font-medium">Title</label>
+              <Input value={title} onChange={(e) => setTitle(e.target.value)} />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Description</label>
+              <Textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={4} />
+            </div>
+
+            <div>
+              <ImageUpload
+                value={image}
+                onChange={setImage}
+                label="Image"
+              />
+            </div>
+
+            <div>
+              <label className="text-sm font-medium">Points (one per line)</label>
+              <Textarea value={pointsText} onChange={(e) => setPointsText(e.target.value)} rows={5} />
+            </div>
           </div>
 
-          <div>
-            <label className="text-sm font-medium">Description</label>
-            <Textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={4} />
-          </div>
-
-          <div>
-            <ImageUpload
-              value={image}
-              onChange={setImage}
-              label="Image"
-            />
-          </div>
-
-          <div>
-            <label className="text-sm font-medium">Points (one per line)</label>
-            <Textarea value={pointsText} onChange={(e) => setPointsText(e.target.value)} rows={5} />
-          </div>
-
-          <DialogFooter className="flex justify-end gap-2">
+          <DialogFooter className="flex justify-end gap-2 mt-4 shrink-0">
             <Button type="button" variant="ghost" onClick={onClose}>Cancel</Button>
             <Button type="submit" disabled={saving}>{saving ? "Saving..." : isEdit ? "Save" : "Create"}</Button>
           </DialogFooter>

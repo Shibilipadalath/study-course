@@ -143,9 +143,11 @@ export function FormDialogContent({
               }
             )();
           }}
-          className="space-y-4"
+          className="flex flex-col flex-1 min-h-0 overflow-hidden"
         >
-          {children}
+          <div className="overflow-y-auto flex-1 space-y-4 pr-2 -mr-2">
+            {children}
+          </div>
         </form>
       </Form>
     </DialogContent>

@@ -1,22 +1,56 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Gallery, GalleryCategory } from "@/types/gallery-types";
 
-const tabs = ["Alumni", "Events", "Sports", "Students"];
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
 export default function GallerySection() {
-  const [activeTab, setActiveTab] = useState("Alumni");
+  const [categories, setCategories] = useState<GalleryCategory[]>([]);
+  const [galleries, setGalleries] = useState<Gallery[]>([]);
+  const [activeCategoryId, setActiveCategoryId] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
-  const images = [
-    "/images/gallery1.png",
-    "/images/gallery2.png",
-    "/images/gallery3.png",
-    "/images/gallery4.png",
-    "/images/gallery5.png",
-    "/images/gallery6.png",
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Fetch categories and galleries in parallel
+        const [categoriesRes, galleriesRes] = await Promise.all([
+          fetch(`${API_BASE_URL}/api/gallery-category`, { cache: "no-store" }),
+          fetch(`${API_BASE_URL}/api/gallery`, { cache: "no-store" }),
+        ]);
+
+        if (categoriesRes.ok) {
+          const categoriesData = await categoriesRes.json();
+          const fetchedCategories = categoriesData.categories || [];
+          setCategories(fetchedCategories);
+          
+          // Set first category as active if categories exist
+          if (fetchedCategories.length > 0) {
+            setActiveCategoryId(fetchedCategories[0].id);
+          }
+        }
+
+        if (galleriesRes.ok) {
+          const galleriesData = await galleriesRes.json();
+          setGalleries(galleriesData.galleries || []);
+        }
+      } catch (error) {
+        console.error("Error fetching gallery data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Filter galleries by active category
+  const filteredGalleries = activeCategoryId
+    ? galleries.filter((gallery) => gallery.categoryId === activeCategoryId)
+    : galleries;
 
   return (
     <section className="w-full py-20 bg-white">
@@ -33,40 +67,67 @@ export default function GallerySection() {
         </p>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-6 mt-8">
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`text-sm md:text-[15px] pb-2 border-b-2 transition ${
-                activeTab === tab
-                  ? "border-[#CF6943] text-[#CF6943] font-medium"
-                  : "border-transparent text-gray-600 hover:text-black"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center gap-6 mt-8">
+            <div className="text-gray-600">Loading categories...</div>
+          </div>
+        ) : categories.length > 0 ? (
+          <div className="flex justify-center gap-6 mt-8">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategoryId(category.id)}
+                className={`text-sm md:text-[15px] pb-2 border-b-2 transition ${
+                  activeCategoryId === category.id
+                    ? "border-[#CF6943] text-[#CF6943] font-medium"
+                    : "border-transparent text-gray-600 hover:text-black"
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
+        ) : null}
 
         {/* ---- 3x2 Grid Layout (all cards aligned) ---- */}
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {images.map((src, index) => (
-            <motion.div
-              key={src + index}
-              whileHover={{ scale: 1.02 }}
-              className="rounded-xl overflow-hidden"
-            >
-              <Image
-                src={src}
-                alt=""
-                width={450}
-                height={350}
-                className="w-full h-[260px] md:h-80 object-cover rounded-xl"
-              />
-            </motion.div>
-          ))}
-        </div>
+        {loading ? (
+          <div className="mt-10 text-center">
+            <p className="text-gray-600">Loading gallery images...</p>
+          </div>
+        ) : filteredGalleries.length === 0 ? (
+          <div className="mt-10 text-center">
+            <p className="text-gray-600">No images available in this category</p>
+          </div>
+        ) : (
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredGalleries.map((gallery) => {
+              const isValidUrl = gallery.image && typeof gallery.image === "string" && gallery.image.trim() !== "" && 
+                (gallery.image.startsWith("http://") || gallery.image.startsWith("https://") || gallery.image.startsWith("/"));
+              
+              return (
+                <motion.div
+                  key={gallery.id}
+                  whileHover={{ scale: 1.02 }}
+                  className="rounded-xl overflow-hidden"
+                >
+                  {isValidUrl ? (
+                    <Image
+                      src={gallery.image}
+                      alt={gallery.category?.name || "Gallery image"}
+                      width={450}
+                      height={350}
+                      className="w-full h-[260px] md:h-80 object-cover rounded-xl"
+                    />
+                  ) : (
+                    <div className="w-full h-[260px] md:h-80 bg-gray-200 rounded-xl flex items-center justify-center text-gray-400">
+                      No Image
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
+        )}
 
       </div>
     </section>
