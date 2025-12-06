@@ -20,6 +20,9 @@ export default function BlogsSection() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const [page, setPage] = useState(1);
+
+  const PER_PAGE = 4; // 4 blogs per "page"
 
   useEffect(() => {
     const fetchBlogs = async (): Promise<void> => {
@@ -58,6 +61,24 @@ export default function BlogsSection() {
     }));
   };
 
+  // Pagination calculations
+  const totalPages = Math.ceil(blogs.length / PER_PAGE);
+  const startIndex = (page - 1) * PER_PAGE;
+  const endIndex = startIndex + PER_PAGE;
+  const paginatedBlogs = blogs.slice(startIndex, endIndex);
+
+  const handleNext = () => {
+    if (page < totalPages) {
+      setPage((prev) => prev + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (page > 1) {
+      setPage((prev) => prev - 1);
+    }
+  };
+
   if (loading) {
     return (
       <section className="w-full py-20 bg-white">
@@ -91,7 +112,7 @@ export default function BlogsSection() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-14 text-left">
-          {blogs.map((blog) => {
+          {paginatedBlogs.map((blog) => {
             const imageUrl = getImageUrl(blog.image ?? null);
             const id = String(blog.id);
             const isExpanded = expanded[id] ?? false;
@@ -171,8 +192,27 @@ export default function BlogsSection() {
           })}
         </div>
 
-        <div className="flex justify-center mt-12">
-          <button className="px-8 py-3 text-white bg-[#CF6943] rounded-lg shadow-md hover:brightness-110 transition">
+        {/* PAGINATION CONTROLS */}
+        <div className="flex items-center justify-center gap-4 mt-12">
+          <button
+            type="button"
+            onClick={handlePrev}
+            disabled={page === 1}
+            className="px-4 py-2 rounded-lg border text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            ← Previous
+          </button>
+
+          <span className="text-sm text-gray-600">
+            Page {page} of {totalPages}
+          </span>
+
+          <button
+            type="button"
+            onClick={handleNext}
+            disabled={page === totalPages}
+            className="px-4 py-2 rounded-lg bg-[#CF6943] text-white text-sm shadow-md hover:brightness-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
+          >
             Load More →
           </button>
         </div>
