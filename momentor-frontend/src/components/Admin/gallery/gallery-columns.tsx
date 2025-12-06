@@ -61,37 +61,6 @@ export const galleryColumns: ColumnDef<Gallery>[] = [
     ),
   },
   {
-    accessorKey: "createdAt",
-    header: ({ column }) => {
-      const sort = column.getIsSorted();
-      const renderIcon = () => {
-        if (!sort) return <ArrowUpDown className="size-4" />;
-        if (sort === "asc") return <ArrowUp className="size-4" />;
-        if (sort === "desc") return <ArrowDown className="size-4" />;
-        return null;
-      };
-
-      return (
-        <Button variant="ghost" onClick={() => column.toggleSorting(sort === "asc")}>
-          Created At {renderIcon()}
-        </Button>
-      );
-    },
-    cell: ({ row }) => {
-      const date = row.getValue("createdAt") as Date;
-      const formattedDate = new Date(date).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-      });
-      return (
-        <div className="px-3">
-          {formattedDate}
-        </div>
-      );
-    },
-  },
-  {
     id: "actions",
     header: "Actions",
     cell: ({ row }) => <GalleryActions gallery={row.original} />,

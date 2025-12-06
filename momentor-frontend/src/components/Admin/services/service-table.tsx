@@ -63,7 +63,7 @@ export function ServiceTable<TValue>({ columns, data }: ServiceTableProps<TValue
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
-                    <TableHead key={header.id}>
+                    <TableHead key={header.id} className="bg-primary text-primary-foreground font-black">
                       {header.isPlaceholder
                         ? null
                         : flexRender(header.column.columnDef.header, header.getContext())}
@@ -86,8 +86,8 @@ export function ServiceTable<TValue>({ columns, data }: ServiceTableProps<TValue
                 ))
               ) : (
                 <TableRow>
-                  <TableCell colSpan={columns.length} className="text-center">
-                    No results
+                  <TableCell colSpan={columns.length} className="h-24 text-center">
+                    No results.
                   </TableCell>
                 </TableRow>
               )}

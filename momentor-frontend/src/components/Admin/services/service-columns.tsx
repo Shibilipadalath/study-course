@@ -24,10 +24,13 @@ export const serviceColumns: ColumnDef<Service>[] = [
     cell: ({ row }) => {
       const url = row.getValue("image") as string;
 
+      const isValidUrl = url && typeof url === "string" && url.trim() !== "" && 
+        (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("/"));
+      
       return (
         <div className="px-3">
-          {url ? (
-            <img
+          {isValidUrl ? (
+            <Image
               src={url}
               alt="Service"
               width={80}
@@ -79,7 +82,7 @@ export const serviceColumns: ColumnDef<Service>[] = [
       const pts = row.getValue("points") as string[];
 
       return (
-        <ul className="px-3 list-disc pl-5 text-sm max-w-md">
+        <ul className=" list-disc pl- text-sm max-w-md">
           {pts?.slice(0, 3).map((p, i) => (
             <li key={i} className="truncate">
               {p}
@@ -114,37 +117,13 @@ export const serviceColumns: ColumnDef<Service>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => (
-      <div className="px-3 max-w-xs">
-        <p className="font-medium truncate">{row.getValue("description") as string}</p>
-      </div>
-    ),
-  },
-
-  {
-    accessorKey: "createdAt",
-    header: ({ column }) => {
-      const sorted = column.getIsSorted();
-
-      const renderIcon = () => {
-        if (!sorted) return <ArrowUpDown className="size-4" />;
-        if (sorted === "asc") return <ArrowUp className="size-4" />;
-        if (sorted === "desc") return <ArrowDown className="size-4" />;
-        return null;
-      };
-
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(sorted === "asc")}
-        >
-          Created At {renderIcon()}
-        </Button>
-      );
-    },
     cell: ({ row }) => {
-      const date = new Date(row.getValue("createdAt") as string);
-      return <div className="px-3">{date.toLocaleDateString()}</div>;
+      const description = row.getValue("description") as string;
+      return (
+        <div className="px-3 max-w-md">
+          <p className="text-sm text-gray-600 line-clamp-2">{description}</p>
+        </div>
+      );
     },
   },
 
@@ -186,14 +165,16 @@ const ServiceActions = ({ service }: { service: Service }) => {
       </Button>
 
       {/* Edit Form */}
-      <ServiceForm
-        service={service}
-        onClose={() => setOpenEdit(false)}
-        onSaved={() => {
-          setOpenEdit(false);
-          window.location.reload(); // refresh list
-        }}
-      />
+      {openEdit && (
+        <ServiceForm
+          service={service}
+          onClose={() => setOpenEdit(false)}
+          onSaved={() => {
+            setOpenEdit(false);
+            window.location.reload(); // refresh list
+          }}
+        />
+      )}
 
       {/* Delete Dialog */}
       <ServiceDeleteDialog
