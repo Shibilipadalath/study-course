@@ -43,12 +43,12 @@ export default function Header() {
         </Link>
 
         {/* ---- DESKTOP NAV ---- */}
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-10 subheading-text">
           {menu.map((item) => (
             <Link
               key={item.path}
               href={item.path}
-              className={`font-medium transition-all ${
+              className={`font-medium transition-all subheading-text ${
                 pathname === item.path
                   ? "text-[#CF6943]"
                   : "text-gray-700 hover:text-[#CF6943]"

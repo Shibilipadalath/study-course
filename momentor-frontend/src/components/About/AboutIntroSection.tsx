@@ -10,7 +10,7 @@ export default function AboutIntroSection() {
 
         {/* ---------- Title & Description ---------- */}
         <div className="mb-14">
-          <h2 className="text-[30px] md:text-[36px] font-semibold text-[#070606]">
+          <h2 className="text-[30px] md:text-[36px] font-semibold text-[#070606] head">
             About us
           </h2>
           <p className="text-[15px] text-gray-600 mt-3 max-w-2xl leading-relaxed">

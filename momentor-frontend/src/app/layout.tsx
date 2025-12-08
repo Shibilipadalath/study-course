@@ -1,20 +1,24 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Momentor",
-  description: "Transform Your Future With Knowledge",
+  description:
+    "Transform Your Future With Knowledge",
+  icons: {
+    icon: [
+      { url: "/logo.png", sizes: "any" },
+      { url: "/logo.png", type: "image/png" },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -23,11 +27,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.cdnfonts.com" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.cdnfonts.com/css/itc-stone-serif"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.cdnfonts.com/css/itc-stone-sans"
+        />
+      </head>
+      <body className="font-primary antialiased">
+        <div className="min-h-screen w-full pt-16">{children}</div>
+        <Toaster />
       </body>
     </html>
   );

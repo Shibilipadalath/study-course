@@ -20,7 +20,7 @@ export default function PageHero({ title, breadcrumb }: PageHeroProps) {
 
       {/* CONTENT */}
       <div className="relative z-12 text-center">
-        <h1 className="text-3xl md:text-5xl font-semibold text-[#070606]">
+        <h1 className="text-3xl md:text-5xl font-semibold text-[#070606] ">
           {title}
         </h1>
 
