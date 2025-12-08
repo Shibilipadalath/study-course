@@ -121,7 +121,7 @@ export default function ServicesSection() {
                         <li key={idx} className="flex items-start gap-2">
                           <CheckCircle
                             size={16}
-                            className={`mt-[2px] transition ${
+                            className={`mt-0.5 transition ${
                               hoveredCard === index
                                 ? "text-white"
                                 : "text-[#CF6943]"

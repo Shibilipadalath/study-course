@@ -95,7 +95,7 @@ export default function ContactSection() {
                     First Name
                   </label>
                   <input
-                    className="w-full h-[44px] border rounded-lg px-4 text-sm
+                    className="w-full h-11 border rounded-lg px-4 text-sm
                     focus:outline-none focus:ring-1 focus:ring-[#CF6943]"
                   />
                 </div>
@@ -105,7 +105,7 @@ export default function ContactSection() {
                     Last Name
                   </label>
                   <input
-                    className="w-full h-[44px] border rounded-lg px-4 text-sm
+                    className="w-full h-11 border rounded-lg px-4 text-sm
                     focus:outline-none focus:ring-1 focus:ring-[#CF6943]"
                   />
                 </div>
@@ -119,7 +119,7 @@ export default function ContactSection() {
                   </label>
                   <input
                     type="email"
-                    className="w-full h-[44px] border rounded-lg px-4 text-sm
+                    className="w-full h-11 border rounded-lg px-4 text-sm
                     focus:outline-none focus:ring-1 focus:ring-[#CF6943]"
                   />
                 </div>
@@ -129,7 +129,7 @@ export default function ContactSection() {
                     Mobile Number
                   </label>
                   <input
-                    className="w-full h-[44px] border rounded-lg px-4 text-sm
+                    className="w-full h-11 border rounded-lg px-4 text-sm
                     focus:outline-none focus:ring-1 focus:ring-[#CF6943]"
                   />
                 </div>
