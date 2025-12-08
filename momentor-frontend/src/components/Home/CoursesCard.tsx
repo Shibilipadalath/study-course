@@ -10,10 +10,8 @@ interface CourseCardProps {
 
 export default function CourseCard({ image, title, desc }: CourseCardProps) {
   return (
-    <div
-      className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-4 flex gap-4"
-      style={{ height: "180px" }}
-    >
+    <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-4 flex gap-4 h-[180px]">
+      
       {/* Thumbnail */}
       <Image
         src={image}
@@ -24,31 +22,40 @@ export default function CourseCard({ image, title, desc }: CourseCardProps) {
       />
 
       {/* Content */}
-      <div className="flex flex-col justify-between flex-1">
+      <div className="flex flex-col justify-between flex-1 text-left">
         
-        {/* Title + Like Button */}
-        <div className="flex justify-between items-start">
-          <div>
-            <h3 className="text-[15px] font-semibold text-[#070606]">{title}</h3>
-            <p className="text-[12px] text-gray-500 w-[90%]">{desc}</p>
+        {/* Title + Like */}
+        <div className="flex justify-between items-start gap-3">
+          <div className="flex flex-col items-start">
+            <h3 className="text-[15px] font-semibold text-[#070606] leading-snug">
+              {title}
+            </h3>
+            <p className="text-[12px] text-gray-500 mt-1 leading-relaxed">
+              {desc}
+            </p>
           </div>
-          <button className="p-2 rounded-full hover:bg-gray-100 transition">
+
+          <button className="p-2 rounded-full hover:bg-gray-100 transition shrink-0">
             <IoHeartOutline size={18} className="text-[#070606]" />
           </button>
         </div>
 
-        {/* Ratings + Profile Row + Button */}
-        <div className="flex justify-between items-center">
+        {/* Rating + Profile + Button */}
+        <div className="flex justify-between items-center mt-2">
           
-          {/* Rating + Profile */}
-          <div>
+          {/* Rating + Profiles */}
+          <div className="text-left">
             <div className="flex items-center gap-1 text-[12px] text-[#070606]">
               <FaStar className="text-[#FFB800]" size={14} /> 4.5
             </div>
 
-            {/* Profile images */}
             <div className="flex items-center mt-1 -space-x-2">
-              {["/images/profile.jpeg","/images/profile.jpeg","/images/profile.jpeg","/images/profile.jpeg"].map((p,i)=>(
+              {[
+                "/images/profile.jpeg",
+                "/images/profile.jpeg",
+                "/images/profile.jpeg",
+                "/images/profile.jpeg",
+              ].map((p, i) => (
                 <Image
                   key={i}
                   src={p}
@@ -66,6 +73,7 @@ export default function CourseCard({ image, title, desc }: CourseCardProps) {
             Apply
           </button>
         </div>
+
       </div>
     </div>
   );

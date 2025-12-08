@@ -60,13 +60,15 @@ export default function TestimonialSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="bg-white mt-14 rounded-xl shadow-lg max-w-4xl mx-auto p-10"
+          className="bg-white mt-14 rounded-xl shadow-lg 
+                    max-w-6xl mx-auto 
+                    px-14 py-12"
         >
-          <h3 className="text-[18px] font-semibold text-[#070606] mb-3">
+          <h3 className="text-[18px] font-semibold text-[#070606] mb-4">
             Lorem Ipsum
           </h3>
 
-          <p className="text-[15px] text-gray-600 leading-[1.7]">
+          <p className="text-[15px] text-gray-600 leading-[1.8] text-left">
             Lorem ipsum dolor sit amet consectetur. Dolor ipsum vel porta mauris ornare pretium eu tortor.
             Facilisis cras cras egestas turpis turpis quis nibh. Ultramcorper vitae id posuere senectus
             facilisis. Facilisis elementum potenti mattis orci id tincidunt dui. Eget volutpat aenean non
@@ -79,17 +81,20 @@ export default function TestimonialSection() {
           </p>
 
           {/* Profile */}
-          <div className="mt-6 flex flex-col items-center">
+          <div className="mt-8 flex flex-col items-center">
             <Image
               src="/images/profile.jpeg"
-              width={50}
-              height={50}
+              width={56}
+              height={56}
               alt="Reviewer"
               className="rounded-full border-2 border-[#CF6943]"
             />
-            <p className="mt-2 text-[15px] font-semibold text-[#070606]">John wick</p>
+            <p className="mt-2 text-[15px] font-semibold text-[#070606]">
+              John Wick
+            </p>
           </div>
         </motion.div>
+
       </div>
     </section>
   );
