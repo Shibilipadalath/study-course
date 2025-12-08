@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
-import { Edit2, Trash2, ArrowUp, ArrowDown, ArrowUpDown } from "lucide-react";
+import { ArrowUp, ArrowDown, ArrowUpDown } from "lucide-react";
 import { BlogFormDialog } from "./blog-form";
 import { BlogDeleteDialog } from "./blog-delete-dailog";
 import { Blog } from "@/types/blog-types";
 import Image from "next/image";
+import { ActionMenu } from "../common/action-menu";
 
 export const blogColumns: ColumnDef<Blog>[] = [
   {
@@ -84,40 +85,23 @@ const BlogActions = ({ blog }: { blog: Blog }) => {
   const [openDelete, setOpenDelete] = useState(false);
 
   return (
-    <div className="flex gap-2">
-      {/* Edit Button */}
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={() => setOpenEdit(true)}
-        className="text-blue-600 hover:text-blue-700"
-      >
-        <Edit2 className="h-4 w-4" />
-      </Button>
+    <>
+      <ActionMenu
+        onEdit={() => setOpenEdit(true)}
+        onDelete={() => setOpenDelete(true)}
+      />
 
-      {/* Delete Button */}
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={() => setOpenDelete(true)}
-        className="text-red-600 hover:text-red-700"
-      >
-        <Trash2 className="h-4 w-4" />
-      </Button>
-
-      {/* Edit Modal */}
       <BlogFormDialog
         open={openEdit}
         openChange={setOpenEdit}
         blog={blog}
       />
 
-      {/* Delete Modal */}
       <BlogDeleteDialog
         blog={blog}
         open={openDelete}
         setOpen={setOpenDelete}
       />
-    </div>
+    </>
   );
 };
