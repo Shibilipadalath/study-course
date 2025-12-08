@@ -85,30 +85,53 @@ export default function ServicesSection() {
                   </h3>
 
                   {/* Description - Limited to 4 lines */}
+                  {/* Description */}
                   <p
-                    className={`text-[14px] leading-[1.6] transition text-justify ${
-                      hoveredCard === index ? "text-white/90" : "text-gray-700"
-                    }`}
+                    className={`
+                      text-[15px] leading-[1.75] transition text-left
+                      line-clamp-4
+                      ${
+                        hoveredCard === index
+                          ? "text-white/90"
+                          : "text-gray-700"
+                      }
+                    `}
                   >
-                    {service.description.slice(0, 400)}...
+                    {service.description}
                   </p>
+
+                  {/* View More */}
+                  <span
+                    className={`
+                      mt-3 inline-flex items-center gap-1 text-[14px] font-medium
+                      ${
+                        hoveredCard === index
+                          ? "text-white"
+                          : "text-[#CF6943]"
+                      }
+                    `}
+                  >
+                    View More →
+                  </span>
 
                   {/* Bullet List with Tick */}
                   {service.points && service.points.length > 0 && (
-                    <ul className="mt-5 space-y-2 text-[14px] w-full text-justify">
+                    <ul className="mt-5 space-y-2 text-[14.5px] w-full text-left">
                       {service.points.map((point, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-justify">
+                        <li key={idx} className="flex items-start gap-2">
                           <CheckCircle
                             size={16}
-                            className={`transition ${
+                            className={`mt-[2px] transition ${
                               hoveredCard === index
                                 ? "text-white"
                                 : "text-[#CF6943]"
                             }`}
                           />
                           <span
-                            className={`transition ${
-                              hoveredCard === index ? "text-white" : "text-black"
+                            className={`leading-[1.6] ${
+                              hoveredCard === index
+                                ? "text-white"
+                                : "text-[#070606]"
                             }`}
                           >
                             {point}
@@ -116,6 +139,7 @@ export default function ServicesSection() {
                         </li>
                       ))}
                     </ul>
+
                   )}
                   </motion.div>
                 </Link>
