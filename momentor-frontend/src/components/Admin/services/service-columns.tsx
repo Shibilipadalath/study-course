@@ -5,10 +5,9 @@ import { ColumnDef } from "@tanstack/react-table";
 import { Service } from "@/types/service-types";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { ActionMenu } from "../common/action-menu";
 
 import {
-  Edit2,
-  Trash2,
   ArrowUp,
   ArrowDown,
   ArrowUpDown
@@ -143,28 +142,12 @@ const ServiceActions = ({ service }: { service: Service }) => {
   const [openDelete, setOpenDelete] = useState(false);
 
   return (
-    <div className="flex gap-2">
-      {/* Edit */}
-      <Button
-        variant="ghost"
-        size="icon"
-        className="text-blue-600 hover:text-blue-700"
-        onClick={() => setOpenEdit(true)}
-      >
-        <Edit2 className="h-4 w-4" />
-      </Button>
+    <>
+      <ActionMenu
+        onEdit={() => setOpenEdit(true)}
+        onDelete={() => setOpenDelete(true)}
+      />
 
-      {/* Delete */}
-      <Button
-        variant="ghost"
-        size="icon"
-        className="text-red-600 hover:text-red-700"
-        onClick={() => setOpenDelete(true)}
-      >
-        <Trash2 className="h-4 w-4" />
-      </Button>
-
-      {/* Edit Form */}
       {openEdit && (
         <ServiceForm
           service={service}
@@ -176,12 +159,11 @@ const ServiceActions = ({ service }: { service: Service }) => {
         />
       )}
 
-      {/* Delete Dialog */}
       <ServiceDeleteDialog
         service={service}
         open={openDelete}
         setOpen={setOpenDelete}
       />
-    </div>
+    </>
   );
 };

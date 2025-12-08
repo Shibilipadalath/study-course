@@ -8,6 +8,7 @@ import { ServiceForm } from "@/components/Admin/services/service-form";
 import { ServiceDeleteDialog } from "@/components/Admin/services/service-delete-dialog";
 import { Button } from "@/components/ui/button";
 import { Row } from "@tanstack/react-table"; // to fix row typing error
+import { ActionMenu } from "@/components/Admin/common/action-menu";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
@@ -49,30 +50,13 @@ export default function AdminServicePage() {
           const service = row.original;
 
           return (
-            <div className="flex gap-2">
-              {/* Edit button */}
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => {
-                  setEditingService(service);
-                  setOpenForm(true);
-                }}
-                className="text-blue-600 hover:text-blue-700"
-              >
-                Edit
-              </Button>
-
-              {/* Delete button */}
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setDeleteTarget(service)}
-                className="text-red-600 hover:text-red-700"
-              >
-                Delete
-              </Button>
-            </div>
+            <ActionMenu
+              onEdit={() => {
+                setEditingService(service);
+                setOpenForm(true);
+              }}
+              onDelete={() => setDeleteTarget(service)}
+            />
           );
         },
       };

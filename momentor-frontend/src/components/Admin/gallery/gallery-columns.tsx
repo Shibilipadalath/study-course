@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
 import { Button } from "@/components/ui/button";
-import { Edit2, Trash2, ArrowUp, ArrowDown, ArrowUpDown } from "lucide-react";
+import { ArrowUp, ArrowDown, ArrowUpDown } from "lucide-react";
 import { GalleryFormDialog } from "./gallery-form";
 import { GalleryDeleteDialog } from "./gallery-delete-dailog";
 import { Gallery } from "@/types/gallery-types";
 import Image from "next/image";
+import { ActionMenu } from "../common/action-menu";
 
 export const galleryColumns: ColumnDef<Gallery>[] = [
   {
@@ -21,15 +22,17 @@ export const galleryColumns: ColumnDef<Gallery>[] = [
       return (
         <div className="px-3">
           {isValidUrl ? (
-            <Image
-              src={imageUrl}
-              alt="Gallery"
-              width={80}
-              height={80}
-              className="rounded-lg object-cover"
-            />
+            <div className="h-24 w-28 overflow-hidden rounded-lg bg-gray-100">
+              <Image
+                src={imageUrl}
+                alt="Gallery"
+                width={112}
+                height={96}
+                className="h-full w-full object-cover"
+              />
+            </div>
           ) : (
-            <div className="w-20 h-20 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-xs">
+            <div className="w-28 h-24 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 text-xs">
               No Image
             </div>
           )}
@@ -72,40 +75,23 @@ const GalleryActions = ({ gallery }: { gallery: Gallery }) => {
   const [openDelete, setOpenDelete] = useState(false);
 
   return (
-    <div className="flex gap-2">
-      {/* Edit Button */}
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={() => setOpenEdit(true)}
-        className="text-blue-600 hover:text-blue-700"
-      >
-        <Edit2 className="h-4 w-4" />
-      </Button>
+    <>
+      <ActionMenu
+        onEdit={() => setOpenEdit(true)}
+        onDelete={() => setOpenDelete(true)}
+      />
 
-      {/* Delete Button */}
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={() => setOpenDelete(true)}
-        className="text-red-600 hover:text-red-700"
-      >
-        <Trash2 className="h-4 w-4" />
-      </Button>
-
-      {/* Edit Modal */}
       <GalleryFormDialog
         open={openEdit}
         openChange={setOpenEdit}
         gallery={gallery}
       />
 
-      {/* Delete Modal */}
       <GalleryDeleteDialog
         gallery={gallery}
         open={openDelete}
         setOpen={setOpenDelete}
       />
-    </div>
+    </>
   );
 };
