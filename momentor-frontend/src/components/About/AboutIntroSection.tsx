@@ -58,24 +58,24 @@ export default function AboutIntroSection() {
             
             {/* Stat Item */}
             <div>
-              <p className="text-[36px] font-bold text-[#0A0A0A]">
-                <CountUp end={28000} duration={2} separator="," />+
+              <p className=" text-[#0A0A0A] heading-text">
+                <CountUp className="text-[36px] font-bold" end={28000} duration={2} separator="," />+
               </p>
               <p className="text-gray-700 text-[14px] mt-2">Lorem ipsum dolor sit</p>
               <p className="text-gray-500 text-[12px]">amet consectetur.</p>
             </div>
 
             <div>
-              <p className="text-[36px] font-bold text-[#0A0A0A]">
-                <CountUp end={35000} duration={2} separator="," />+
+              <p className=" text-[#0A0A0A] heading-text">
+                <CountUp className="text-[36px] font-bold" end={35000} duration={2} separator="," />+
               </p>
               <p className="text-gray-700 text-[14px] mt-2">Lorem ipsum dolor sit</p>
               <p className="text-gray-500 text-[12px]">amet consectetur.</p>
             </div>
 
             <div>
-              <p className="text-[36px] font-bold text-[#0A0A0A]">
-                <CountUp end={120} duration={2} />+
+              <p className=" text-[#0A0A0A] heading-text">
+                <CountUp className="text-[36px] font-bold" end={120} duration={2} />+
               </p>
               <p className="text-gray-700 text-[14px] mt-2">Lorem ipsum dolor sit</p>
               <p className="text-gray-500 text-[12px]">amet consectetur.</p>

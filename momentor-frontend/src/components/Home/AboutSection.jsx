@@ -70,22 +70,22 @@ export default function AboutSection() {
         {/* STATS */}
         <div className="flex flex-col md:flex-row gap-16 justify-center mt-20">
           <div className="text-center">
-            <p className="text-[42px] font-semibold text-[#CF6943]">
-              <CountUp end={28000} duration={2.5} separator="," />+
+            <p className=" text-[#CF6943] heading-text">
+              <CountUp className="text-[42px] font-semibold" end={28000} duration={2.5} separator="," />+
             </p>
             <p className="text-[#474747] mt-2">Active Students</p>
           </div>
 
           <div className="text-center">
-            <p className="text-[42px] font-semibold text-[#CF6943]">
-              <CountUp end={35000} duration={2.5} separator="," />+
+            <p className=" text-[#CF6943] heading-text">
+              <CountUp className="text-[42px] font-semibold" end={35000} duration={2.5} separator="," />+
             </p>
             <p className="text-[#474747] mt-2">Video Classes</p>
           </div>
 
           <div className="text-center">
-            <p className="text-[42px] font-semibold text-[#CF6943]">
-              <CountUp end={120} duration={2} />+
+            <p className=" text-[#CF6943] heading-text">
+              <CountUp className="text-[42px] font-semibold" end={120} duration={2} />+
             </p>
             <p className="text-[#474747] mt-2">Online Courses</p>
           </div>

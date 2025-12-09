@@ -114,6 +114,10 @@ body {
   --font-heading: "ITC Stone Serif", "Times New Roman", serif;
   --font-subheading: "ITC Stone Sans", "Helvetica Neue", Arial, sans-serif;
   --font-body: var(--font-subheading);
+  --heading-size: 2.75rem;
+  --heading-line-height: 1.2;
+  --subheading-size: 1.1rem;
+  --subheading-line-height: 1.4;
 
   --brand: #CF6943;
   --radius: 0.625rem;
