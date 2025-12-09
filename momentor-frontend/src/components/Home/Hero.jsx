@@ -24,10 +24,10 @@ export default function Hero() {
         >
           {/* Heading */}
           <h1 className="font-semibold text-[#070606] leading-[1.15] tracking-tight">
-            <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] whitespace-nowrap">
+            <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-semibold whitespace-nowrap">
               Transform Your Future
             </span>
-            <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] text-[#CF6943]">
+            <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-semibold text-[#CF6943]">
               With Knowledge
             </span>
           </h1>
