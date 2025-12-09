@@ -48,20 +48,46 @@ export default function FAQSection() {
       <div className="container mx-auto px-6 lg:px-24 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
         {/* ---------- LEFT CONTENT ---------- */}
-        <div className="max-w-lg">
-          <span className="inline-block bg-[#CF6943] text-white text-xs px-5 py-1 rounded-full shadow">
-            FAQ
-          </span>
+          <div className="relative max-w-xl pl-6 md:pl-0">
 
-          <h2 className="text-[34px] md:text-[38px] font-semibold text-[#070606] leading-[1.2] mt-5">
-            Frequently Asked <br /> Questions
-          </h2>
+            {/* BACKGROUND ARC IMAGE */}
+            <img
+              src="/images/FAQdesign.png"
+              alt="FAQ background"
+              className="
+                absolute
+                -top-20
+                -left-40
+                w-[520px]
+                opacity-[0.18]
+                pointer-events-none
+                z-0
+              "
+            />
 
-          <p className="text-gray-600 text-[16px] mt-5 max-w-md text-justify tracking-normal leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing.
-            Pulvinar sit aliquam ipsum rhoncus turpis pellentesque vestibulum condimentum orci.
-          </p>
-        </div>
+            {/* CONTENT */}
+            <div className="relative z-10">
+
+              {/* TAG */}
+              <span className="inline-block bg-[#CF6943] text-white text-xs px-5 py-1.5 rounded-full shadow-sm">
+                FAQ
+              </span>
+
+              {/* TITLE */}
+              <h2 className="mt-6 text-[36px] md:text-[40px] font-semibold text-[#070606] leading-snug">
+                Frequently Asked <br /> Questions
+              </h2>
+
+              {/* DESCRIPTION */}
+              <p className="mt-6 text-[16px] text-gray-600 leading-relaxed max-w-md">
+                Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing.
+                Pulvinar sit aliquam ipsum rhoncus turpis pellentesque vestibulum
+                condimentum orci.
+              </p>
+
+            </div>
+          </div>
+
 
         {/* ---------- RIGHT FAQ CARD ---------- */}
         <div className="bg-white rounded-2xl shadow-xl p-10 max-w-2xl w-full">
