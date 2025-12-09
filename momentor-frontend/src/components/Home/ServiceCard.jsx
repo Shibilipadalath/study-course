@@ -5,12 +5,12 @@ import { IoArrowForwardOutline } from "react-icons/io5";
 export default function ServiceCard({ image, title, tutor, tutorImg }) {
   return (
     <div
-      className="bg-white rounded-xl p-5 transition-all hover:-translate-y-2 hover:shadow-xl"
+      className="bg-white rounded-xl p-2 transition-all hover:-translate-y-2 hover:shadow-xl"
       style={{
         boxShadow: "0px 15px 29px rgba(0,0,0,0.15)",
         width: "100%",
         maxWidth: "392px",
-        minHeight: "420px", // Reduced height
+        minHeight: "420px",
       }}
     >
       {/* Service Image */}
@@ -26,12 +26,12 @@ export default function ServiceCard({ image, title, tutor, tutorImg }) {
       </div>
 
       {/* Title */}
-      <h3 className="text-[16px] font-semibold text-[#070606] mt-4 leading-tight">
+      <h3 className="text-[16px] font-semibold text-[#070606] mt-4 px-3 leading-tight">
         {title}
       </h3>
 
       {/* Footer */}
-<div className="mt-16 flex items-center justify-between px-4 py-3"
+<div className="mt-16 mx-3 mb-3 flex items-center justify-between px-4 py-3"
   style={{
     background: "#E7E6E6",
     borderRadius: "12px",
