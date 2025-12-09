@@ -1,3 +1,5 @@
+@import url("https://fonts.cdnfonts.com/css/itc-stone-serif");
+@import url("https://fonts.cdnfonts.com/css/itc-stone-sans");
 @import "tailwindcss";
 @import "tw-animate-css";
 /* ---break---*/
@@ -47,13 +49,23 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* ---------------------------------
-   Global Body Styling
-----------------------------------*/
+body {
+  min-height: 100vh;         /* ensures full viewport height */
+  width: 100%;               /* ensures full viewport width */
+  margin: 0;                 /* remove default margins */
+  padding: 0;                /* remove default padding */
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(
+    --font-body,
+    "ITC Stone Sans",
+    "Helvetica Neue",
+    Arial,
+    sans-serif
+  );
+  scroll-behavior: smooth;   /* optional for nice scrolling */
+}
 
-/* ---------------------------------
-   HERO BLOB GRADIENTS
-----------------------------------*/
 .hero-blobs {
   position: relative;
   overflow: hidden;
@@ -98,7 +110,11 @@
   100% { transform: translate(0,0); }
 }
 
-:root {
+ :root {
+  --font-heading: "ITC Stone Serif", "Times New Roman", serif;
+  --font-subheading: "ITC Stone Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-subheading);
+
   --brand: #CF6943;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -132,6 +148,24 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+.font-primary {
+  font-family: var(--font-body, "ITC Stone Sans", Arial, sans-serif);
+}
+
+.heading-text {
+  font-family: var(--font-heading);
+  font-size: var(--heading-size);
+  line-height: var(--heading-line-height);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.subheading-text {
+  font-family: var(--font-heading);
+  font-size: var(--subheading-size);
+  line-height: var(--subheading-line-height);
+  font-weight: 400;
 }
 
 .mask-gradient {
@@ -179,10 +213,25 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Global typography helpers */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-size: var(--heading-size);
+    line-height: var(--heading-line-height);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  p, a, li, span, label, input, textarea, button {
+    font-family: var(--font-heading);
+    font-size: var(--subheading-size);
+    line-height: var(--subheading-line-height);
+    font-weight: 400;
   }
 }
 

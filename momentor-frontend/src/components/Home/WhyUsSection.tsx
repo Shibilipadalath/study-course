@@ -53,7 +53,7 @@ export default function WhyUsSection() {
           </h2>
 
           {/* ✅ Wider text block */}
-          <p className="text-gray-600 text-[16px] leading-[1.8] mt-5 max-w-2xl text-left">
+          <p className="text-gray-600 text-[16px] mt-5 max-w-2xl text-justify tracking-tight leading-relaxed">
             Lorem ipsum dolor sit amet consectetur. Vitae et id aliquet risus ut odio.
             Consectetur velit mattis morbi imperdiet. Tellus a ut faucibus id ultrices.
             Amet nulla magna libero at maecenas accumsan diam. Laoreet ut convallis

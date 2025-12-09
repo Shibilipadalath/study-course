@@ -13,7 +13,7 @@ export default function AboutIntroSection() {
           <h2 className="text-[30px] md:text-[36px] font-semibold text-[#070606]">
             About us
           </h2>
-          <p className="text-[15px] text-gray-600 mt-3 max-w-2xl leading-relaxed">
+          <p className="text-[15px] text-gray-600 mt-3 max-w-2xl text-justify tracking-normal leading-relaxed">
             Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing. Pulvinar sit aliquam ipsum rhoncus 
             turpis pellentesque vestibulum condimentum orci. Cras tristique eros amet etiam quam purus morbi. 
             Id ultricies sed placerat pellentesque et adipiscing nec. Commodo.
@@ -38,7 +38,7 @@ export default function AboutIntroSection() {
               Shaping Learners. <br /> Empowering Futures
             </h3>
 
-            <p className="text-gray-600 text-[15px] leading-[1.8] mt-4">
+            <p className="text-gray-600 text-[15px] text-justify tracking-normal leading-relaxed mt-4">
               Lorem ipsum dolor sit amet consectetur. Mi gravida eros sed tortor porttitor eu varius. Gravida arcu
               suscipit elit cursus volutpat sem. Eget purus auctor aliquet a volutpat cras at enim. In enim amet
               ullamcorper commodo ac lobortis tellus. Auctor vel nunc adipiscing massa facilisi commodo a laoreet

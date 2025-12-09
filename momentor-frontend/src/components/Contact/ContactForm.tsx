@@ -29,7 +29,7 @@ export default function ContactSection() {
               Let’s Get in Touch
             </h2>
 
-            <p className="text-gray-600 text-[15px] mt-4 leading-[1.75] max-w-md">
+            <p className="text-gray-600 text-[15px] mt-4 max-w-md text-justify tracking-normal leading-relaxed">
               Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat
               adipiscing. Pulvinar sit aliquam ipsum rhoncus turpis
               pellentesque vestibulum condimentum.

@@ -45,7 +45,7 @@ export default function ServicesSection() {
         <h2 className="text-[30px] md:text-[36px] font-semibold text-[#070606]">
           See Our All Services
         </h2>
-        <p className="text-gray-600 text-[14px] md:text-[15px] mt-3 max-w-2xl mx-auto">
+        <p className="text-gray-600 text-[14px] md:text-[15px] mt-3 max-w-2xl mx-auto text-justify tracking-normal leading-relaxed">
           Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing.
           Pulvinar sit aliquam ipsum rhoncus turpis pellentesque vestibulum luctus.
         </p>
@@ -88,7 +88,8 @@ export default function ServicesSection() {
                   {/* Description */}
                   <p
                     className={`
-                      text-[15px] leading-[1.75] transition text-left
+                      text-justify tracking-normal leading-relaxed
+                      text-[15px] transition
                       line-clamp-4
                       ${
                         hoveredCard === index

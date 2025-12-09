@@ -51,7 +51,7 @@ export default function MissionVisionSection() {
               Our Mission
             </h3>
 
-            <p className="text-gray-600 text-[15px] leading-[1.8] mt-4 max-w-md">
+            <p className="text-gray-600 text-[15px] mt-4 max-w-md text-justify tracking-normal leading-relaxed">
               Lorem ipsum dolor sit amet consectetur. Mi platea orci sed tortor
               porttitor eu vivamus. Gravida arcu suscipit elit cursus volutpat
               sem. Eget purus auctor aliquet a volutpat cras at enim. In enim
@@ -92,7 +92,7 @@ export default function MissionVisionSection() {
               Our Vision
             </h3>
 
-            <p className="text-gray-600 text-[15px] leading-[1.8] mt-4 max-w-md">
+            <p className="text-gray-600 text-[15px] mt-4 max-w-md text-justify tracking-normal leading-relaxed">
               Lorem ipsum dolor sit amet consectetur. Mi platea orci sed tortor
               porttitor eu vivamus. Gravida arcu suscipit elit cursus volutpat
               sem. Eget purus auctor aliquet a volutpat cras at enim. In enim

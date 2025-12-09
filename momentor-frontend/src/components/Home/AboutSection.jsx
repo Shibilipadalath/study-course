@@ -48,11 +48,10 @@ export default function AboutSection() {
             max-w-5xl 
             mx-auto 
             mt-8 
-            text-left
             text-[#474747]
             text-[16px]
-            leading-[1.8]
             space-y-6
+            text-justify tracking-tight leading-relaxed
           "
         >
           <p>

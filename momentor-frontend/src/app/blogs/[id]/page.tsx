@@ -65,7 +65,7 @@ export default async function BlogDetailPage({
               </div>
             )}
 
-            <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
+            <p className="text-gray-700 whitespace-pre-wrap text-justify tracking-normal leading-relaxed">
               {blog.description}
             </p>
           </div>

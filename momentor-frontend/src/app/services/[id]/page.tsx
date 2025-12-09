@@ -74,7 +74,7 @@ export default async function ServiceDetailPage({
             <h2 className="text-[24px] font-semibold text-[#070606] mb-4">
               Description
             </h2>
-            <p className="text-[16px] leading-[1.8] text-gray-700 whitespace-pre-wrap">
+            <p className="text-[16px] text-gray-700 whitespace-pre-wrap text-justify tracking-normal leading-relaxed">
               {service.description}
             </p>
           </div>

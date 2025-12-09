@@ -68,7 +68,7 @@ export default function TestimonialSection() {
             Lorem Ipsum
           </h3>
 
-          <p className="text-[15px] text-gray-600 leading-[1.8] text-left">
+          <p className="text-[15px] text-gray-600 text-justify tracking-tight leading-relaxed">
             Lorem ipsum dolor sit amet consectetur. Dolor ipsum vel porta mauris ornare pretium eu tortor.
             Facilisis cras cras egestas turpis turpis quis nibh. Ultramcorper vitae id posuere senectus
             facilisis. Facilisis elementum potenti mattis orci id tincidunt dui. Eget volutpat aenean non

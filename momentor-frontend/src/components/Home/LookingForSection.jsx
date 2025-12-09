@@ -10,7 +10,7 @@ export default function LookingForSection() {
           What You Looking For?
         </h2>
 
-        <p className="text-gray-600 text-[15px] mt-4 leading-[1.7]">
+        <p className="text-gray-600 text-[15px] mt-4 text-justify tracking-normal leading-relaxed">
           Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing.
           Pulvinar sit aliquam ipsum rhoncus turpis pellentesque condimentum orci.
         </p>

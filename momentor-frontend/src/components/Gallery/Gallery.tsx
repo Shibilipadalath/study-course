@@ -60,7 +60,7 @@ export default function GallerySection() {
         <h2 className="text-[30px] md:text-[36px] font-semibold text-[#070606]">
           Explore Our Gallery
         </h2>
-        <p className="text-gray-600 text-[13px] md:text-[14px] mt-3 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-gray-600 text-[13px] md:text-[14px] mt-3 max-w-3xl mx-auto text-justify tracking-normal leading-relaxed">
           Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing. Pulvinar quis justo
           nunc turpis penatibus vestibulum condimentum orci. Cras tristique cras amet etiam quam
           purus morbi. Id ipsum sed placerat phasellus a est adipiscing cras. Commodo.
