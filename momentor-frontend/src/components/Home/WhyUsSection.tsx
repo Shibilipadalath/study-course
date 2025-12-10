@@ -9,37 +9,40 @@ export default function WhyUsSection() {
       <div className="container mx-auto px-6 lg:px-24 flex flex-col md:flex-row items-center gap-16">
 
         {/* LEFT VISUAL BLOCK */}
-        <div className="relative flex-1 flex justify-start -ml-4">
-          {/*            ↑ move image a bit left */}
+<div className="relative flex-1 flex justify-start -ml-4">
 
-          {/* BACKGROUND CIRCLE */}
-          <div className="absolute w-[480px] h-[480px] bg-[#FDEEE8] rounded-full opacity-70 -z-10 left-0"></div>
+  {/* BACKGROUND CIRCLE – hide on mobile */}
+  <div className="hidden md:block absolute w-[480px] h-[480px] bg-[#FDEEE8] rounded-full opacity-70 -z-10 left-0"></div>
 
-          {/* Outline Circles */}
-          <div className="absolute -z-10 left-0">
-            <svg width="500" height="500">
-              <circle cx="250" cy="250" r="200" stroke="#CF694350" strokeWidth="1.2" fill="none" />
-              <circle cx="250" cy="250" r="160" stroke="#CF694350" strokeWidth="1.2" fill="none" />
-              <circle cx="250" cy="250" r="120" stroke="#CF694350" strokeWidth="1.2" fill="none" />
-            </svg>
-          </div>
+  {/* Outline Circles – hide on mobile */}
+  <div className="hidden md:block absolute -z-10 left-0">
+    <svg width="500" height="500">
+      <circle cx="250" cy="250" r="200" stroke="#CF694350" strokeWidth="1.2" fill="none" />
+      <circle cx="250" cy="250" r="160" stroke="#CF694350" strokeWidth="1.2" fill="none" />
+      <circle cx="250" cy="250" r="120" stroke="#CF694350" strokeWidth="1.2" fill="none" />
+    </svg>
+  </div>
 
-          {/* IMAGE */}
-          <Image
-            src="/images/student2.png"
-            alt="Student"
-            width={500}
-            height={700}
-            className="relative z-20 
-                      object-contain
-                      drop-shadow-lg
-                      w-[520px] h-auto
-                      md:w-[580px]
-                      lg:w-[630px]"
-            priority
-          />
+  {/* IMAGE */}
+  <Image
+    src="/images/student2.png"
+    alt="Student"
+    width={500}
+    height={700}
+    className="
+      relative z-20
+      object-contain
+      drop-shadow-lg
+      w-[350px]
+      sm:w-[420px]
+      md:w-[580px]
+      lg:w-[630px]
+      mx-auto md:mx-0
+    "
+    priority
+  />
+</div>
 
-        </div>
 
         {/* RIGHT TEXT CONTENT */}
         <div className="flex-1">
