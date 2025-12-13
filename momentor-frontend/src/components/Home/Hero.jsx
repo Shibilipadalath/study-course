@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="hero-blobs pt-32 pb-24 bg-[#FFEFEA] relative overflow-hidden">
+    <section className="hero-blobs min-h-[100dvh] pt-20 md:pt-32 pb-12 md:pb-24 bg-[#FFEFEA] relative overflow-hidden flex items-center">
 
       {/* Floating Light Background Glow */}
       <div className="absolute left-20 top-10 w-72 h-72 bg-[#CF6943]/15 rounded-full blur-[100px] animate-pulse" />
       <div className="absolute right-32 bottom-16 w-96 h-96 bg-[#CF6943]/10 rounded-full blur-[120px]" />
 
-      <div className="relative z-10 container mx-auto flex flex-col md:flex-row items-center gap-14 px-6 md:px-10 lg:px-24">
+      <div className="relative z-10 container mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-14 px-6 md:px-10 lg:px-24 w-full">
 
         {/* -------- LEFT CONTENT -------- */}
         <motion.div
@@ -24,7 +24,7 @@ export default function Hero() {
         >
           {/* Heading */}
           <h1 className="font-semibold text-[#070606] leading-[1.15] tracking-tight">
-            <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-semibold whitespace-nowrap">
+            <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-semibold md:whitespace-nowrap">
               Transform Your Future
             </span>
             <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-semibold text-[#CF6943]">
@@ -46,11 +46,11 @@ export default function Hero() {
             viewport={{ once: true }}
             className="flex gap-5"
           >
-            <button className="flex items-center gap-2 bg-[#CF6943] text-white px-10 py-3 rounded-lg text-base font-medium shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:brightness-110 transition">
+            <button className="flex items-center gap-2 bg-[#CF6943] text-white px-6 md:px-10 py-3 rounded-lg text-sm md:text-base font-medium shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:brightness-110 transition">
               Admission <ArrowRight className="w-4 h-4" />
             </button>
 
-            <button className="border border-[#CF6943] text-[#CF6943] px-10 py-3 rounded-lg text-base font-medium hover:bg-[#FDEEE8] transition">
+            <button className="border border-[#CF6943] text-[#CF6943] px-6 md:px-10 py-3 rounded-lg text-sm md:text-base font-medium hover:bg-[#FDEEE8] transition">
               Get Free Trial
             </button>
           </motion.div>
@@ -70,7 +70,7 @@ export default function Hero() {
             width={600}
             height={550}
             priority
-            className="object-contain drop-shadow-xl mask-gradient"
+            className="object-contain drop-shadow-xl mask-gradient w-full max-w-[400px] md:max-w-none"
           />
         </motion.div>
       </div>
