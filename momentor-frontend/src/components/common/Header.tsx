@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import { FiPhoneCall } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -22,27 +23,30 @@ export default function Header() {
 
   // Detect scroll
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300 
+      className={`w-full fixed top-0 left-0 z-50 transition-all duration-300
       ${isScrolled ? "bg-white/80 backdrop-blur-xl shadow-md" : "bg-transparent"}`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-10">
 
-        {/* ---- LOGO ---- */}
+        {/* ---------- LOGO ---------- */}
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/images/logo.png" alt="logo" width={160} height={80} priority />
+          <Image
+            src="/images/logo.png"
+            alt="logo"
+            width={160}
+            height={80}
+            priority
+          />
         </Link>
 
-        {/* ---- DESKTOP NAV ---- */}
+        {/* ---------- DESKTOP NAV ---------- */}
         <nav className="hidden md:flex items-center gap-10">
           {menu.map((item) => (
             <Link
@@ -59,21 +63,27 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* ---- DESKTOP LOGIN BUTTON ---- */}
-        <Link
-          href="/login"
-          className="hidden md:flex items-center justify-center text-white rounded-lg font-medium transition shadow-md bg-[#CF6943] hover:bg-[#b95c3b] w-[150px] h-[45px]"
+        {/* ---------- CALL ICON (DESKTOP) ---------- */}
+        <a
+          href="tel:+9198898898000"
+          className="hidden md:flex items-center justify-center
+          w-11 h-11 rounded-full bg-[#CF6943] text-white
+          hover:bg-[#b95c3b] transition shadow-md"
+          aria-label="Call us"
         >
-          Login
-        </Link>
+          <FiPhoneCall size={20} />
+        </a>
 
-        {/* ---- MOBILE MENU BUTTON ---- */}
-        <button className="md:hidden text-3xl" onClick={() => setOpen(!open)}>
+        {/* ---------- MOBILE MENU BUTTON ---------- */}
+        <button
+          className="md:hidden text-3xl text-[#070606]"
+          onClick={() => setOpen(!open)}
+        >
           {open ? <HiX /> : <HiMenu />}
         </button>
       </div>
 
-      {/* ---- MOBILE NAV ---- */}
+      {/* ---------- MOBILE NAV ---------- */}
       {open && (
         <div className="md:hidden bg-white/95 backdrop-blur-xl shadow-md py-4 flex flex-col gap-4 px-6">
           {menu.map((item) => (
@@ -91,13 +101,17 @@ export default function Header() {
             </Link>
           ))}
 
-          <Link
-            href="/login"
+          {/* Mobile Call Button */}
+          <a
+            href="tel:+9198898898000"
             onClick={() => setOpen(false)}
-            className="w-full flex items-center justify-center text-white rounded-lg font-medium transition bg-[#CF6943] hover:bg-[#b95c3b] h-[45px]"
+            className="mt-2 flex items-center justify-center gap-2
+            bg-[#CF6943] text-white rounded-lg h-[45px] font-medium
+            hover:bg-[#b95c3b] transition"
           >
-            Login
-          </Link>
+            <FiPhoneCall size={18} />
+            Call Us
+          </a>
         </div>
       )}
     </header>
