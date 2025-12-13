@@ -86,7 +86,7 @@ export default function MissionVisionSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="w-full order-2 md:order-1 md:pr-4"
+            className="w-full order-2 md:order-1 md:pl-8 md:pr-4"
           >
             <h3 className="text-[26px] font-semibold text-[#070606]">
               Our Vision
