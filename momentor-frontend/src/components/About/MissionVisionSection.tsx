@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 
 export default function MissionVisionSection() {
   return (
-    <section className="w-full pb-28 pt-12 bg-white">
-      <div className="container mx-auto px-6 lg:px-24 space-y-32">
+    <section className="w-full pb-16 md:pb-28 pt-12 bg-white">
+      <div className="container mx-auto px-6 md:px-10 lg:px-24 space-y-16 md:space-y-32">
         {/* ==================== MISSION ==================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Image Group */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -24,17 +24,17 @@ export default function MissionVisionSection() {
               width={600}
               height={600}
               alt="Mission"
-              className="rounded-2xl object-cover w-[540px] h-[440px]"
+              className="rounded-2xl object-cover w-full max-w-[540px] h-auto aspect-540/440"
             />
 
             {/* Small Overlay Image */}
-            <div className="absolute bottom-[-35px] right-[-35px] border-8 border-white rounded-2xl">
+            <div className="absolute -bottom-5 md:bottom-[-35px] -right-2.5 md:right-[-35px] border-4 md:border-8 border-white rounded-2xl hidden sm:block">
               <Image
                 src="/images/about1.png"
                 width={200}
                 height={200}
                 alt="overlay"
-                className="rounded-xl object-cover w-[180px] h-40"
+                className="rounded-xl object-cover w-[120px] md:w-[180px] h-20 md:h-40"
               />
             </div>
           </motion.div>
@@ -45,7 +45,7 @@ export default function MissionVisionSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="pl-4"
+            className="w-full md:pl-4"
           >
             <h3 className="text-[26px] font-semibold text-[#070606]">
               Our Mission
@@ -79,14 +79,14 @@ export default function MissionVisionSection() {
         </div>
 
         {/* ==================== VISION ==================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Vision Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="order-2 md:order-1 pr-4"
+            className="w-full order-2 md:order-1 md:pr-4"
           >
             <h3 className="text-[26px] font-semibold text-[#070606]">
               Our Vision
@@ -132,17 +132,17 @@ export default function MissionVisionSection() {
               width={600}
               height={600}
               alt="Vision"
-              className="rounded-2xl object-cover w-[540px] h-[440px]"
+              className="rounded-2xl object-cover w-full max-w-[540px] h-auto aspect-540/440"
             />
 
             {/* Small Overlay Image (top left) */}
-            <div className="absolute top-[-35px] left-[-35px] border-8 border-white rounded-2xl">
+            <div className="absolute -top-5 md:top-[-35px] -left-2.5 md:left-[-35px] border-4 md:border-8 border-white rounded-2xl hidden sm:block">
               <Image
                 src="/images/about1.png"
                 width={200}
                 height={200}
                 alt="overlay"
-                className="rounded-xl object-cover w-[180px] h-40"
+                className="rounded-xl object-cover w-[120px] md:w-[180px] h-20 md:h-40"
               />
             </div>
           </motion.div>

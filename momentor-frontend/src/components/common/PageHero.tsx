@@ -7,7 +7,7 @@ interface PageHeroProps {
 
 export default function PageHero({ title, breadcrumb }: PageHeroProps) {
   return (
-    <section className="relative w-full py-32 md:py-40 overflow-hidden">
+    <section className="relative w-full py-20 md:py-32 lg:py-40 overflow-hidden">
 
       {/* Background Base */}
       <div className="absolute inset-0 bg-[#FFEFEA]" />
@@ -19,7 +19,7 @@ export default function PageHero({ title, breadcrumb }: PageHeroProps) {
       <div className="absolute -right-20 -bottom-20 w-[400px] h-[400px] bg-white rounded-full blur-[200px] opacity-80" />
 
       {/* CONTENT */}
-      <div className="relative z-12 text-center">
+      <div className="relative z-12 container mx-auto px-6 text-center">
         <h1 className="text-3xl md:text-5xl font-semibold text-[#070606]">
           {title}
         </h1>

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="hero-blobs min-h-[100dvh] pt-20 md:pt-32 pb-12 md:pb-24 bg-[#FFEFEA] relative overflow-hidden flex items-center">
+    <section className="hero-blobs min-h-dvh pt-20 md:pt-32 pb-12 md:pb-24 bg-[#FFEFEA] relative overflow-hidden flex items-center">
 
       {/* Floating Light Background Glow */}
       <div className="absolute left-20 top-10 w-72 h-72 bg-[#CF6943]/15 rounded-full blur-[100px] animate-pulse" />

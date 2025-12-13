@@ -13,8 +13,8 @@ const benefits = [
 
 export default function OurBenefitsSection() {
   return (
-    <section className="w-full pb-24 bg-white">
-      <div className="container mx-auto px-6 lg:px-24 text-center">
+    <section className="w-full pb-16 md:pb-24 bg-white">
+      <div className="container mx-auto px-6 md:px-10 lg:px-24 text-center">
         
         {/* Title */}
         <h2 className="text-[32px] md:text-[38px] font-semibold text-[#070606]">Our Benefits</h2>
