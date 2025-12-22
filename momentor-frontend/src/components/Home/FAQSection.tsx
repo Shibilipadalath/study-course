@@ -6,30 +6,37 @@ import { IoAdd, IoRemove } from "react-icons/io5";
 
 const faqs = [
   {
-    q: "How do I get started with your product?",
-    a: "Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing. Pulvinar sit aliquam ipsum rhoncus turpis pretium eu vestibulum condimentum orci.",
+    q: "What is Momentor?",
+    a: "Momentor is India's first education journalism and future-skills mentorship platform designed to guide students through real career awareness, industry readiness, and global opportunities."
   },
   {
-    q: "What payment methods do you accept?",
-    a: "We accept debit cards, credit cards, PayPal, and international payments.",
+    q: "Who is Momentor for?",
+    a: "Momentor is designed for youth aged 16–30 who want clarity, direction, employability skills, and exposure to real global career possibilities."
   },
   {
-    q: "Is there a free trial available?",
-    a: "Yes, we offer a 14-day trial with full access to all features.",
+    q: "What makes Momentor different?",
+    a: "Momentor blends education journalism, future-skills training, mentorship, and global internships — helping students understand careers, build skills, and access real-world opportunities."
   },
   {
-    q: "Is technical support available?",
-    a: "Yes, we provide 24/7 customer support via chat, email, and helpdesk.",
+    q: "What future skills training do you provide?",
+    a: "Our programs include communication, etiquette, digital & AI literacy, leadership, sales, business development, workplace behaviour, and mindset development — all built with industry needs in mind."
   },
   {
-    q: "Can I cancel my subscription?",
-    a: "Yes, you can cancel anytime from your dashboard settings.",
+    q: "Do you offer global internship programs?",
+    a: "Yes. Our flagship program offers industry readiness + hospitality internships in Dubai and Vietnam, with more global pathways being added."
   },
   {
-    q: "Is my data secure with your product?",
-    a: "We use industry-standard encryption and GDPR-compliant security systems.",
+    q: "Why education journalism?",
+    a: "Because students fail not due to lack of talent, but due to lack of awareness. Our journalism exposes career truths, industry realities, global trends, and opportunities the education system doesn’t reveal."
   },
+  {
+    q: "How do I join Momentor?",
+    a: "Students can apply for mentorship, skills programs, and global internships by filling out the application form on our platform. A mentor will guide the next steps."
+  }
 ];
+
+
+
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -71,10 +78,12 @@ export default function FAQSection() {
 
             {/* DESCRIPTION */}
             <p className="mt-6 text-[16px] text-gray-700 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing.
-              Pulvinar sit aliquam ipsum rhoncus turpis pellentesque vestibulum
-              condimentum orci.
+              Find answers to the most common questions about Momentor — our mentorship, 
+              education journalism, future-skills training, and global internship programs. 
+              If you’re exploring your career direction or planning your next step, this 
+              section will help you understand how Momentor can guide your future.
             </p>
+
           </div>
         </div>
 

@@ -7,29 +7,48 @@ export default function WhyUsSection() {
   return (
     <section className="py-20 bg-[#F4F4F4]">
       <div className="container mx-auto px-6 lg:px-24 flex flex-col md:flex-row items-center gap-16">
-
         {/* LEFT VISUAL BLOCK */}
-<div className="relative flex-1 flex justify-start -ml-4">
+        <div className="relative flex-1 flex justify-start -ml-4">
+          {/* BACKGROUND CIRCLE – hide on mobile */}
+          <div className="hidden md:block absolute w-[480px] h-[480px] bg-[#FDEEE8] rounded-full opacity-70 -z-10 left-0"></div>
 
-  {/* BACKGROUND CIRCLE – hide on mobile */}
-  <div className="hidden md:block absolute w-[480px] h-[480px] bg-[#FDEEE8] rounded-full opacity-70 -z-10 left-0"></div>
+          {/* Outline Circles – hide on mobile */}
+          <div className="hidden md:block absolute -z-10 left-0">
+            <svg width="500" height="500">
+              <circle
+                cx="250"
+                cy="250"
+                r="200"
+                stroke="#CF694350"
+                strokeWidth="1.2"
+                fill="none"
+              />
+              <circle
+                cx="250"
+                cy="250"
+                r="160"
+                stroke="#CF694350"
+                strokeWidth="1.2"
+                fill="none"
+              />
+              <circle
+                cx="250"
+                cy="250"
+                r="120"
+                stroke="#CF694350"
+                strokeWidth="1.2"
+                fill="none"
+              />
+            </svg>
+          </div>
 
-  {/* Outline Circles – hide on mobile */}
-  <div className="hidden md:block absolute -z-10 left-0">
-    <svg width="500" height="500">
-      <circle cx="250" cy="250" r="200" stroke="#CF694350" strokeWidth="1.2" fill="none" />
-      <circle cx="250" cy="250" r="160" stroke="#CF694350" strokeWidth="1.2" fill="none" />
-      <circle cx="250" cy="250" r="120" stroke="#CF694350" strokeWidth="1.2" fill="none" />
-    </svg>
-  </div>
-
-  {/* IMAGE */}
-  <Image
-    src="/images/student2.png"
-    alt="Student"
-    width={500}
-    height={700}
-    className="
+          {/* IMAGE */}
+          <Image
+            src="/images/student2.png"
+            alt="Student"
+            width={500}
+            height={700}
+            className="
       relative z-20
       object-contain
       drop-shadow-lg
@@ -39,16 +58,14 @@ export default function WhyUsSection() {
       lg:w-[630px]
       mx-auto md:mx-0
     "
-    priority
-  />
-</div>
-
+            priority
+          />
+        </div>
 
         {/* RIGHT TEXT CONTENT */}
         <div className="flex-1">
-
           <span className="bg-[#CF6943] text-white text-xs px-4 py-1 rounded-full">
-            Why us
+            Why Momentor
           </span>
 
           <h2 className="text-[36px] font-semibold text-[#070606] mt-4 leading-tight max-w-2xl">
@@ -57,10 +74,14 @@ export default function WhyUsSection() {
 
           {/* ✅ Wider text block */}
           <p className="text-gray-600 text-[16px] mt-5 max-w-2xl text-justify tracking-tight leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur. Vitae et id aliquet risus ut odio.
-            Consectetur velit mattis morbi imperdiet. Tellus a ut faucibus id ultrices.
-            Amet nulla magna libero at maecenas accumsan diam. Laoreet ut convallis
-            placerat adipiscing sed. Mauris amet ut integer sem a eget nibh sed nullam.
+            We offer an industry-driven curriculum shaped by real workforce
+            needs, supported by expert mentorship that guides, motivates, and
+            transforms learners. Our programs open doors to real opportunities
+            including internships, international exposure, and career pathways
+            while preparing students for the future with AI-era skills and
+            communication excellence. Designed especially for young adults, our
+            approach is flexible, practical, and hands-on—empowering learners to
+            build confidence, capability, and long-term success.
           </p>
 
           <button className="mt-8 flex items-center gap-2 bg-[#CF6943] text-white px-10 py-3 rounded-lg shadow hover:bg-[#B85A39] transition font-medium">

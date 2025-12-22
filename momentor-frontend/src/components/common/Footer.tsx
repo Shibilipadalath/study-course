@@ -14,10 +14,10 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Image src="/images/logo.png" alt="Momentor Logo" width={140} height={50} className="object-contain" />
 
-            <p className="mt-4 text-sm leading-6 text-[#4A4A4A] max-w-xs">
-              Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing. 
-              Pulvinar sit aliquam ipsum rhoncus turpis.
+            <p className="mt-4 text-sm leading-6 text-[#4A4A4A] max-w-xs text-justify">
+              Momentor is India’s first education journalism + future-skills mentorship platform guiding youth with clarity, skills, and global career opportunities.
             </p>
+
 
             <p className="mt-6 font-semibold text-[#222222] text-[15px]">Social Media</p>
 
@@ -36,11 +36,12 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold text-[#222222] mb-4 text-[15px]">Company</h3>
               <ul className="space-y-2 text-sm text-[#4A4A4A]">
-                <li>About us</li>
-                <li>Careers</li>
-                <li>Press</li>
-                <li>News</li>
+                <li>About Momentor</li>
+                <li>Founder Story</li>
+                <li>Our Mission</li>
+                <li>What We Do</li>
               </ul>
+
             </div>
 
             {/* Social */}
@@ -71,22 +72,23 @@ export default function Footer() {
             <h3 className="font-semibold text-[#222222] mb-4 text-[15px]">Contact Us</h3>
 
             <p className="text-sm text-[#4A4A4A] leading-5 mb-5">
-              Join us on this journey of discovery <br /> as we explore the latest trends.
+              Have questions? We’re here to guide you. Reach out to our team anytime.
             </p>
+
 
             <ul className="space-y-4 text-sm text-[#4A4A4A]">
               <li className="flex items-center gap-3">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FAD7CA] text-[#CF6943]">
                   <IoCall size={15} />
                 </span>
-                +91 852 876 39200
+                +91 98765 43210
               </li>
 
               <li className="flex items-center gap-3">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FAD7CA] text-[#CF6943]">
                   <IoMail size={15} />
                 </span>
-                example@gmail.com
+                hello@momentor.in
               </li>
 
               <li className="flex items-start gap-3">

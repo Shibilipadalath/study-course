@@ -25,17 +25,16 @@ export default function Hero() {
           {/* Heading */}
           <h1 className="font-semibold text-[#070606] leading-[1.15] tracking-tight">
             <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-semibold md:whitespace-nowrap">
-              Transform Your Future
+              Where Guidance Meets 
             </span>
             <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-semibold text-[#CF6943]">
-              With Knowledge
+              The Future
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-[#070606] text-lg max-w-lg leading-relaxed">
-            We provide accessible and effective education designed to help
-            learners grow with confidence.
+            India’s Most Relevant Career Mentorship Platform + Next-Gen Future Skills Career Academy
           </p>
 
           {/* Buttons */}

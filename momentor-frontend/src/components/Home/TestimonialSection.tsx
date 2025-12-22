@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 export default function TestimonialSection() {
   return (
     <section className="py-12 bg-[#F4F4F4] relative overflow-hidden">
-
       {/* Background Circular Pattern */}
       <svg
         className="absolute right-0 top-10 opacity-30 -z-10 hidden md:block"
@@ -14,17 +13,44 @@ export default function TestimonialSection() {
         height="550"
         viewBox="0 0 600 600"
       >
-        <circle cx="300" cy="300" r="260" stroke="#CF694345" strokeWidth="1" fill="none" />
-        <circle cx="300" cy="300" r="210" stroke="#CF694345" strokeWidth="1" fill="none" />
-        <circle cx="300" cy="300" r="160" stroke="#CF694345" strokeWidth="1" fill="none" />
-        <circle cx="300" cy="300" r="110" stroke="#CF694345" strokeWidth="1" fill="none" />
+        <circle
+          cx="300"
+          cy="300"
+          r="260"
+          stroke="#CF694345"
+          strokeWidth="1"
+          fill="none"
+        />
+        <circle
+          cx="300"
+          cy="300"
+          r="210"
+          stroke="#CF694345"
+          strokeWidth="1"
+          fill="none"
+        />
+        <circle
+          cx="300"
+          cy="300"
+          r="160"
+          stroke="#CF694345"
+          strokeWidth="1"
+          fill="none"
+        />
+        <circle
+          cx="300"
+          cy="300"
+          r="110"
+          stroke="#CF694345"
+          strokeWidth="1"
+          fill="none"
+        />
       </svg>
 
       {/* Decorative Orange Dot */}
       <div className="absolute left-16 md:left-32 top-32 w-12 h-12 bg-[#CF6943] rounded-full opacity-90 -z-10" />
 
       <div className="container mx-auto px-6 lg:px-24 text-center relative z-10">
-
         {/* Small Tag */}
         <motion.span
           initial={{ opacity: 0, y: -10 }}
@@ -69,15 +95,16 @@ export default function TestimonialSection() {
           </h3>
 
           <p className="text-[15px] text-gray-600 text-justify tracking-tight leading-relaxed">
-            Lorem ipsum dolor sit amet consectetur. Dolor ipsum vel porta mauris ornare pretium eu tortor.
-            Facilisis cras cras egestas turpis turpis quis nibh. Ultramcorper vitae id posuere senectus
-            facilisis. Facilisis elementum potenti mattis orci id tincidunt dui. Eget volutpat aenean non
-            blandit dictum purus tempor. Nibh malesuada eget consectetur pellentesque a neque pellentesque
-            placerat. Neque venenatis odio integer nisi ipsum mauris ac. Nec leo suscipit commodo habitasse
-            fusce enim diam odio tellus. Tristique pretium gravida adipiscing nisi turpis dui volutpat quis. 
-            Non maecenas tellus euismod quis semper diam ultrices gravida. Fames bibendum cursus sagittis sed 
-            volutpat. Maecenas ut varius sapien amet elit. Netus vestibulum a porttitor consequat. 
-            Non vitae in aenean mattis ipsum. A vel vel libero bibendum a donec id ultrices.
+            Youth today need more than education — they need direction,
+            real-world skills, and opportunities. Our curriculum is built with
+            industry experts to match workforce demands, supported by mentorship
+            that guides students through growth, clarity, and transformation. We
+            open doors to internships, global exposure, and genuine career
+            pathways, preparing learners for future work through AI-era
+            readiness, communication mastery, and international etiquette.
+            Designed specifically for young adults, our approach is flexible,
+            practical, and deeply hands-on, helping them build confidence,
+            capability, and momentum for the future.
           </p>
 
           {/* Profile */}
@@ -94,7 +121,6 @@ export default function TestimonialSection() {
             </p>
           </div>
         </motion.div>
-
       </div>
     </section>
   );
