@@ -52,22 +52,21 @@ export default function MissionVisionSection() {
             </h3>
 
             <p className="text-gray-600 text-[15px] mt-4 max-w-md text-justify tracking-normal leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Mi platea orci sed tortor
-              porttitor eu vivamus. Gravida arcu suscipit elit cursus volutpat
-              sem. Eget purus auctor aliquet a volutpat cras at enim. In enim
-              amet ullamcorper commodo ac lobortis tellus. Arcu vel nunc
-              adipiscing massa facilisi commodo a laoreet dignissim. Imperdiet
-              dis at pharetra sit pellentesque gravida rhoncus. Ipsum cras
-              pharetra cursus mi. Sodales pharetra molestie vestibulum aliquam
-              mi habitasse lectus eget ut.
+              Our mission is to empower youth with clarity, mindset, and
+              future-ready skills — by exposing the truth about careers,
+              building real awareness, and opening global opportunities that
+              transform confidence, employability, and purpose. We exist to fix
+              the core problem students face today: lack of direction, lack of
+              exposure, and lack of understanding about how the world of work is
+              changing.
             </p>
 
             <ul className="mt-6 space-y-4">
               {[
-                "Lorem ipsum dolor sit amet consectetur. Mi pharetra sed tortor",
-                "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-                "Lorem ipsum dolor sit amet lorem pellentesque",
-                "Lorem ipsum dolor sit amet consectetur adipiscing",
+                "Provide clarity and direction by telling the truth about careers and industries.",
+                "Equip youth with future skills that make them confident and employable.",
+                "Create pathways for global exposure, mentorship, and real opportunities.",
+                "Build a movement that transforms the way young people learn, think, and grow.",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2">
                   <IoCheckmarkCircle className="text-[#27C052] text-[22px]" />
@@ -93,22 +92,19 @@ export default function MissionVisionSection() {
             </h3>
 
             <p className="text-gray-600 text-[15px] mt-4 max-w-md text-justify tracking-normal leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Mi platea orci sed tortor
-              porttitor eu vivamus. Gravida arcu suscipit elit cursus volutpat
-              sem. Eget purus auctor aliquet a volutpat cras at enim. In enim
-              amet ullamcorper commodo ac lobortis tellus. Arcu vel nunc
-              adipiscing massa facilisi commodo a laoreet dignissim. Imperdiet
-              dis at pharetra sit pellentesque gravida rhoncus. Ipsum cras
-              pharetra cursus mi. Sodales pharetra molestie vestibulum aliquam
-              mi habitasse lectus eget ut.
+              Our vision is to build a generation that is confident,
+              aspirational, globally competitive, and deeply aware of their
+              career possibilities. We aim to reshape the education-to-career
+              journey in India — so that every young person knows who they are,
+              what they want, and how to succeed in the world of tomorrow.
             </p>
 
             <ul className="mt-6 space-y-4">
               {[
-                "Lorem ipsum dolor sit amet consectetur. Mi pharetra sed tortor",
-                "Lorem ipsum dolor sit amet consectetur adipiscing elit",
-                "Lorem ipsum dolor sit amet lorem pellentesque",
-                "Lorem ipsum dolor sit amet consectetur adipiscing",
+                "Create an India where youth discover careers through awareness — not guesswork.",
+                "Redefine employability with mindset, skill, exposure, and real-world readiness.",
+                "Build the world’s most trusted education journalism and future-skills platform.",
+                "Unlock access to global internships, industries, mentors, and opportunities.",
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-2">
                   <IoCheckmarkCircle className="text-[#27C052] text-[22px]" />
