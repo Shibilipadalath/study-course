@@ -26,7 +26,7 @@ export default function GallerySection() {
           const categoriesData = await categoriesRes.json();
           const fetchedCategories = categoriesData.categories || [];
           setCategories(fetchedCategories);
-          
+
           // Set first category as active if categories exist
           if (fetchedCategories.length > 0) {
             setActiveCategoryId(fetchedCategories[0].id);
@@ -55,15 +55,16 @@ export default function GallerySection() {
   return (
     <section className="w-full py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
-
         {/* Heading */}
         <h2 className="text-[30px] md:text-[36px] font-semibold text-[#070606]">
           Explore Our Gallery
         </h2>
-        <p className="text-gray-600 text-[13px] md:text-[14px] mt-3 max-w-3xl mx-auto text-justify tracking-normal leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing. Pulvinar quis justo
-          nunc turpis penatibus vestibulum condimentum orci. Cras tristique cras amet etiam quam
-          purus morbi. Id ipsum sed placerat phasellus a est adipiscing cras. Commodo.
+
+        <p className="text-gray-600 text-[13px] md:text-[14px] mt-3 max-w-3xl mx-auto text-center tracking-normal leading-relaxed">
+          A glimpse into our world — youth learning, growing, building skills,
+          gaining confidence, and experiencing life beyond classrooms. Explore
+          moments from workshops, internships, events, travels, and real student
+          journeys that define the spirit of Momentor.
         </p>
 
         {/* Tabs */}
@@ -96,14 +97,21 @@ export default function GallerySection() {
           </div>
         ) : filteredGalleries.length === 0 ? (
           <div className="mt-10 text-center">
-            <p className="text-gray-600">No images available in this category</p>
+            <p className="text-gray-600">
+              No images available in this category
+            </p>
           </div>
         ) : (
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredGalleries.map((gallery) => {
-              const isValidUrl = gallery.image && typeof gallery.image === "string" && gallery.image.trim() !== "" && 
-                (gallery.image.startsWith("http://") || gallery.image.startsWith("https://") || gallery.image.startsWith("/"));
-              
+              const isValidUrl =
+                gallery.image &&
+                typeof gallery.image === "string" &&
+                gallery.image.trim() !== "" &&
+                (gallery.image.startsWith("http://") ||
+                  gallery.image.startsWith("https://") ||
+                  gallery.image.startsWith("/"));
+
               return (
                 <motion.div
                   key={gallery.id}
@@ -128,7 +136,6 @@ export default function GallerySection() {
             })}
           </div>
         )}
-
       </div>
     </section>
   );

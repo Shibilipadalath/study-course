@@ -8,7 +8,6 @@ import Link from "next/link";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
-
 export default function ServicesSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [services, setServices] = useState<Service[]>([]);
@@ -43,11 +42,14 @@ export default function ServicesSection() {
       <div className="container mx-auto px-6 lg:px-24 text-center">
         {/* ---------- Heading ---------- */}
         <h2 className="text-[30px] md:text-[36px] font-semibold text-[#070606]">
-          See Our All Services
+          Explore Our Services
         </h2>
-        <p className="text-gray-600 text-[14px] md:text-[15px] mt-3 max-w-2xl mx-auto text-justify tracking-normal leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing.
-          Pulvinar sit aliquam ipsum rhoncus turpis pellentesque vestibulum luctus.
+
+        <p className="text-gray-600 text-[14px] md:text-[15px] mt-3 max-w-2xl mx-auto text-center tracking-normal leading-relaxed">
+          From future-skills training to mentorship, education journalism, and
+          global internship pathways — our services are designed to help
+          students gain clarity, confidence, and career direction for the world
+          of tomorrow.
         </p>
 
         {/* ---------- Grid ---------- */}
@@ -79,15 +81,15 @@ export default function ServicesSection() {
                       }
                     `}
                   >
-                  {/* Title */}
-                  <h3 className="text-[18px] font-semibold  mb-2">
-                    {service.title}
-                  </h3>
+                    {/* Title */}
+                    <h3 className="text-[18px] font-semibold  mb-2">
+                      {service.title}
+                    </h3>
 
-                  {/* Description - Limited to 4 lines */}
-                  {/* Description */}
-                  <p
-                    className={`
+                    {/* Description - Limited to 4 lines */}
+                    {/* Description */}
+                    <p
+                      className={`
                       text-justify tracking-normal leading-relaxed
                       text-[15px] transition
                       line-clamp-4
@@ -97,51 +99,46 @@ export default function ServicesSection() {
                           : "text-gray-700"
                       }
                     `}
-                  >
-                    {service.description}
-                  </p>
+                    >
+                      {service.description}
+                    </p>
 
-                  {/* View More */}
-                  <span
-                    className={`
+                    {/* View More */}
+                    <span
+                      className={`
                       mt-3 inline-flex items-center gap-1 text-[14px] font-medium
-                      ${
-                        hoveredCard === index
-                          ? "text-white"
-                          : "text-[#CF6943]"
-                      }
+                      ${hoveredCard === index ? "text-white" : "text-[#CF6943]"}
                     `}
-                  >
-                    View More →
-                  </span>
+                    >
+                      View More →
+                    </span>
 
-                  {/* Bullet List with Tick */}
-                  {service.points && service.points.length > 0 && (
-                    <ul className="mt-5 space-y-2 text-[14.5px] w-full text-left">
-                      {service.points.map((point, idx) => (
-                        <li key={idx} className="flex items-start gap-2">
-                          <CheckCircle
-                            size={16}
-                            className={`mt-0.5 transition ${
-                              hoveredCard === index
-                                ? "text-white"
-                                : "text-[#CF6943]"
-                            }`}
-                          />
-                          <span
-                            className={`leading-[1.6] ${
-                              hoveredCard === index
-                                ? "text-white"
-                                : "text-[#070606]"
-                            }`}
-                          >
-                            {point}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-
-                  )}
+                    {/* Bullet List with Tick */}
+                    {service.points && service.points.length > 0 && (
+                      <ul className="mt-5 space-y-2 text-[14.5px] w-full text-left">
+                        {service.points.map((point, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <CheckCircle
+                              size={16}
+                              className={`mt-0.5 transition ${
+                                hoveredCard === index
+                                  ? "text-white"
+                                  : "text-[#CF6943]"
+                              }`}
+                            />
+                            <span
+                              className={`leading-[1.6] ${
+                                hoveredCard === index
+                                  ? "text-white"
+                                  : "text-[#070606]"
+                              }`}
+                            >
+                              {point}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </motion.div>
                 </Link>
               );

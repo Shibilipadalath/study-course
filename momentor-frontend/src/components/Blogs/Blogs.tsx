@@ -6,8 +6,7 @@ import { ThumbsUp, MessageCircle, Share2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
 interface Blog {
   id: string | number;
@@ -103,12 +102,14 @@ export default function BlogsSection() {
     <section className="w-full py-20 bg-white">
       <div className="container mx-auto px-6 lg:px-24 text-center">
         <h2 className="text-[30px] md:text-[36px] font-semibold text-[#070606]">
-          Explore Our Blog & Articles
+          Explore Our Blogs & Stories
         </h2>
+
         <p className="text-gray-600 text-[14px] md:text-[15px] mt-3 max-w-2xl mx-auto leading-[1.6]">
-          Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat adipiscing.
-          Pulvinar sit aliquam ipsum rhoncus turpis pellentesque vestibulum
-          condimentum orci.
+          Discover ideas, insights, research, stories, and real conversations
+          about careers, skills, industries, mindsets, and the future of work.
+          Every article is written to bring clarity, awareness, and direction to
+          today’s youth.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-14 text-left">

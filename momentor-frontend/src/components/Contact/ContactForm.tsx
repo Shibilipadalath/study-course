@@ -15,9 +15,7 @@ export default function ContactSection() {
   return (
     <section className="w-full py-28 bg-white">
       <div className="container mx-auto px-6 lg:px-24">
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
-
           {/* ================= LEFT ================= */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -26,13 +24,13 @@ export default function ContactSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-[30px] md:text-[34px] font-semibold text-[#070606]">
-              Let’s Get in Touch
+              Let’s Build Your Future Together
             </h2>
 
             <p className="text-gray-600 text-[15px] mt-4 max-w-md text-justify tracking-normal leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Vel nisl mus erat
-              adipiscing. Pulvinar sit aliquam ipsum rhoncus turpis
-              pellentesque vestibulum condimentum.
+              Have questions? Looking for guidance, opportunities, or clarity?
+              We’re here to help. Reach out to our team and let’s explore the
+              right path forward — with mentorship, skills, and direction.
             </p>
 
             {/* Contact Info */}
@@ -61,9 +59,7 @@ export default function ContactSection() {
 
             {/* Social */}
             <div className="mt-12">
-              <h4 className="font-semibold text-[16px] mb-4">
-                Follow Us
-              </h4>
+              <h4 className="font-semibold text-[16px] mb-4">Follow Us</h4>
 
               <div className="bg-[#FDF0EB] rounded-xl px-6 py-4 flex gap-5 w-fit">
                 {[FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter].map(
@@ -87,7 +83,6 @@ export default function ContactSection() {
             className="bg-white border border-gray-200 shadow-xl rounded-2xl px-10 py-12"
           >
             <form className="space-y-7">
-
               {/* ROW 1 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
@@ -156,7 +151,6 @@ export default function ContactSection() {
               </button>
             </form>
           </motion.div>
-
         </div>
       </div>
     </section>
