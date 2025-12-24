@@ -40,7 +40,7 @@ export default function ServiceCard({ id, image, title, description }) {
         </h3>
 
         {/* Description Preview */}
-        <p className="text-[13px] text-[#7A7A7A] mt-2 px-3 line-clamp-3 leading-relaxed flex-grow">
+        <p className="text-[13px] text-[#7A7A7A] mt-2 px-3 line-clamp-3 leading-relaxed grow">
           {truncatedDescription}
         </p>
 
