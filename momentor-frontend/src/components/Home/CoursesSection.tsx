@@ -19,11 +19,11 @@ export default function CoursesSection() {
       title: "Lorem Ipsum",
       desc: "Lorem ipsum dolor sit amet consectetur. Granda facilisis enim non commodo.",
     },
-    {
-      image: "/images/course4.png",
-      title: "Lorem Ipsum",
-      desc: "Lorem ipsum dolor sit amet consectetur. Granda facilisis enim non commodo.",
-    },
+    // {
+    //   image: "/images/course4.png",
+    //   title: "Lorem Ipsum",
+    //   desc: "Lorem ipsum dolor sit amet consectetur. Granda facilisis enim non commodo.",
+    // },
   ];
 
   return (
@@ -48,9 +48,9 @@ export default function CoursesSection() {
         </div>
 
         {/* View button */}
-        <button className="mt-10 flex items-center justify-center gap-2 mx-auto bg-[#CF6943] text-white text-sm px-6 py-3 rounded-lg hover:bg-[#b85a39] transition font-medium">
+        {/* <button className="mt-10 flex items-center justify-center gap-2 mx-auto bg-[#CF6943] text-white text-sm px-6 py-3 rounded-lg hover:bg-[#b85a39] transition font-medium">
           View more →
-        </button>
+        </button> */}
       </div>
     </section>
   );

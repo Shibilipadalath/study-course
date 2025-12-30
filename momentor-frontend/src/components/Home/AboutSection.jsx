@@ -2,6 +2,7 @@
 
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
@@ -63,9 +64,22 @@ export default function AboutSection() {
         </p>
       </motion.div>
 
-
+{/* BUTTON */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-10"
+        >
+          <Link href="/about">
+            <button className="bg-[#CF6943] text-white px-8 py-3 rounded-lg text-sm font-medium hover:bg-[#b85a39] transition-all shadow-md">
+              Know More About Us
+            </button>
+          </Link>
+        </motion.div>
         {/* STATS */}
-        <div className="flex flex-col md:flex-row gap-16 justify-center mt-20">
+        {/* <div className="flex flex-col md:flex-row gap-16 justify-center mt-20">
           <div className="text-center">
             <p className=" text-[#CF6943] heading-text">
               <CountUp className="text-[42px] font-semibold" end={28000} duration={2.5} separator="," />+
@@ -86,7 +100,7 @@ export default function AboutSection() {
             </p>
             <p className="text-[#474747] mt-2">Online Courses</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

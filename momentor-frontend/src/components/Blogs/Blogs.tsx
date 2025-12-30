@@ -102,7 +102,8 @@ export default function BlogsSection() {
     <section className="w-full py-20 bg-white">
       <div className="container mx-auto px-6 lg:px-24 text-center">
         <h2 className="text-[30px] md:text-[36px] font-semibold text-[#070606]">
-          Explore Our Blogs & Stories
+          Education and journalism 
+          {/* Explore Our Blogs & Stories */}
         </h2>
 
         <p className="text-gray-600 text-[14px] md:text-[15px] mt-3 max-w-2xl mx-auto leading-[1.6]">
