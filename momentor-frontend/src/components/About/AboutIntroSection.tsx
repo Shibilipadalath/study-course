@@ -160,7 +160,7 @@ export default function AboutIntroSection() {
 
           {/* Text */}
           <div className="w-full md:flex-1 max-w-xl">
-            <h3 className="text-[28px] md:text-[32px] font-semibold text-white leading-tight">
+            <h3 className="text-[28px] md:text-[32px] font-semibold text-[#CF6943] leading-tight">
               Shaping Clarity. <br /> Building Skills
             </h3>
 

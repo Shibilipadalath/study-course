@@ -197,7 +197,7 @@ export default function MissionVisionSection() {
             viewport={{ once: true }}
             className="w-full md:pl-4"
           >
-            <h3 className="text-[26px] font-semibold text-white">
+            <h3  className="text-[32px] md:text-[38px] font-semibold text-[#CF6943]">
               Our Mission
             </h3>
 
@@ -238,7 +238,7 @@ export default function MissionVisionSection() {
             viewport={{ once: true }}
             className="w-full order-2 md:order-1 md:pl-8 md:pr-4"
           >
-            <h3 className="text-[26px] font-semibold text-white">
+            <h3  className="text-[32px] md:text-[38px] font-semibold text-[#CF6943]">
               Our Vision
             </h3>
 

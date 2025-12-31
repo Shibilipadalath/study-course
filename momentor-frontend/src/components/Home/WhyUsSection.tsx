@@ -151,6 +151,7 @@ export default function WhyUsSection() {
               relative z-20
               object-contain
               drop-shadow-lg
+              opacity-80
               w-[350px]
               sm:w-[420px]
               md:w-[580px]
