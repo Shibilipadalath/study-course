@@ -41,6 +41,7 @@ import PartnerSection from "../components/Home/PartnerSection";
 
 export default function Home() {
   return (
+    
     <>
       <Header />
       <Hero />

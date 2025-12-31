@@ -15,14 +15,15 @@ export default function ServiceCard({ id, image, title, description }) {
   return (
     <Link href={`/services/${id}`}>
       <div
-        className="bg-white rounded-xl p-2 transition-all hover:-translate-y-2 hover:shadow-xl cursor-pointer flex flex-col"
-        style={{
-          boxShadow: "0px 15px 29px rgba(0,0,0,0.15)",
-          width: "100%",
-          maxWidth: "392px",
-          minHeight: "420px",
-        }}
-      >
+  className="bg-[#FFF6F2] rounded-xl p-2 transition-all hover:-translate-y-2 hover:shadow-xl cursor-pointer flex flex-col"
+  style={{
+    boxShadow: "0px 15px 29px rgba(0,0,0,0.15)",
+    width: "100%",
+    maxWidth: "392px",
+    minHeight: "420px",
+  }}
+>
+
         {/* Service Image */}
         <div className="relative">
           <Image
