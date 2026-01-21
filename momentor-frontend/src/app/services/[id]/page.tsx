@@ -44,67 +44,68 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-    <Header />
-    <PageHero title="Service Details" breadcrumb={`Home / Services / ${service.title}`} />
+      <Header />
+      <PageHero title="Service Details" breadcrumb={`Home / Services / ${service.title}`} />
 
-    <div className="min-h-screen bg-white w-full">
-      <div className="container mx-auto px-6 lg:px-24 py-12">
-        {/* Service Content */}
-        <div className="max-w-5xl mx-auto">
-          {/* Header Section */}
-          <div className="mb-8">
-            <h1 className="text-[36px] md:text-[48px] font-bold text-[#070606] mb-4">
-              {service.title}
-            </h1>
-            {service.image && (
-              <div className="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden mb-6">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            )}
-          </div>
+      <div className="min-h-screen bg-white w-full">
+        <div className="container mx-auto px-6 lg:px-24 py-12">
+          {/* Service Content */}
+          <div className="max-w-5xl mx-auto">
+            {/* Header Section */}
+            <div className="mb-8">
+              <h1 className="text-[36px] md:text-[48px] font-bold text-[#070606] mb-4">
+                {service.title}
+              </h1>
+              {service.image && (
+                <div className="w-full h-auto rounded-xl overflow-hidden mb-6 bg-gray-50">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    width={1200}
+                    height={800}
+                    className="w-full h-auto object-contain rounded-xl"
+                    priority
+                  />
+                </div>
+              )}
+            </div>
 
-          {/* Description Section */}
-          <div className="mb-8">
-            <h2 className="text-[24px] font-semibold text-[#070606] mb-4">
-              Description
-            </h2>
-            <p className="text-[16px] text-gray-700 whitespace-pre-wrap text-justify tracking-normal leading-relaxed">
-              {service.description}
-            </p>
-          </div>
-
-          {/* Points Section */}
-          {service.points && service.points.length > 0 && (
+            {/* Description Section */}
             <div className="mb-8">
               <h2 className="text-[24px] font-semibold text-[#070606] mb-4">
-                Key Features
+                Description
               </h2>
-              <ul className="space-y-3">
-                {service.points.map((point, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <CheckCircle
-                      size={20}
-                      className="text-[#CF6943] mt-1 shrink-0"
-                    />
-                    <span className="text-[16px] leading-[1.6] text-gray-700">
-                      {point}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-[16px] text-gray-700 whitespace-pre-wrap text-justify tracking-normal leading-relaxed">
+                {service.description}
+              </p>
             </div>
-          )}
 
+            {/* Points Section */}
+            {service.points && service.points.length > 0 && (
+              <div className="mb-8">
+                <h2 className="text-[24px] font-semibold text-[#070606] mb-4">
+                  Key Features
+                </h2>
+                <ul className="space-y-3">
+                  {service.points.map((point, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle
+                        size={20}
+                        className="text-[#CF6943] mt-1 shrink-0"
+                      />
+                      <span className="text-[16px] leading-[1.6] text-gray-700">
+                        {point}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+          </div>
         </div>
       </div>
-    </div>
-    <Footer />
+      <Footer />
     </>
   );
 }

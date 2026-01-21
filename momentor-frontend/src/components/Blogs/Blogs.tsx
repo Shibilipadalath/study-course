@@ -226,8 +226,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ThumbsUp, MessageCircle, Share2 } from "lucide-react";
 import { useEffect, useState } from "react";
+
 import Link from "next/link";
 
 const API_BASE_URL =
@@ -338,8 +338,8 @@ export default function BlogsSection() {
             const text = isExpanded
               ? blog.description
               : blog.description.length > 180
-              ? `${blog.description.slice(0, 180)}...`
-              : blog.description;
+                ? `${blog.description.slice(0, 180)}...`
+                : blog.description;
 
             return (
               <motion.div
@@ -369,11 +369,7 @@ export default function BlogsSection() {
 
                   <div className="absolute bottom-0 left-0 right-0 bg-black/40 px-4 py-4 flex justify-between text-[13px] text-white items-center">
                     <p className="font-semibold text-[14px]">Blog</p>
-                    <div className="flex gap-4 text-gray-300">
-                      <ThumbsUp size={16} />
-                      <MessageCircle size={16} />
-                      <Share2 size={16} />
-                    </div>
+
                   </div>
                 </div>
 
