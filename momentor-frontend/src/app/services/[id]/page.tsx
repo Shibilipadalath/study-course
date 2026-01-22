@@ -47,17 +47,17 @@ export default async function ServiceDetailPage({
       <Header />
       <PageHero title="Service Details" breadcrumb={`Home / Services / ${service.title}`} />
 
-      <div className="min-h-screen bg-white w-full">
+      <div className="min-h-screen bg-black w-full">
         <div className="container mx-auto px-6 lg:px-24 py-12">
           {/* Service Content */}
           <div className="max-w-5xl mx-auto">
             {/* Header Section */}
             <div className="mb-8">
-              <h1 className="text-[36px] md:text-[48px] font-bold text-[#070606] mb-4">
+              <h1 className="text-[36px] md:text-[48px] font-bold text-white mb-4">
                 {service.title}
               </h1>
               {service.image && (
-                <div className="w-full h-auto rounded-xl overflow-hidden mb-6 bg-gray-50">
+                <div className="w-full h-auto rounded-xl overflow-hidden mb-6 bg-zinc-900">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -72,10 +72,10 @@ export default async function ServiceDetailPage({
 
             {/* Description Section */}
             <div className="mb-8">
-              <h2 className="text-[24px] font-semibold text-[#070606] mb-4">
+              <h2 className="text-[24px] font-semibold text-white mb-4">
                 Description
               </h2>
-              <p className="text-[16px] text-gray-700 whitespace-pre-wrap text-justify tracking-normal leading-relaxed">
+              <p className="text-[16px] text-gray-300 whitespace-pre-wrap text-justify tracking-normal leading-relaxed">
                 {service.description}
               </p>
             </div>
@@ -83,7 +83,7 @@ export default async function ServiceDetailPage({
             {/* Points Section */}
             {service.points && service.points.length > 0 && (
               <div className="mb-8">
-                <h2 className="text-[24px] font-semibold text-[#070606] mb-4">
+                <h2 className="text-[24px] font-semibold text-white mb-4">
                   Key Features
                 </h2>
                 <ul className="space-y-3">
@@ -93,7 +93,7 @@ export default async function ServiceDetailPage({
                         size={20}
                         className="text-[#CF6943] mt-1 shrink-0"
                       />
-                      <span className="text-[16px] leading-[1.6] text-gray-700">
+                      <span className="text-[16px] leading-[1.6] text-gray-300">
                         {point}
                       </span>
                     </li>

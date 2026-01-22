@@ -45,10 +45,10 @@ export default async function BlogDetailPage({
     <Header />
     <PageHero title="Blog Details" breadcrumb={`Home / Blogs / ${blog.title}`} />
 
-    <div className="min-h-screen bg-white w-full">
+    <div className="min-h-screen bg-black w-full">
         <div className="container mx-auto px-6 lg:px-24 py-12">
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-4xl font-bold mb-6">{blog.title}</h1>
+            <h1 className="text-4xl font-bold mb-6 text-white">{blog.title}</h1>
 
             {blog.image && (
               <div className="relative w-full h-[400px] mb-6 rounded-xl overflow-hidden">
@@ -65,7 +65,7 @@ export default async function BlogDetailPage({
               </div>
             )}
 
-            <p className="text-gray-700 whitespace-pre-wrap text-justify tracking-normal leading-relaxed">
+            <p className="text-gray-300 whitespace-pre-wrap text-justify tracking-normal leading-relaxed">
               {blog.description}
             </p>
           </div>
