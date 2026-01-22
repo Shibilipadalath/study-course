@@ -42,8 +42,8 @@ interface PageHeroProps {
 
 export default function PageHero({ title, breadcrumb }: PageHeroProps) {
   return (
-    <section className="relative w-full py-20 md:py-32 lg:py-40 bg-black overflow-hidden">
-      
+    <section className="relative w-full pt-24 pb-6 md:pt-32 md:pb-8 lg:pt-36 lg:pb-10 bg-black overflow-hidden">
+
       {/* CONTENT */}
       <div className="container mx-auto px-6 text-center">
         <h1 className="text-3xl md:text-5xl font-semibold text-white">
