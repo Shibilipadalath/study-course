@@ -175,7 +175,7 @@ export default function AboutSection() {
                 bg-gradient-to-r from-[#FF9A6B] via-[#E87A5A] to-[#CF6943]
                 shadow-[0_8px_28px_rgba(207,105,67,0.4)]
                 hover:from-[#FFB08A] hover:via-[#FF9A6B] hover:to-[#E87A5A]
-                transition-all duration-300
+                transition-all duration-300 cursor-pointer
               "
             >
               Know More About Us

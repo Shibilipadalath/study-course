@@ -191,7 +191,7 @@ export default function WhyUsSection() {
     text-white px-10 py-3 rounded-lg
     shadow-[0_8px_28px_rgba(207,105,67,0.4)]
     hover:from-[#FFB08A] hover:via-[#FF9A6B] hover:to-[#E87A5A]
-    transition-all duration-300 font-medium
+    transition-all duration-300 font-medium cursor-pointer
   "
           >
             View More <IoArrowForwardOutline size={18} />

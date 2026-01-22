@@ -417,7 +417,7 @@ export default function BlogsSection() {
               bg-gradient-to-r from-[#FF9A6B] via-[#E87A5A] to-[#CF6943]
               shadow-[0_6px_20px_rgba(207,105,67,0.4)]
               hover:from-[#FFB08A] hover:via-[#FF9A6B] hover:to-[#E87A5A]
-              transition-all duration-300
+              transition-all duration-300 cursor-pointer
               disabled:opacity-50 disabled:cursor-not-allowed
             "
           >
