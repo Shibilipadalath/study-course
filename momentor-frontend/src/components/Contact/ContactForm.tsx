@@ -241,7 +241,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white border border-gray-200 shadow-xl rounded-2xl px-10 py-12"
+            className="bg-white border border-gray-200 shadow-xl rounded-2xl px-6 py-8 md:px-10 md:py-12"
           >
             <form className="space-y-7">
               {/* ROW 1 */}

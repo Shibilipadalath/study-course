@@ -195,7 +195,7 @@ export default function GallerySection() {
   return (
     <section className="w-full py-20 bg-black">
       <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
-        
+
         {/* Heading */}
         <h2 className="text-[30px] md:text-[36px] font-semibold text-white">
           Explore Our Gallery
@@ -214,16 +214,15 @@ export default function GallerySection() {
             <div className="text-gray-400">Loading categories...</div>
           </div>
         ) : categories.length > 0 ? (
-          <div className="flex justify-center gap-6 mt-8">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-8">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategoryId(category.id)}
                 className={`text-sm md:text-[15px] pb-2 border-b-2 transition
-                  ${
-                    activeCategoryId === category.id
-                      ? "border-[#CF6943] text-[#CF6943] font-medium"
-                      : "border-transparent text-gray-400 hover:text-white"
+                  ${activeCategoryId === category.id
+                    ? "border-[#CF6943] text-[#CF6943] font-medium"
+                    : "border-transparent text-gray-400 hover:text-white"
                   }`}
               >
                 {category.name}

@@ -101,12 +101,12 @@ export default function WhyUsSection() {
   return (
     <section className="py-20 bg-black">
       <div className="container mx-auto px-6 lg:px-24 flex flex-col md:flex-row items-center gap-16">
-        
+
         {/* LEFT VISUAL BLOCK */}
         <div className="relative flex-1 flex justify-start -ml-4">
-          
+
           {/* BACKGROUND CIRCLE – hide on mobile */}
-        <div className="hidden md:block absolute w-[480px] h-[480px] bg-[#CF6943]/15 rounded-full -z-10 left-0"></div>
+          <div className="hidden md:block absolute w-[480px] h-[480px] bg-[#CF6943]/15 rounded-full -z-10 left-0"></div>
 
 
 
@@ -152,10 +152,10 @@ export default function WhyUsSection() {
               object-contain
               drop-shadow-lg
               opacity-80
-              w-[350px]
-              sm:w-[420px]
-              md:w-[580px]
-              lg:w-[630px]
+              w-full max-w-[350px]
+              sm:max-w-[420px]
+              md:max-w-[580px]
+              lg:max-w-[630px]
               mx-auto md:mx-0
             "
             priority
@@ -184,8 +184,8 @@ export default function WhyUsSection() {
           </p>
 
           {/* GRADIENT BUTTON */}
-         <button
-  className="
+          <button
+            className="
     mt-8 flex items-center gap-2
     bg-gradient-to-r from-[#FF9A6B] via-[#CF6943] to-[#3A3A3A]
     text-white px-10 py-3 rounded-lg
@@ -193,9 +193,9 @@ export default function WhyUsSection() {
     hover:from-[#2A2A2A] hover:via-[#CF6943] hover:to-[#FF9A6B]
     transition-all duration-300 font-medium
   "
->
-  View More <IoArrowForwardOutline size={18} />
-</button>
+          >
+            View More <IoArrowForwardOutline size={18} />
+          </button>
 
         </div>
       </div>

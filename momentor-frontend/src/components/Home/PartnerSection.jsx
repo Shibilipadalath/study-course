@@ -22,7 +22,7 @@
 //   { id: 4, name: "Partner 4", logo: "/images/partner4.jpg" },
 //   { id: 5, name: "Partner 5", logo: "/images/partner5.jpg" },
 
-  
+
 // ];
 
 // export default function PartnerSection() {
@@ -189,7 +189,7 @@ export default function PartnerSection() {
                 bg-[#111]
                 rounded-lg
                 border border-[#CF6943]/30
-                w-[160px]
+                w-full
                 h-[70px]
                 p-2
                 transition-all duration-300
@@ -202,7 +202,7 @@ export default function PartnerSection() {
                 alt={partner.name}
                 width={180}
                 height={55}
-                className="object-contain max-h-[48px]"
+                className="object-contain max-h-[48px] w-auto h-auto"
               />
             </div>
           ))}
