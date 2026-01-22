@@ -172,9 +172,9 @@ export default function AboutSection() {
             <button
               className="
                 px-8 py-3 rounded-lg text-sm font-medium text-white
-                bg-gradient-to-r from-[#FF9A6B] via-[#CF6943] to-[#2A2A2A]
-                shadow-[0_8px_28px_rgba(255,154,107,0.35)]
-                hover:from-[#2A2A2A] hover:via-[#CF6943] hover:to-[#FF9A6B]
+                bg-gradient-to-r from-[#FF9A6B] via-[#E87A5A] to-[#CF6943]
+                shadow-[0_8px_28px_rgba(207,105,67,0.4)]
+                hover:from-[#FFB08A] hover:via-[#FF9A6B] hover:to-[#E87A5A]
                 transition-all duration-300
               "
             >

@@ -187,10 +187,10 @@ export default function WhyUsSection() {
           <button
             className="
     mt-8 flex items-center gap-2
-    bg-gradient-to-r from-[#FF9A6B] via-[#CF6943] to-[#3A3A3A]
+    bg-gradient-to-r from-[#FF9A6B] via-[#E87A5A] to-[#CF6943]
     text-white px-10 py-3 rounded-lg
-    shadow-[0_8px_28px_rgba(255,154,107,0.35)]
-    hover:from-[#2A2A2A] hover:via-[#CF6943] hover:to-[#FF9A6B]
+    shadow-[0_8px_28px_rgba(207,105,67,0.4)]
+    hover:from-[#FFB08A] hover:via-[#FF9A6B] hover:to-[#E87A5A]
     transition-all duration-300 font-medium
   "
           >
