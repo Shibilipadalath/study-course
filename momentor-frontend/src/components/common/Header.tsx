@@ -173,11 +173,14 @@ export default function Header() {
             <Link
               key={item.path}
               href={item.path}
-              className={`font-medium transition-all ${
-                pathname === item.path
-                  ? "text-[#CF6943]"
-                  : "text-gray-300 hover:text-[#CF6943]"
-              }`}
+              className={`relative font-medium transition-all duration-300
+                after:content-[''] after:absolute after:left-0 after:bottom-[-2px]
+                after:h-[2px] after:bg-[#CF6943] after:transition-all after:duration-300
+                ${pathname === item.path
+                  ? "text-[#CF6943] after:w-full"
+                  : "text-gray-300 hover:text-[#CF6943] after:w-0 hover:after:w-full"
+                }
+              `}
             >
               {item.name}
             </Link>
@@ -212,11 +215,10 @@ export default function Header() {
               key={item.path}
               href={item.path}
               onClick={() => setOpen(false)}
-              className={`font-medium transition ${
-                pathname === item.path
+              className={`font-medium transition ${pathname === item.path
                   ? "text-[#CF6943] font-semibold"
                   : "text-gray-300 hover:text-[#CF6943]"
-              }`}
+                }`}
             >
               {item.name}
             </Link>
