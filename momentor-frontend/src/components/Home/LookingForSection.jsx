@@ -3,7 +3,7 @@
 // export default function LookingForSection() {
 //   return (
 //     <section className="py-24 bg-[#F4F4F4]">
-      
+
 //       {/* ---------- HEADING ---------- */}
 //       <div className="text-center max-w-2xl mx-auto px-6">
 //         <h2 className="text-[32px] md:text-[40px] font-semibold text-[#070606]">
@@ -82,7 +82,7 @@ import { IoSchoolOutline, IoPersonOutline } from "react-icons/io5";
 export default function LookingForSection() {
   return (
     <section className="py-24 bg-black">
-      
+
       {/* ---------- HEADING ---------- */}
       <div className="text-center max-w-2xl mx-auto px-6">
         <h2 className="text-[32px] md:text-[40px] font-semibold text-white">
@@ -90,7 +90,7 @@ export default function LookingForSection() {
         </h2>
 
         <p className="text-gray-400 text-[15px] mt-4 tracking-normal leading-relaxed">
-          Whether you want to learn future skills, get real career direction, or join our 
+          Whether you want to learn future skills, get real career direction, or join our
           global opportunities — choose your path and begin shaping your future with Momentor.
         </p>
       </div>
@@ -109,22 +109,22 @@ export default function LookingForSection() {
           </h3>
 
           <p className="text-gray-500 text-[14px] mt-3 leading-[1.6] max-w-xs mx-auto">
-            Join our mission and become part of India&apos;s first education journalism 
+            Join our mission and become part of India&apos;s first education journalism
             and future-skills mentorship movement.
           </p>
 
           {/* GRADIENT BUTTON */}
           <button
-  className="
+            className="
     mt-6 px-8 py-3 rounded-lg font-medium text-white
-    bg-gradient-to-r from-[#FF9A6B] via-[#E87A5A] to-[#CF6943]
+    bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
     shadow-[0_6px_20px_rgba(207,105,67,0.4)]
-    hover:from-[#FFB08A] hover:via-[#FF9A6B] hover:to-[#E87A5A]
+    hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
     transition-all duration-300 cursor-pointer
   "
->
-  Apply Now
-</button>
+          >
+            Apply Now
+          </button>
 
         </div>
 
@@ -139,22 +139,22 @@ export default function LookingForSection() {
           </h3>
 
           <p className="text-gray-600 text-[14px] mt-3 leading-[1.6] max-w-xs mx-auto">
-            Discover future skills, gain real career clarity, access mentorship, 
+            Discover future skills, gain real career clarity, access mentorship,
             and explore global pathways designed for youth.
           </p>
 
           {/* GRADIENT BUTTON */}
           <button
-  className="
+            className="
     mt-6 px-8 py-3 rounded-lg font-medium text-white
-    bg-gradient-to-r from-[#FF9A6B] via-[#E87A5A] to-[#CF6943]
+    bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
     shadow-[0_6px_20px_rgba(207,105,67,0.4)]
-    hover:from-[#FFB08A] hover:via-[#FF9A6B] hover:to-[#E87A5A]
+    hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
     transition-all duration-300 cursor-pointer
   "
->
-  Start Learning
-</button>
+          >
+            Start Learning
+          </button>
 
         </div>
 

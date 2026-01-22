@@ -8,7 +8,7 @@
 // export default function Hero() {
 //   return (
 //     <section className="hero-blobs min-h-dvh pt-20 md:pt-32 pb-12 md:pb-24 bg-[#FFEFEA] relative overflow-hidden flex items-center">
-      
+
 //       {/* Floating Light Background Glow */}
 //       <div className="absolute left-20 top-10 w-72 h-72 bg-[#CF6943]/15 rounded-full blur-[100px] animate-pulse" />
 //       <div className="absolute right-32 bottom-16 w-96 h-96 bg-[#CF6943]/10 rounded-full blur-[120px]" />
@@ -93,7 +93,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="min-h-dvh pt-20 md:pt-32 pb-12 md:pb-24 bg-black relative flex items-center">
-      
+
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-14 px-6 md:px-10 lg:px-24 w-full">
 
         {/* -------- LEFT CONTENT -------- */}
@@ -130,9 +130,9 @@ export default function Hero() {
                 flex items-center gap-2
                 px-6 md:px-10 py-3 rounded-lg
                 text-sm md:text-base font-medium text-white
-                bg-gradient-to-r from-[#FF9A6B] via-[#E87A5A] to-[#CF6943]
+                bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
                 shadow-[0_6px_24px_rgba(207,105,67,0.4)]
-                hover:from-[#FFB08A] hover:via-[#FF9A6B] hover:to-[#E87A5A]
+                hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
                 transition-all duration-300 cursor-pointer
               "
             >

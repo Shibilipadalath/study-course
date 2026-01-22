@@ -49,7 +49,7 @@
 //             Explore Our Services
 //           </h2>
 //         </div>
-        
+
 //         {/* View More Button */}
 //         <Link
 //           href="/services"
@@ -142,9 +142,9 @@ export default function ServicesSection() {
           href="/services"
           className="
             px-7 py-2 rounded-lg font-medium text-white
-            bg-gradient-to-r from-[#FF9A6B] via-[#E87A5A] to-[#CF6943]
+            bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
             shadow-[0_8px_28px_rgba(207,105,67,0.4)]
-            hover:from-[#FFB08A] hover:via-[#FF9A6B] hover:to-[#E87A5A]
+            hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
             transition-all duration-300 cursor-pointer
           "
         >

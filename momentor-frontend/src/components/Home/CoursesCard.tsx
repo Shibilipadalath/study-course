@@ -93,9 +93,9 @@ export default function CourseCard({ image, title, desc }: CourseCardProps) {
           <button
             className="
               px-6 py-2 text-[12px] rounded-lg font-medium text-white
-              bg-gradient-to-r from-[#FF9A6B] via-[#E87A5A] to-[#CF6943]
+              bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
               shadow-[0_6px_20px_rgba(207,105,67,0.4)]
-              hover:from-[#FFB08A] hover:via-[#FF9A6B] hover:to-[#E87A5A]
+              hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
               transition-all duration-300 cursor-pointer
             "
           >
