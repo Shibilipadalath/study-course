@@ -192,11 +192,11 @@ export default function FAQSection() {
               FAQ
             </span>
 
-            <h2 className="mt-6 text-[32px] md:text-[40px] font-semibold text-[#070606] leading-snug">
+            <h2 className="mt-6 text-[32px] md:text-[40px] font-semibold text-white leading-snug">
               Frequently Asked <br /> Questions
             </h2>
 
-            <p className="mt-6 text-[16px] text-gray-700 leading-relaxed">
+            <p className="mt-6 text-[16px] text-gray-200 leading-relaxed">
               Find answers to the most common questions about Momentor — our mentorship,
               education journalism, future-skills training, and global internship programs.
               If you’re exploring your career direction or planning your next step, this
@@ -205,33 +205,33 @@ export default function FAQSection() {
           </div>
         </div>
 
-        {/* RIGHT FAQ CARD — KEEP WHITE */}
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 max-w-2xl w-full self-center lg:self-stretch flex flex-col justify-center">
+        {/* RIGHT FAQ CARD — ORANGE SEE-THROUGH */}
+        <div className="bg-[#CF6943]/20 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-10 max-w-2xl w-full self-center lg:self-stretch flex flex-col justify-center border border-[#CF6943]/30">
           {faqs.map((item, index) => (
             <div key={index}>
               <button
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                className="w-full flex justify-between items-center py-5 text-left"
+                className="w-full flex justify-between items-center py-5 text-left cursor-pointer"
               >
-                <span className="text-[16px] font-medium text-[#070606] leading-snug pr-6">
+                <span className="text-[16px] font-medium text-white leading-snug pr-6">
                   {item.q}
                 </span>
 
                 <span
-                  className={`flex items-center justify-center w-8 h-8 rounded-full transition
-                    ${openIndex === index ? "bg-[#f89b84]" : "bg-[#F4B9AA]"}`}
+                  className={`flex items-center justify-center w-8 h-8 rounded-full transition text-white
+                    ${openIndex === index ? "bg-[#CF6943]/60" : "bg-[#CF6943]/40"}`}
                 >
                   {openIndex === index ? <IoRemove size={16} /> : <IoAdd size={16} />}
                 </span>
               </button>
 
               {openIndex === index && (
-                <p className="text-[14px] text-gray-500 pb-5 leading-[1.75] pr-10">
+                <p className="text-[14px] text-gray-200 pb-5 leading-[1.75] pr-10">
                   {item.a}
                 </p>
               )}
 
-              {index !== faqs.length - 1 && <hr className="border-[#F2F2F2]" />}
+              {index !== faqs.length - 1 && <hr className="border-white/20" />}
             </div>
           ))}
         </div>
