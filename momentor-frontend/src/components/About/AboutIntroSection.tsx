@@ -128,13 +128,13 @@ export default function AboutIntroSection() {
   return (
     <section className="w-full bg-black pt-12 md:pt-20 pb-12">
       <div className="container mx-auto px-6 md:px-10 lg:px-24">
-        
+
         {/* ---------- Title & Description ---------- */}
-        <div className="mb-14">
-          <h2 className="text-[30px] md:text-[36px] font-semibold text-white">
+        <div className="mb-14 text-center">
+          <h2 className="text-[30px] md:text-[36px] font-semibold text-white text-center">
             About Momentor
           </h2>
-          <p className="text-[15px] text-gray-300 mt-3 max-w-2xl text-justify tracking-normal leading-relaxed">
+          <p className="text-[15px] text-gray-300 mt-3 w-full max-w-4xl mx-auto text-center tracking-normal leading-relaxed">
             Momentor is India’s first platform blending Future Skills Training,
             Career Mentorship, Global Internships, and Education Journalism —
             built to guide youth with clarity, confidence, awareness, and
@@ -146,7 +146,7 @@ export default function AboutIntroSection() {
 
         {/* ---------- Image + Text Content ---------- */}
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12 lg:gap-20">
-          
+
           {/* Image */}
           <div className="w-full md:w-auto md:flex-1">
             <Image
@@ -178,13 +178,13 @@ export default function AboutIntroSection() {
 
         {/* ---------- Stats with Soft Glow ---------- */}
         <div className="relative mt-20 pb-10 flex justify-center">
-          
+
           {/* Background Glow (adjusted for dark bg) */}
           <div className="absolute inset-0 bg-[#CF6943]/20 blur-[90px] rounded-full"></div>
 
           {/* Stats */}
           <div className="relative flex flex-col sm:flex-row gap-16 sm:gap-28 text-center">
-            
+
             {/* Stat Item 1 */}
             <div>
               <p className="text-white heading-text">

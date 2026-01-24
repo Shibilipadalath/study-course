@@ -99,7 +99,7 @@ import { IoArrowForwardOutline } from "react-icons/io5";
 
 export default function WhyUsSection() {
   return (
-    <section className="py-20 bg-black">
+    <section className="pt-10 pb-20 bg-black">
       <div className="container mx-auto px-6 lg:px-24 flex flex-col md:flex-row items-center gap-16">
 
         {/* LEFT VISUAL BLOCK */}

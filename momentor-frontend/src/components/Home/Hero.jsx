@@ -92,7 +92,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="min-h-dvh pt-20 md:pt-32 pb-12 md:pb-24 bg-black relative flex items-center">
+    <section className="w-full pt-32 pb-10 bg-black relative">
 
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-14 px-6 md:px-10 lg:px-24 w-full">
 
