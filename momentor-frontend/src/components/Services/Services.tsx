@@ -192,7 +192,7 @@ export default function ServicesSection() {
   return (
     <section className="w-full py-20 bg-black">
       <div className="container mx-auto px-6 lg:px-24 text-center">
-        
+
         {/* ---------- Heading ---------- */}
         <h2 className="text-[30px] md:text-[36px] font-semibold text-white">
           Explore Our Services
@@ -225,16 +225,24 @@ export default function ServicesSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
                   viewport={{ once: true }}
-                  className={`p-6 rounded-xl min-h-[380px] transition-all duration-300 shadow-md cursor-pointer flex flex-col items-start justify-center
-                    ${
-                      hoveredCard === index
-                        ? "bg-[#CF6943] text-white shadow-xl"
-                        : "bg-[#FFEFEA] text-[#070606]"
+                  className={`p-6 rounded-xl min-h-[380px] transition-all duration-300 cursor-pointer flex flex-col items-start justify-center border border-[#333]
+                    ${hoveredCard === index
+                      ? "shadow-2xl translate-y-[-5px]"
+                      : "shadow-lg"
                     }
                   `}
+                  style={{
+                    background:
+                      hoveredCard === index
+                        ? "#CF6943"
+                        : "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)",
+                  }}
                 >
                   {/* Title */}
-                  <h3 className="text-[18px] font-semibold mb-2">
+                  <h3
+                    className={`text-[18px] font-semibold mb-2 ${hoveredCard === index ? "text-white" : "text-white"
+                      }`}
+                  >
                     {service.title}
                   </h3>
 
@@ -243,10 +251,9 @@ export default function ServicesSection() {
                     className={`
                       text-justify tracking-normal leading-relaxed
                       text-[15px] transition line-clamp-4
-                      ${
-                        hoveredCard === index
-                          ? "text-white/90"
-                          : "text-gray-700"
+                      ${hoveredCard === index
+                        ? "text-white/90"
+                        : "text-gray-300"
                       }
                     `}
                   >
@@ -257,10 +264,9 @@ export default function ServicesSection() {
                   <span
                     className={`
                       mt-3 inline-flex items-center gap-1 text-[14px] font-medium
-                      ${
-                        hoveredCard === index
-                          ? "text-white"
-                          : "text-[#CF6943]"
+                      ${hoveredCard === index
+                        ? "text-white"
+                        : "text-[#CF6943]"
                       }
                     `}
                   >
@@ -274,18 +280,14 @@ export default function ServicesSection() {
                         <li key={idx} className="flex items-start gap-2">
                           <CheckCircle
                             size={16}
-                            className={`mt-0.5 transition ${
-                              hoveredCard === index
+                            className={`mt-0.5 transition ${hoveredCard === index
                                 ? "text-white"
                                 : "text-[#CF6943]"
-                            }`}
+                              }`}
                           />
                           <span
-                            className={`leading-[1.6] ${
-                              hoveredCard === index
-                                ? "text-white"
-                                : "text-[#070606]"
-                            }`}
+                            className={`leading-[1.6] ${hoveredCard === index ? "text-white" : "text-gray-200"
+                              }`}
                           >
                             {point}
                           </span>
