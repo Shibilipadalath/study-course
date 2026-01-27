@@ -179,16 +179,10 @@ export default function FAQSection() {
 
         {/* LEFT IMAGE + CONTENT (UNCHANGED STYLE) */}
         <div className="relative h-full overflow-hidden rounded-br-[120px]">
-          <Image
-            src="/images/faq.jpg"
-            alt="FAQ background"
-            fill
-            className="object-cover"
-            priority
-          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#8C6E3F] via-[#B08D55] to-[#5e4b2a]"></div>
 
           <div className="relative z-10 px-8 py-10 md:px-10 md:py-12 max-w-xl">
-            <span className="inline-block bg-[#B08D55] text-white text-xs px-5 py-1.5 rounded-full shadow-sm">
+            <span className="inline-block bg-white text-[#B08D55] text-xs px-5 py-1.5 rounded-full shadow-sm font-semibold">
               FAQ
             </span>
 
