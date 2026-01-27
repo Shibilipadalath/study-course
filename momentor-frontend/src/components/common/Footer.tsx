@@ -144,7 +144,7 @@ export default function Footer() {
               Social Media
             </p>
 
-            <div className="flex gap-5 mt-4 text-[#CF6943]">
+            <div className="flex gap-5 mt-4 text-[#B08D55]">
               <FaInstagram size={22} />
               <FaFacebookF size={22} />
               <FaTwitter size={22} />
@@ -207,21 +207,21 @@ export default function Footer() {
 
             <ul className="space-y-4 text-sm text-gray-300">
               <li className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#2A2A2A] text-[#CF6943]">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#2A2A2A] text-[#B08D55]">
                   <IoCall size={15} />
                 </span>
                 +91 98765 43210
               </li>
 
               <li className="flex items-center gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#2A2A2A] text-[#CF6943]">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#2A2A2A] text-[#B08D55]">
                   <IoMail size={15} />
                 </span>
                 hello@momentor.in
               </li>
 
               <li className="flex items-start gap-3">
-                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#2A2A2A] text-[#CF6943] mt-1">
+                <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#2A2A2A] text-[#B08D55] mt-1">
                   <IoLocationSharp size={15} />
                 </span>
                 <span>

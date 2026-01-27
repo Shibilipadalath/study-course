@@ -63,7 +63,7 @@ export default function ServiceCard({ id, image, title, description }) {
           <div
             className="w-10 h-10 flex items-center justify-center text-white transition-all hover:brightness-105 hover:scale-[1.08]"
             style={{
-              background: "#CF6943",
+              background: "#B08D55",
               borderRadius: "12px",
             }}
           >

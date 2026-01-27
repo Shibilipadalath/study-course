@@ -93,14 +93,14 @@ export default function CourseCard({ image, title, desc }: CourseCardProps) {
           </div>
         </div>
 
-        {/* Apply Button – Smooth Orange Gradient */}
+        {/* Apply Button – Smooth Gold Gradient */}
         <div className="flex justify-end mt-3 sm:mt-2">
           <button
             className="
               px-6 py-2 text-[12px] rounded-lg font-medium text-white
-              bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
-              shadow-[0_6px_20px_rgba(207,105,67,0.4)]
-              hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
+              bg-gradient-to-r from-[#B08D55] via-[#D8B67C] to-[#B08D55]
+              shadow-[0_6px_20px_rgba(176,141,85,0.4)]
+              hover:from-[#B08D55] hover:via-[#C4A060] hover:to-[#B08D55]
               transition-all duration-300 cursor-pointer
             "
           >

@@ -140,14 +140,14 @@ export default function TestimonialSection() {
         height="550"
         viewBox="0 0 600 600"
       >
-        <circle cx="300" cy="300" r="260" stroke="#CF694345" strokeWidth="1" fill="none" />
-        <circle cx="300" cy="300" r="210" stroke="#CF694345" strokeWidth="1" fill="none" />
-        <circle cx="300" cy="300" r="160" stroke="#CF694345" strokeWidth="1" fill="none" />
-        <circle cx="300" cy="300" r="110" stroke="#CF694345" strokeWidth="1" fill="none" />
+        <circle cx="300" cy="300" r="260" stroke="#B08D5545" strokeWidth="1" fill="none" />
+        <circle cx="300" cy="300" r="210" stroke="#B08D5545" strokeWidth="1" fill="none" />
+        <circle cx="300" cy="300" r="160" stroke="#B08D5545" strokeWidth="1" fill="none" />
+        <circle cx="300" cy="300" r="110" stroke="#B08D5545" strokeWidth="1" fill="none" />
       </svg>
 
       {/* Decorative Orange Dot */}
-      <div className="absolute left-16 md:left-32 top-32 w-12 h-12 bg-[#CF6943] rounded-full opacity-90 -z-10" />
+      <div className="absolute left-16 md:left-32 top-32 w-12 h-12 bg-[#B08D55] rounded-full opacity-90 -z-10" />
 
       <div className="container mx-auto px-6 lg:px-24 text-center relative z-10">
         {/* Small Tag */}
@@ -155,7 +155,7 @@ export default function TestimonialSection() {
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="bg-[#CF6943] text-white text-[12px] px-4 py-1 rounded-full inline-block shadow-md"
+          className="bg-[#B08D55] text-white text-[12px] px-4 py-1 rounded-full inline-block shadow-md"
         >
           Testimonials
         </motion.span>
@@ -175,7 +175,7 @@ export default function TestimonialSection() {
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-[#FF9A6B] text-[20px] font-semibold mt-1"
+          className="text-[#D8B67C] text-[20px] font-semibold mt-1"
         >
           Our Students Says
         </motion.p>

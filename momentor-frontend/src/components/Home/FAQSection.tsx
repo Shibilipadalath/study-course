@@ -188,7 +188,7 @@ export default function FAQSection() {
           />
 
           <div className="relative z-10 px-8 py-10 md:px-10 md:py-12 max-w-xl">
-            <span className="inline-block bg-[#CF6943] text-white text-xs px-5 py-1.5 rounded-full shadow-sm">
+            <span className="inline-block bg-[#B08D55] text-white text-xs px-5 py-1.5 rounded-full shadow-sm">
               FAQ
             </span>
 
@@ -205,8 +205,8 @@ export default function FAQSection() {
           </div>
         </div>
 
-        {/* RIGHT FAQ CARD — ORANGE SEE-THROUGH */}
-        <div className="bg-[#CF6943]/20 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-10 max-w-2xl w-full self-center lg:self-stretch flex flex-col justify-center border border-[#CF6943]/30">
+        {/* RIGHT FAQ CARD — GOLD SEE-THROUGH */}
+        <div className="bg-[#B08D55]/20 backdrop-blur-sm rounded-2xl shadow-xl p-8 md:p-10 max-w-2xl w-full self-center lg:self-stretch flex flex-col justify-center border border-[#B08D55]/30">
           {faqs.map((item, index) => (
             <div key={index}>
               <button
@@ -219,7 +219,7 @@ export default function FAQSection() {
 
                 <span
                   className={`flex items-center justify-center w-8 h-8 rounded-full transition text-white
-                    ${openIndex === index ? "bg-[#CF6943]/60" : "bg-[#CF6943]/40"}`}
+                    ${openIndex === index ? "bg-[#B08D55]/60" : "bg-[#B08D55]/40"}`}
                 >
                   {openIndex === index ? <IoRemove size={16} /> : <IoAdd size={16} />}
                 </span>

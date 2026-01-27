@@ -104,7 +104,7 @@ export default function LookingForSection() {
           style={{ background: "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)" }}
         >
           <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-[#333]">
-            <IoPersonOutline size={34} className="text-[#CF6943]" />
+            <IoPersonOutline size={34} className="text-[#B08D55]" />
           </div>
 
           <h3 className="text-[20px] font-semibold text-white mt-5">
@@ -120,9 +120,9 @@ export default function LookingForSection() {
           <button
             className="
     mt-6 px-8 py-3 rounded-lg font-medium text-white
-    bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
-    shadow-[0_6px_20px_rgba(207,105,67,0.4)]
-    hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
+    bg-gradient-to-r from-[#B08D55] via-[#D8B67C] to-[#B08D55]
+    shadow-[0_6px_20px_rgba(176,141,85,0.4)]
+    hover:from-[#B08D55] hover:via-[#C4A060] hover:to-[#B08D55]
     transition-all duration-300 cursor-pointer
   "
           >
@@ -137,7 +137,7 @@ export default function LookingForSection() {
           style={{ background: "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)" }}
         >
           <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-[#333]">
-            <IoSchoolOutline size={34} className="text-[#CF6943]" />
+            <IoSchoolOutline size={34} className="text-[#B08D55]" />
           </div>
 
           <h3 className="text-[20px] font-semibold text-white mt-5">
@@ -153,9 +153,9 @@ export default function LookingForSection() {
           <button
             className="
     mt-6 px-8 py-3 rounded-lg font-medium text-white
-    bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
-    shadow-[0_6px_20px_rgba(207,105,67,0.4)]
-    hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
+    bg-gradient-to-r from-[#B08D55] via-[#D8B67C] to-[#B08D55]
+    shadow-[0_6px_20px_rgba(176,141,85,0.4)]
+    hover:from-[#B08D55] hover:via-[#C4A060] hover:to-[#B08D55]
     transition-all duration-300 cursor-pointer
   "
           >

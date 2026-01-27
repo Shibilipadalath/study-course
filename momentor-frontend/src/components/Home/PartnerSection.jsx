@@ -188,13 +188,13 @@ export default function PartnerSection() {
                 flex items-center justify-center
                 bg-[#111]
                 rounded-lg
-                border border-[#CF6943]/30
+                border border-[#B08D55]/30
                 w-full
                 h-[70px]
                 p-2
                 transition-all duration-300
-                hover:border-[#CF6943]
-                hover:shadow-[0_6px_16px_rgba(207,105,67,0.35)]
+                hover:border-[#B08D55]
+                hover:shadow-[0_6px_16px_rgba(176,141,85,0.35)]
               "
             >
               <Image

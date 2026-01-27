@@ -175,10 +175,10 @@ export default function Header() {
               href={item.path}
               className={`relative font-medium transition-all duration-300
                 after:content-[''] after:absolute after:left-0 after:bottom-[-2px]
-                after:h-[2px] after:bg-[#CF6943] after:transition-all after:duration-300
+                after:h-[2px] after:bg-[#B08D55] after:transition-all after:duration-300
                 ${pathname === item.path
-                  ? "text-[#CF6943] after:w-full"
-                  : "text-gray-300 hover:text-[#CF6943] after:w-0 hover:after:w-full"
+                  ? "text-[#B08D55] after:w-full"
+                  : "text-gray-300 hover:text-[#B08D55] after:w-0 hover:after:w-full"
                 }
               `}
             >
@@ -191,8 +191,8 @@ export default function Header() {
         <a
           href="tel:+9198898898000"
           className="hidden md:flex items-center justify-center
-          w-11 h-11 rounded-full bg-[#CF6943] text-white
-          hover:bg-[#b95c3b] transition shadow-md"
+          w-11 h-11 rounded-full bg-[#B08D55] text-white
+          hover:bg-[#8C6E3F] transition shadow-md"
           aria-label="Call us"
         >
           <FiPhoneCall size={20} />
@@ -216,8 +216,8 @@ export default function Header() {
               href={item.path}
               onClick={() => setOpen(false)}
               className={`font-medium transition ${pathname === item.path
-                  ? "text-[#CF6943] font-semibold"
-                  : "text-gray-300 hover:text-[#CF6943]"
+                ? "text-[#B08D55] font-semibold"
+                : "text-gray-300 hover:text-[#B08D55]"
                 }`}
             >
               {item.name}
@@ -230,8 +230,8 @@ export default function Header() {
             onClick={() => setOpen(false)}
             className="
               mt-2 flex items-center justify-center gap-2
-              bg-[#CF6943] text-white rounded-lg h-[45px] font-medium
-              hover:bg-[#b95c3b] transition
+              bg-[#B08D55] text-white rounded-lg h-[45px] font-medium
+              hover:bg-[#8C6E3F] transition
             "
           >
             <FiPhoneCall size={18} />

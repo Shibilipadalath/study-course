@@ -137,7 +137,7 @@ export default function OurBenefitsSection() {
     <section className="w-full pb-16 md:pb-24 bg-black">
       <div className="container mx-auto px-6 md:px-10 lg:px-24 text-center">
 
-        <h2 className="text-[32px] md:text-[38px] font-semibold text-[#CF6943]">
+        <h2 className="text-[32px] md:text-[38px] font-semibold text-[#B08D55]">
           Why Momentor Works
         </h2>
 
@@ -167,7 +167,7 @@ export default function OurBenefitsSection() {
                 {/* NUMBER BADGE */}
                 <div className="relative w-12 h-12">
                   <div className="absolute inset-0 bg-[#333] rounded-full blur-sm"></div>
-                  <span className="relative z-10 font-bold text-[26px] text-[#CF6943]">
+                  <span className="relative z-10 font-bold text-[26px] text-[#B08D55]">
                     {item.number}
                   </span>
                 </div>

@@ -234,7 +234,7 @@ export default function ServicesSection() {
                   style={{
                     background:
                       hoveredCard === index
-                        ? "#CF6943"
+                        ? "#B08D55"
                         : "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)",
                   }}
                 >
@@ -281,8 +281,8 @@ export default function ServicesSection() {
                           <CheckCircle
                             size={16}
                             className={`mt-0.5 transition ${hoveredCard === index
-                                ? "text-white"
-                                : "text-[#CF6943]"
+                              ? "text-white"
+                              : "text-[#CF6943]"
                               }`}
                           />
                           <span

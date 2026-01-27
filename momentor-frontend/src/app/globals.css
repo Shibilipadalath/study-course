@@ -48,13 +48,18 @@
 }
 
 body {
-  min-height: 100vh;         /* ensures full viewport height */
-  width: 100%;               /* ensures full viewport width */
-  margin: 0;                 /* remove default margins */
-  padding: 0;                /* remove default padding */
+  min-height: 100vh;
+  /* ensures full viewport height */
+  width: 100%;
+  /* ensures full viewport width */
+  margin: 0;
+  /* remove default margins */
+  padding: 0;
+  /* remove default padding */
   background: var(--background);
   color: var(--foreground);
-  scroll-behavior: smooth;   /* optional for nice scrolling */
+  scroll-behavior: smooth;
+  /* optional for nice scrolling */
 }
 
 .hero-blobs {
@@ -96,12 +101,20 @@ body {
 
 /* Optional Animation */
 @keyframes float {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(30px, -40px); }
-  100% { transform: translate(0,0); }
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(30px, -40px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
- :root {
+:root {
   --font-heading: "Georgia", "Times New Roman", serif;
   --font-subheading: "Georgia", "Times New Roman", serif;
   --font-body: var(--font-subheading);
@@ -110,7 +123,7 @@ body {
   --subheading-size: 1.1rem;
   --subheading-line-height: 1.4;
 
-  --brand: #CF6943;
+  --brand: #B08D55;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -144,6 +157,7 @@ body {
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 }
+
 .font-primary {
   font-family: var(--font-body, "Georgia", "Times New Roman", serif);
 }
@@ -210,23 +224,36 @@ body {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 
   /* Global typography helpers */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
     font-size: var(--heading-size);
     line-height: var(--heading-line-height);
     font-weight: 600;
     letter-spacing: -0.02em;
   }
-  p, a, li, span, label, input, textarea, button {
+
+  p,
+  a,
+  li,
+  span,
+  label,
+  input,
+  textarea,
+  button {
     font-family: var(--font-heading);
     font-size: var(--subheading-size);
     line-height: var(--subheading-line-height);
     font-weight: 400;
   }
 }
-

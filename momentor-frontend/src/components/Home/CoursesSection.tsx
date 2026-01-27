@@ -82,7 +82,7 @@ export default function CoursesSection() {
     <section className="w-full bg-black py-20">
       <div className="container mx-auto px-6 lg:px-24 text-center">
         {/* Tag */}
-        <span className="bg-[#CF6943] text-white text-[11px] px-4 py-1 rounded-full shadow-md">
+        <span className="bg-[#B08D55] text-white text-[11px] px-4 py-1 rounded-full shadow-md">
           Our Courses
         </span>
 

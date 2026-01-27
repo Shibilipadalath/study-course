@@ -241,7 +241,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="border border-[#333] shadow-2xl rounded-2xl px-6 py-8 md:px-10 md:py-12 relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-[6px] before:bg-gradient-to-r before:from-[#FF9A6B] before:via-[#CF6943] before:to-[#A64D2D]"
+            className="border border-[#333] shadow-2xl rounded-2xl px-6 py-8 md:px-10 md:py-12 relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-[6px] before:bg-gradient-to-r before:from-[#D8B67C] before:via-[#B08D55] before:to-[#8C6E3F]"
             style={{
               background: "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)",
             }}
@@ -253,14 +253,14 @@ export default function ContactSection() {
                   <label className="block text-sm font-medium mb-2 text-white">
                     First Name
                   </label>
-                  <input className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]" />
+                  <input className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#B08D55]" />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium mb-2 text-white">
                     Last Name
                   </label>
-                  <input className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]" />
+                  <input className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#B08D55]" />
                 </div>
               </div>
 
@@ -272,7 +272,7 @@ export default function ContactSection() {
                   </label>
                   <input
                     type="email"
-                    className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]"
+                    className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#B08D55]"
                   />
                 </div>
 
@@ -280,7 +280,7 @@ export default function ContactSection() {
                   <label className="block text-sm font-medium mb-2 text-white">
                     Mobile Number
                   </label>
-                  <input className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]" />
+                  <input className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#B08D55]" />
                 </div>
               </div>
 
@@ -291,7 +291,7 @@ export default function ContactSection() {
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]"
+                  className="w-full border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#B08D55]"
                 />
               </div>
 
@@ -299,9 +299,9 @@ export default function ContactSection() {
               <button
                 className="
                   w-full mt-4 py-3 rounded-lg font-medium text-white
-                  bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
-                  shadow-[0_8px_30px_rgba(207,105,67,0.4)]
-                  hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
+                  bg-gradient-to-r from-[#B08D55] via-[#D8B67C] to-[#B08D55]
+                  shadow-[0_8px_30px_rgba(176,141,85,0.4)]
+                  hover:from-[#B08D55] hover:via-[#C4A060] hover:to-[#B08D55]
                   transition-all duration-300 cursor-pointer
                 "
               >

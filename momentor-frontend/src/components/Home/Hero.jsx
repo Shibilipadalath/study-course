@@ -108,7 +108,7 @@ export default function Hero() {
             <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-semibold md:whitespace-nowrap">
               Where Guidance Meets
             </span>
-            <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-semibold text-[#CF6943]">
+            <span className="block text-[34px] sm:text-[40px] md:text-[56px] lg:text-[64px] font-semibold text-[#B08D55]">
               The Future
             </span>
           </h1>
@@ -130,9 +130,9 @@ export default function Hero() {
                 flex items-center gap-2
                 px-6 md:px-10 py-3 rounded-lg
                 text-sm md:text-base font-medium text-white
-                bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
-                shadow-[0_6px_24px_rgba(207,105,67,0.4)]
-                hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
+                bg-gradient-to-r from-[#B08D55] via-[#D8B67C] to-[#B08D55]
+                shadow-[0_6px_24px_rgba(176,141,85,0.4)]
+                hover:from-[#B08D55] hover:via-[#C4A060] hover:to-[#B08D55]
                 transition-all duration-300 cursor-pointer
               "
             >
@@ -144,9 +144,9 @@ export default function Hero() {
               className="
                 px-6 md:px-10 py-3 rounded-lg
                 text-sm md:text-base font-medium
-                text-[#CF6943]
-                border border-[#CF6943]
-                hover:bg-[#CF6943]/10
+                text-[#B08D55]
+                border border-[#B08D55]
+                hover:bg-[#B08D55]/10
                 transition
               "
             >
