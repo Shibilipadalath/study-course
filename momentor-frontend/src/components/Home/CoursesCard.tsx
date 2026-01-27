@@ -61,7 +61,12 @@ interface CourseCardProps {
 
 export default function CourseCard({ image, title, desc }: CourseCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 p-3 sm:p-4 flex flex-row gap-4 h-full">
+    <div
+      className="rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 p-3 sm:p-4 flex flex-row gap-4 h-full border border-[#333]"
+      style={{
+        background: "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)",
+      }}
+    >
 
       {/* Thumbnail */}
       <div className="relative w-[120px] sm:w-[140px] shrink-0 self-stretch rounded-xl overflow-hidden">
@@ -78,11 +83,11 @@ export default function CourseCard({ image, title, desc }: CourseCardProps) {
 
         <div className="flex items-start gap-3">
           <div className="flex flex-col items-start w-full">
-            <h3 className="text-[15px] font-semibold text-[#070606] leading-snug line-clamp-2">
+            <h3 className="text-[15px] font-semibold text-white leading-snug line-clamp-2">
               {title}
             </h3>
 
-            <p className="text-[12px] text-gray-500 mt-1 leading-relaxed line-clamp-3">
+            <p className="text-[12px] text-gray-300 mt-1 leading-relaxed line-clamp-3">
               {desc}
             </p>
           </div>

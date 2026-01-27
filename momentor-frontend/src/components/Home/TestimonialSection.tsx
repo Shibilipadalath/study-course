@@ -186,11 +186,11 @@ export default function TestimonialSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
           className="
-            bg-[#111]
-            mt-14 rounded-xl shadow-lg
-            max-w-6xl mx-auto
+            mt-14 rounded-xl shadow-2xl border border-[#333]
+            max-w-6xl mx-auto 
             px-14 py-12
           "
+          style={{ background: "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)" }}
         >
           <h3 className="text-[18px] font-semibold text-white mb-4">
             Lorem Ipsum

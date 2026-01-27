@@ -15,15 +15,15 @@ export default function ServiceCard({ id, image, title, description }) {
   return (
     <Link href={`/services/${id}`}>
       <div
-  className="bg-[#FFF6F2] rounded-xl p-2 transition-all hover:-translate-y-2 hover:shadow-xl cursor-pointer flex flex-col"
-  style={{
-    boxShadow: "0px 15px 29px rgba(0,0,0,0.15)",
-    width: "100%",
-    maxWidth: "392px",
-    minHeight: "420px",
-  }}
->
-
+        className="rounded-xl p-2 transition-all hover:-translate-y-2 hover:shadow-2xl cursor-pointer flex flex-col border border-[#333]"
+        style={{
+          background: "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)",
+          boxShadow: "0px 15px 29px rgba(0,0,0,0.5)",
+          width: "100%",
+          maxWidth: "392px",
+          minHeight: "420px",
+        }}
+      >
         {/* Service Image */}
         <div className="relative">
           <Image
@@ -36,12 +36,12 @@ export default function ServiceCard({ id, image, title, description }) {
         </div>
 
         {/* Title */}
-        <h3 className="text-[16px] font-semibold text-[#070606] mt-4 px-3 leading-tight">
+        <h3 className="text-[16px] font-semibold text-white mt-4 px-3 leading-tight">
           {title}
         </h3>
 
         {/* Description Preview */}
-        <p className="text-[13px] text-[#7A7A7A] mt-2 px-3 line-clamp-3 leading-relaxed grow">
+        <p className="text-[13px] text-gray-300 mt-2 px-3 line-clamp-3 leading-relaxed grow">
           {truncatedDescription}
         </p>
 
@@ -49,12 +49,13 @@ export default function ServiceCard({ id, image, title, description }) {
         <div
           className="mt-4 mx-3 mb-3 flex items-center justify-between px-4 py-3"
           style={{
-            background: "#E7E6E6",
+            background: "#1A1A1A",
             borderRadius: "12px",
+            border: "1px solid #333",
           }}
         >
           {/* Learn More Text */}
-          <span className="text-[14px] font-medium text-[#070606]">
+          <span className="text-[14px] font-medium text-white">
             Learn More
           </span>
 

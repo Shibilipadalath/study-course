@@ -99,16 +99,19 @@ export default function LookingForSection() {
       <div className="mt-14 container mx-auto px-6 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-10">
 
         {/* ===== MENTOR / TRAINER CARD ===== */}
-        <div className="bg-white p-10 rounded-2xl text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-          <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-[#FFEFEA]">
+        <div
+          className="p-10 rounded-2xl text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border border-[#333]"
+          style={{ background: "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)" }}
+        >
+          <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-[#333]">
             <IoPersonOutline size={34} className="text-[#CF6943]" />
           </div>
 
-          <h3 className="text-[20px] font-semibold text-[#070606] mt-5">
+          <h3 className="text-[20px] font-semibold text-white mt-5">
             Want to Mentor or Train Youth?
           </h3>
 
-          <p className="text-gray-500 text-[14px] mt-3 leading-[1.6] max-w-xs mx-auto">
+          <p className="text-gray-400 text-[14px] mt-3 leading-[1.6] max-w-xs mx-auto">
             Join our mission and become part of India&apos;s first education journalism
             and future-skills mentorship movement.
           </p>
@@ -129,16 +132,19 @@ export default function LookingForSection() {
         </div>
 
         {/* ===== STUDENT / LEARNER CARD ===== */}
-        <div className="bg-[#FFE6DE] p-10 rounded-2xl text-center shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-          <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-white">
+        <div
+          className="p-10 rounded-2xl text-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border border-[#333]"
+          style={{ background: "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)" }}
+        >
+          <div className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-[#333]">
             <IoSchoolOutline size={34} className="text-[#CF6943]" />
           </div>
 
-          <h3 className="text-[20px] font-semibold text-[#070606] mt-5">
+          <h3 className="text-[20px] font-semibold text-white mt-5">
             Want to Learn and Grow With Us?
           </h3>
 
-          <p className="text-gray-600 text-[14px] mt-3 leading-[1.6] max-w-xs mx-auto">
+          <p className="text-gray-400 text-[14px] mt-3 leading-[1.6] max-w-xs mx-auto">
             Discover future skills, gain real career clarity, access mentorship,
             and explore global pathways designed for youth.
           </p>
