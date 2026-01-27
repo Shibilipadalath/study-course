@@ -169,9 +169,9 @@ export default function FAQSection() {
       {/* Background Circles */}
       <div className="absolute left-10 top-20 -z-10 opacity-30">
         <svg width="260" height="260">
-          <circle cx="130" cy="130" r="120" stroke="#CF694350" strokeWidth="1.2" fill="none" />
-          <circle cx="130" cy="130" r="90" stroke="#CF694350" strokeWidth="1.2" fill="none" />
-          <circle cx="130" cy="130" r="60" stroke="#CF694350" strokeWidth="1.2" fill="none" />
+          <circle cx="130" cy="130" r="120" stroke="#B08D5550" strokeWidth="1.2" fill="none" />
+          <circle cx="130" cy="130" r="90" stroke="#B08D5550" strokeWidth="1.2" fill="none" />
+          <circle cx="130" cy="130" r="60" stroke="#B08D5550" strokeWidth="1.2" fill="none" />
         </svg>
       </div>
 

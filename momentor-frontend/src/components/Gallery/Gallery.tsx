@@ -221,7 +221,7 @@ export default function GallerySection() {
                 onClick={() => setActiveCategoryId(category.id)}
                 className={`text-sm md:text-[15px] pb-2 border-b-2 transition
                   ${activeCategoryId === category.id
-                    ? "border-[#CF6943] text-[#CF6943] font-medium"
+                    ? "border-[#B08D55] text-[#B08D55] font-medium"
                     : "border-transparent text-gray-400 hover:text-white"
                   }`}
               >

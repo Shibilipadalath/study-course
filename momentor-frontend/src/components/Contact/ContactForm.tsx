@@ -195,21 +195,21 @@ export default function ContactSection() {
             {/* Contact Info */}
             <div className="mt-10 space-y-6">
               <div className="flex gap-4 items-start">
-                <FaPhone className="text-[#CF6943] mt-1" />
+                <FaPhone className="text-[#B08D55] mt-1" />
                 <span className="text-[15px] text-white font-medium">
                   +91 98898 898000
                 </span>
               </div>
 
               <div className="flex gap-4 items-start">
-                <FaEnvelope className="text-[#CF6943] mt-1" />
+                <FaEnvelope className="text-[#B08D55] mt-1" />
                 <span className="text-[15px] text-white">
                   example2@gmail.com
                 </span>
               </div>
 
               <div className="flex gap-4 items-start">
-                <FaLocationDot className="text-[#CF6943] mt-1" />
+                <FaLocationDot className="text-[#B08D55] mt-1" />
                 <span className="text-[15px] text-white leading-[1.6]">
                   Hilite Business Park <br /> Calicut, Kerala
                 </span>
@@ -227,7 +227,7 @@ export default function ContactSection() {
                   (Icon, i) => (
                     <Icon
                       key={i}
-                      className="text-[#CF6943] text-[20px] cursor-pointer hover:scale-110 transition"
+                      className="text-[#B08D55] text-[20px] cursor-pointer hover:scale-110 transition"
                     />
                   )
                 )}

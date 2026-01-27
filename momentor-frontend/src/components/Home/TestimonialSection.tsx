@@ -216,7 +216,7 @@ export default function TestimonialSection() {
               width={56}
               height={56}
               alt="Reviewer"
-              className="rounded-full border-2 border-[#CF6943]"
+              className="rounded-full border-2 border-[#B08D55]"
             />
             <p className="mt-2 text-[15px] font-semibold text-white">
               John Wick

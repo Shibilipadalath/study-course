@@ -57,7 +57,7 @@ export default function AdminSidebar() {
       <div className="lg:hidden fixed top-4 left-4 z-50">
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="p-2 rounded-lg bg-[#CF6943] text-white shadow-lg hover:bg-[#b95c3b] transition-colors"
+          className="p-2 rounded-lg bg-[#B08D55] text-white shadow-lg hover:bg-[#8C6E3F] transition-colors"
         >
           {isMobileOpen ? <HiX size={24} /> : <HiMenu size={24} />}
         </button>
@@ -75,7 +75,7 @@ export default function AdminSidebar() {
         {/* Logo Section */}
         <div className="p-4 lg:p-6 border-b border-gray-700/50 shrink-0">
           <Link href="/admin" className="flex items-center gap-3" onClick={() => setIsMobileOpen(false)}>
-            <div className="relative w-10 h-10 rounded-lg bg-linear-to-br from-[#CF6943] to-[#b95c3b] flex items-center justify-center shadow-lg">
+            <div className="relative w-10 h-10 rounded-lg bg-linear-to-br from-[#B08D55] to-[#8C6E3F] flex items-center justify-center shadow-lg">
               <span className="text-white font-bold text-xl">A</span>
             </div>
             <div>
@@ -104,10 +104,9 @@ export default function AdminSidebar() {
                   className={`
                     group relative flex items-center gap-2 lg:gap-3 px-3 lg:px-4 py-2.5 lg:py-3 rounded-xl
                     transition-all duration-200
-                    ${
-                      isActive
-                        ? "bg-linear-to-r from-[#CF6943] to-[#b95c3b] text-white shadow-lg shadow-[#CF6943]/30"
-                        : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
+                    ${isActive
+                      ? "bg-linear-to-r from-[#B08D55] to-[#8C6E3F] text-white shadow-lg shadow-[#B08D55]/30"
+                      : "text-gray-300 hover:bg-gray-700/50 hover:text-white"
                     }
                   `}
                 >
@@ -131,7 +130,7 @@ export default function AdminSidebar() {
                   {/* Hover Effect */}
                   {!isActive && (
                     <motion.div
-                      className="absolute inset-0 rounded-xl bg-linear-to-r from-[#CF6943]/10 to-transparent opacity-0 group-hover:opacity-100"
+                      className="absolute inset-0 rounded-xl bg-linear-to-r from-[#B08D55]/10 to-transparent opacity-0 group-hover:opacity-100"
                       transition={{ duration: 0.2 }}
                     />
                   )}
@@ -157,7 +156,7 @@ export default function AdminSidebar() {
         {/* User Profile Section */}
         <div className="p-3 lg:p-4 border-t border-gray-700/50 shrink-0">
           <div className="flex items-center gap-2 lg:gap-3 px-2 py-2 rounded-lg hover:bg-gray-700/30 transition-colors cursor-pointer">
-            <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-linear-to-br from-[#CF6943] to-[#b95c3b] flex items-center justify-center text-white font-semibold shrink-0 text-sm lg:text-base">
+            <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-linear-to-br from-[#B08D55] to-[#8C6E3F] flex items-center justify-center text-white font-semibold shrink-0 text-sm lg:text-base">
               A
             </div>
             <div className="flex-1 min-w-0">

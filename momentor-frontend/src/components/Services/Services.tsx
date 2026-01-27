@@ -266,7 +266,7 @@ export default function ServicesSection() {
                       mt-3 inline-flex items-center gap-1 text-[14px] font-medium
                       ${hoveredCard === index
                         ? "text-white"
-                        : "text-[#CF6943]"
+                        : "text-[#B08D55]"
                       }
                     `}
                   >
@@ -282,7 +282,7 @@ export default function ServicesSection() {
                             size={16}
                             className={`mt-0.5 transition ${hoveredCard === index
                               ? "text-white"
-                              : "text-[#CF6943]"
+                              : "text-[#B08D55]"
                               }`}
                           />
                           <span

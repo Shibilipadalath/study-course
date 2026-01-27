@@ -160,7 +160,7 @@ export default function AboutIntroSection() {
 
           {/* Text */}
           <div className="w-full md:flex-1 max-w-xl">
-            <h3 className="text-[28px] md:text-[32px] font-semibold text-[#CF6943] leading-tight">
+            <h3 className="text-[28px] md:text-[32px] font-semibold text-[#B08D55] leading-tight">
               Shaping Clarity. <br /> Building Skills
             </h3>
 
@@ -180,7 +180,7 @@ export default function AboutIntroSection() {
         <div className="relative mt-20 pb-10 flex justify-center">
 
           {/* Background Glow (adjusted for dark bg) */}
-          <div className="absolute inset-0 bg-[#CF6943]/20 blur-[90px] rounded-full"></div>
+          <div className="absolute inset-0 bg-[#B08D55]/20 blur-[90px] rounded-full"></div>
 
           {/* Stats */}
           <div className="relative flex flex-col sm:flex-row gap-16 sm:gap-28 text-center">

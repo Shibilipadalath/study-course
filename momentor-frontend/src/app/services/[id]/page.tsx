@@ -91,7 +91,7 @@ export default async function ServiceDetailPage({
                     <li key={idx} className="flex items-start gap-3">
                       <CheckCircle
                         size={20}
-                        className="text-[#CF6943] mt-1 shrink-0"
+                        className="text-[#B08D55] mt-1 shrink-0"
                       />
                       <span className="text-[16px] leading-[1.6] text-gray-300">
                         {point}

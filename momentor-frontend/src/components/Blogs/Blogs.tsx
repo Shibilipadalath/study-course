@@ -383,7 +383,7 @@ export default function BlogsSection() {
                     <button
                       type="button"
                       onClick={() => toggleReadMore(id)}
-                      className="text-[#CF6943] hover:underline ml-1 underline-offset-4"
+                      className="text-[#B08D55] hover:underline ml-1 underline-offset-4"
                     >
                       {isExpanded ? "Show Less" : "Read More..."}
                     </button>
@@ -414,9 +414,9 @@ export default function BlogsSection() {
             disabled={page === totalPages}
             className="
               px-5 py-2 rounded-lg text-sm font-medium text-white
-              bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
-              shadow-[0_6px_20px_rgba(207,105,67,0.4)]
-              hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
+              bg-gradient-to-r from-[#B08D55] via-[#D8B67C] to-[#B08D55]
+              shadow-[0_6px_20px_rgba(176,141,85,0.4)]
+              hover:from-[#B08D55] hover:via-[#C4A060] hover:to-[#B08D55]
               transition-all duration-300 cursor-pointer
               disabled:opacity-50 disabled:cursor-not-allowed
             "

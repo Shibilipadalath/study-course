@@ -106,10 +106,7 @@ export default function WhyUsSection() {
         <div className="relative flex-1 flex justify-start -ml-4">
 
           {/* BACKGROUND CIRCLE – hide on mobile */}
-          <div className="hidden md:block absolute w-[480px] h-[480px] bg-[#CF6943]/15 rounded-full -z-10 left-0"></div>
-
-
-
+          <div className="hidden md:block absolute w-[480px] h-[480px] bg-[#B08D55]/15 rounded-full -z-10 left-0"></div>
 
           {/* Outline Circles – hide on mobile */}
           <div className="hidden md:block absolute -z-10 left-0">
@@ -118,7 +115,7 @@ export default function WhyUsSection() {
                 cx="250"
                 cy="250"
                 r="200"
-                stroke="#CF694350"
+                stroke="#B08D5550"
                 strokeWidth="1.2"
                 fill="none"
               />
@@ -126,7 +123,7 @@ export default function WhyUsSection() {
                 cx="250"
                 cy="250"
                 r="160"
-                stroke="#CF694350"
+                stroke="#B08D5550"
                 strokeWidth="1.2"
                 fill="none"
               />
@@ -134,7 +131,7 @@ export default function WhyUsSection() {
                 cx="250"
                 cy="250"
                 r="120"
-                stroke="#CF694350"
+                stroke="#B08D5550"
                 strokeWidth="1.2"
                 fill="none"
               />
@@ -164,7 +161,7 @@ export default function WhyUsSection() {
 
         {/* RIGHT TEXT CONTENT */}
         <div className="flex-1">
-          <span className="bg-[#CF6943] text-white text-xs px-4 py-1 rounded-full">
+          <span className="bg-[#B08D55] text-white text-xs px-4 py-1 rounded-full">
             Why Momentor
           </span>
 
@@ -187,10 +184,10 @@ export default function WhyUsSection() {
           <button
             className="
     mt-8 flex items-center gap-2
-    bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
+    bg-gradient-to-r from-[#B08D55] via-[#D8B67C] to-[#B08D55]
     text-white px-10 py-3 rounded-lg
-    shadow-[0_8px_28px_rgba(207,105,67,0.4)]
-    hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
+    shadow-[0_8px_28px_rgba(176,141,85,0.4)]
+    hover:from-[#B08D55] hover:via-[#C4A060] hover:to-[#B08D55]
     transition-all duration-300 font-medium cursor-pointer
   "
           >

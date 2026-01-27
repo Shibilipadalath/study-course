@@ -118,7 +118,7 @@ export default function AboutSection() {
 
         {/* TAG */}
         <div className="flex justify-center">
-          <span className="bg-[#CF6943] text-white text-sm font-medium px-6 py-2 rounded-full shadow-md">
+          <span className="bg-[#B08D55] text-white text-sm font-medium px-6 py-2 rounded-full shadow-md">
             About us
           </span>
         </div>
@@ -172,9 +172,9 @@ export default function AboutSection() {
             <button
               className="
                 px-8 py-3 rounded-lg text-sm font-medium text-white
-                bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
-                shadow-[0_8px_28px_rgba(207,105,67,0.4)]
-                hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
+                bg-gradient-to-r from-[#B08D55] via-[#D8B67C] to-[#B08D55]
+                shadow-[0_8px_28px_rgba(176,141,85,0.4)]
+                hover:from-[#B08D55] hover:via-[#C4A060] hover:to-[#B08D55]
                 transition-all duration-300 cursor-pointer
               "
             >

@@ -137,7 +137,7 @@ export default function AdminProfilePage() {
               type="password"
               value={currentPassword}
               onChange={(e) => setCurrentPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CF6943]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B08D55]"
               placeholder="Enter current password"
             />
           </div>
@@ -150,7 +150,7 @@ export default function AdminProfilePage() {
               type="password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CF6943]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B08D55]"
               placeholder="Enter new password"
             />
           </div>
@@ -163,7 +163,7 @@ export default function AdminProfilePage() {
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#CF6943]"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#B08D55]"
               placeholder="Confirm new password"
             />
           </div>
@@ -173,7 +173,7 @@ export default function AdminProfilePage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="px-6 py-2 bg-[#CF6943] text-white rounded-lg hover:bg-[#b95c3b] transition-colors disabled:opacity-60"
+            className="px-6 py-2 bg-[#B08D55] text-white rounded-lg hover:bg-[#8C6E3F] transition-colors disabled:opacity-60"
           >
             {isLoading ? "Saving..." : "Save Changes"}
           </button>

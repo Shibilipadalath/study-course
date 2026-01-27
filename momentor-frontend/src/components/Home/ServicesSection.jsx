@@ -129,7 +129,7 @@ export default function ServicesSection() {
       <div className="container mx-auto px-6 lg:px-24 mb-14 flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Tag + Title */}
         <div>
-          <span className="bg-[#CF6943] text-white text-[12px] px-4 py-1 rounded-full shadow-md">
+          <span className="bg-[#B08D55] text-white text-[12px] px-4 py-1 rounded-full shadow-md">
             Our Services
           </span>
           <h2 className="text-[28px] md:text-[36px] font-semibold mt-3 text-white">
@@ -137,14 +137,14 @@ export default function ServicesSection() {
           </h2>
         </div>
 
-        {/* View More Button (Smooth Orange Gradient) */}
+        {/* View More Button (Smooth Gold Gradient) */}
         <Link
           href="/services"
           className="
             px-7 py-2 rounded-lg font-medium text-white
-            bg-gradient-to-r from-[#CF6943] via-[#FF9A6B] to-[#CF6943]
-            shadow-[0_8px_28px_rgba(207,105,67,0.4)]
-            hover:from-[#CF6943] hover:via-[#E87A5A] hover:to-[#CF6943]
+            bg-gradient-to-r from-[#B08D55] via-[#D8B67C] to-[#B08D55]
+            shadow-[0_8px_28px_rgba(176,141,85,0.4)]
+            hover:from-[#B08D55] hover:via-[#C4A060] hover:to-[#B08D55]
             transition-all duration-300 cursor-pointer
           "
         >
