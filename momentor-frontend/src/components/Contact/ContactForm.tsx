@@ -241,54 +241,57 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white border border-[#CF6943]/30 shadow-[0_10px_40px_-10px_rgba(207,105,67,0.2)] rounded-2xl px-6 py-8 md:px-10 md:py-12 relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-[6px] before:bg-gradient-to-r before:from-[#FF9A6B] before:via-[#CF6943] before:to-[#A64D2D]"
+            className="border border-[#333] shadow-2xl rounded-2xl px-6 py-8 md:px-10 md:py-12 relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-[6px] before:bg-gradient-to-r before:from-[#FF9A6B] before:via-[#CF6943] before:to-[#A64D2D]"
+            style={{
+              background: "linear-gradient(180deg, #2A2A2A 0%, #000000 100%)",
+            }}
           >
             <form className="space-y-7">
               {/* ROW 1 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 text-white">
                     First Name
                   </label>
-                  <input className="w-full h-11 border rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]" />
+                  <input className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]" />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 text-white">
                     Last Name
                   </label>
-                  <input className="w-full h-11 border rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]" />
+                  <input className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]" />
                 </div>
               </div>
 
               {/* ROW 2 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 text-white">
                     Email Address
                   </label>
                   <input
                     type="email"
-                    className="w-full h-11 border rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]"
+                    className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">
+                  <label className="block text-sm font-medium mb-2 text-white">
                     Mobile Number
                   </label>
-                  <input className="w-full h-11 border rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]" />
+                  <input className="w-full h-11 border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]" />
                 </div>
               </div>
 
               {/* MESSAGE */}
               <div>
-                <label className="block text-sm font-medium mb-2">
+                <label className="block text-sm font-medium mb-2 text-white">
                   Message
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]"
+                  className="w-full border border-[#333] bg-[#1A1A1A] text-white rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-1 focus:ring-[#CF6943]"
                 />
               </div>
 
